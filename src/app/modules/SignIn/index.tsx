@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthLayout from 'app/modules/auth/layout';
+import { AuthLayout } from 'app/modules/SignIn/layout';
 
 export default function Auth() {
   const [username, setUsername] = React.useState('');

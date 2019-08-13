@@ -1,7 +1,6 @@
 /* core */
 import React, { ReactNode } from 'react';
-import { Grid, Col, Row } from 'react-styled-flexboxgrid';
-import { Typography, Container } from '@material-ui/core';
+import styled from 'styled-components';
 import useTitle from 'react-use/lib/useTitle';
 import { ThemeProvider } from 'styled-components';
 
@@ -9,6 +8,10 @@ export type PageProps = {
   title?: string;
   children?: ReactNode;
 };
+
+const Container = styled.div`
+  flex-grow: 1;
+`
 
 const theme = {
   flexboxgrid: {

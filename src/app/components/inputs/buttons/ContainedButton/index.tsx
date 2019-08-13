@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const ContainedButton = (props: Props) => {
+export const ContainedButton = (props: Props) => {
   const { text, ...otherProps } = props;
   const classes = useStyles();
   return (
@@ -31,4 +31,3 @@ const ContainedButton = (props: Props) => {
   );
 };
 
-export default ContainedButton;

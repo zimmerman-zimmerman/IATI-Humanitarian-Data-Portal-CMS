@@ -14,6 +14,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 interface Props extends InputBaseProps {
+  id: string;
   label: string;
   value: string;
   showPass: boolean;
@@ -45,7 +46,7 @@ const Input = withStyles((theme: Theme) =>
   })
 )(InputBase);
 
-const PasswordTextField = (props: Props) => {
+export const PasswordTextField = (props: Props) => {
   const { value, showPass, setShowPass, setValue, ...otherProps } = props;
   return (
     <FormControl fullWidth={props.fullWidth}>
@@ -73,4 +74,3 @@ const PasswordTextField = (props: Props) => {
   );
 };
 
-export default PasswordTextField;

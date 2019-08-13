@@ -11,6 +11,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 
 interface Props extends InputBaseProps {
+  id: string;
   label: string;
   value: string;
   setValue: Function;
@@ -40,7 +41,7 @@ const Input = withStyles((theme: Theme) =>
   })
 )(InputBase);
 
-const SingleLineTextField = (props: Props) => {
+export const SingleLineTextField = (props: Props) => {
   return (
     <FormControl fullWidth={props.fullWidth}>
       <InputLabel shrink htmlFor={props.id}>
@@ -50,5 +51,3 @@ const SingleLineTextField = (props: Props) => {
     </FormControl>
   );
 };
-
-export default SingleLineTextField;

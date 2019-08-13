@@ -1,19 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import SingleLineTextField from 'app/components/inputs/textfields/SingleLineTextField';
-import PasswordTextField from 'app/components/inputs/textfields/PasswordTextField';
-import ContainedButton from 'app/components/inputs/buttons/ContainedButton';
-import { LayoutModel } from 'app/modules/auth/models';
+import { SingleLineTextField } from 'app/components/inputs/textfields/SingleLineTextField';
+import { PasswordTextField } from 'app/components/inputs/textfields/PasswordTextField';
+import { ContainedButton } from 'app/components/inputs/buttons/ContainedButton';
+import { LayoutModel } from 'app/modules/SignIn/models';
 
-const CContainer = styled(Container)`
+const Container = styled.div`
   && {
     left: 0;
-    height: 100%;
+    height: 100vh;
     display: flex;
     overflow-y: auto;
-    position: absolute;
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
@@ -43,9 +41,10 @@ const Password = styled(PasswordTextField)`
     margin-bottom: 45px;
   }
 `;
-const InputForm = (props: LayoutModel) => {
+
+export const InputForm = (props: LayoutModel) => {
   return (
-    <CContainer maxWidth="sm">
+    <Container>
       <Form>
         <Header variant="h3">
           <span role="img" aria-label="emoji">
@@ -74,8 +73,6 @@ const InputForm = (props: LayoutModel) => {
           disabled={props.username === '' || props.password === ''}
         />
       </Form>
-    </CContainer>
+    </Container>
   );
 };
-
-export default InputForm;
