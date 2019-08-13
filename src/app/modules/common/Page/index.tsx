@@ -32,22 +32,11 @@ const theme = {
 };
 
 const Page = (props: PageProps) => {
-  useTitle(`MLT-CMS - ${props.title}`);
+  useTitle(`MLT CMS - ${props.title}`);
 
   return (
     <ThemeProvider theme={theme}>
-      <Container>
-        <Grid>
-          <Row>
-            <Col lg={7}>
-              <Typography variant="h3" color="textPrimary">
-                {props.title}
-              </Typography>
-            </Col>
-          </Row>
-        </Grid>
-        {props.children}
-      </Container>
+      <Container>{props.children}</Container>
     </ThemeProvider>
   );
 };

@@ -212,6 +212,13 @@ export default createMuiTheme({
   shape: Shape,
   zIndex: zIndex,
   overrides: {
+    MuiInputLabel: {
+      root: {
+        fontSize: 12,
+        fontWeight: 'normal',
+        color: Palette.text.primary,
+      },
+    },
     MUIDataTable: {
       paper: {
         boxShadow: 'none',
@@ -228,6 +235,23 @@ export default createMuiTheme({
       },
       titleText: {
         fontSize: 20,
+      },
+    },
+    MuiInputAdornment: {
+      positionEnd: {
+        right: 0,
+        position: 'absolute',
+      },
+    },
+    MuiButton: {
+      root: {
+        '&disabled': {
+          background: Palette.grey[40],
+          color: Palette.text.disabled,
+        },
+      },
+      label: {
+        padding: '6px 15px',
       },
     },
     MuiTableBody: {
