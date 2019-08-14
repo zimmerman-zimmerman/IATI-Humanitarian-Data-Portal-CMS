@@ -4,6 +4,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
 type Props = {
   text: string;
+  onClick(): void;
   disabled?: boolean;
   fullWidth?: boolean;
 };

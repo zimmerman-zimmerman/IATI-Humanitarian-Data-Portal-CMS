@@ -1,3 +1,5 @@
+import { History } from 'history';
+
 export type LayoutModel = {
   username: string;
   password: string;
@@ -5,4 +7,5 @@ export type LayoutModel = {
   setUsername: Function;
   setPassword: Function;
   setShowPass: Function;
+  history: History;
 };

@@ -1,7 +1,8 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { AuthLayout } from 'app/modules/SignIn/layout';
 
-export default function Auth() {
+function Auth(props) {
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [showPass, setShowPass] = React.useState(false);
@@ -13,6 +14,9 @@ export default function Auth() {
       setUsername={setUsername}
       setPassword={setPassword}
       setShowPass={setShowPass}
+      history={props.history}
     />
   );
 }
+
+export const SignIn = withRouter(Auth);
