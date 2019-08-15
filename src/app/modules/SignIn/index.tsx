@@ -1,18 +1,22 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { AuthLayout } from 'app/modules/SignIn/layout';
 
-export default function Auth() {
-  const [username, setUsername] = React.useState('');
+function Auth(props) {
+  const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [showPass, setShowPass] = React.useState(false);
   return (
     <AuthLayout
-      username={username}
+      email={email}
       password={password}
       showPass={showPass}
-      setUsername={setUsername}
+      setEmail={setEmail}
       setPassword={setPassword}
       setShowPass={setShowPass}
+      history={props.history}
     />
   );
 }
+
+export const SignIn = withRouter(Auth);
