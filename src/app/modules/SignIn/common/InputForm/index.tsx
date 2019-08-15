@@ -50,24 +50,13 @@ const Password = styled(PasswordTextField)`
 export const InputForm = (props: LayoutModel) => {
 
   const signIn = () => {
-    client.login(props.username, props.password).then(res => {
+    client.login(props.email, props.password).then(res => {
       if (!res.ack) {
         alert('Error logging in');
         return;
       }
 
       props.history.push('/dashboard');
-    })
-  };
-
-  const signUp = () => {
-    client.createAccount('elbartas321@gmail.com', props.username, props.password).then(res => {
-      if (!res.ack) {
-        alert('Error signing up');
-        return;
-      }
-
-      alert('User created');
     })
   };
 
@@ -82,10 +71,10 @@ export const InputForm = (props: LayoutModel) => {
         </Header>
         <Username
           fullWidth
-          label="Username"
-          id="login-username"
-          value={props.username}
-          setValue={props.setUsername}
+          label="Email"
+          id="login-email"
+          value={props.email}
+          setValue={props.setEmail}
         />
         <Password
           fullWidth
@@ -99,12 +88,7 @@ export const InputForm = (props: LayoutModel) => {
         <ContainedButton
           text="Sign in"
           onClick={signIn}
-          disabled={props.username === '' || props.password === ''}
-        />
-        <ContainedButton
-          text="Sign up"
-          onClick={signUp}
-          disabled={props.username === '' || props.password === ''}
+          disabled={props.email === '' || props.password === ''}
         />
       </Form>
     </Container>
