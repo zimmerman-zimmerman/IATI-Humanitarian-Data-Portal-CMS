@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
 /* api */
-import { client } from 'app/client';
+import { client } from 'app/state/api/spaceCloudClient';
 
 /* components */
 import { SingleLineTextField } from 'app/components/inputs/textfields/SingleLineTextField';
@@ -48,18 +48,6 @@ const Password = styled(PasswordTextField)`
 `;
 
 export const InputForm = (props: LayoutModel) => {
-
-  const signIn = () => {
-    client.login(props.email, props.password).then(res => {
-      if (!res.ack) {
-        alert('Error logging in');
-        return;
-      }
-
-      props.history.push('/dashboard');
-    })
-  };
-
   return (
     <Container>
       <Form>
@@ -87,7 +75,7 @@ export const InputForm = (props: LayoutModel) => {
         />
         <ContainedButton
           text="Sign in"
-          onClick={signIn}
+          onClick={() => props.login()}
           disabled={props.email === '' || props.password === ''}
         />
       </Form>
