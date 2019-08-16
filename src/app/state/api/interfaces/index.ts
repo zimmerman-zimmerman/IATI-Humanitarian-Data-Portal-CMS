@@ -1,11 +1,6 @@
 import { API } from 'space-api';
 import { Action, Thunk } from 'easy-peasy';
-import {
-  loginPayload,
-  signUpPayload,
-  User,
-  UserResponse,
-} from './userInterface';
+import { loginPayload, User, UserResponse } from './userInterface';
 
 export interface ErrorResponse {
   data: {
@@ -20,5 +15,4 @@ export interface SpaceCloudModel {
   setError: Action<SpaceCloudModel, ErrorResponse>;
   setUser: Action<SpaceCloudModel, UserResponse>;
   login: Thunk<SpaceCloudModel, loginPayload>;
-  createAccount: Thunk<SpaceCloudModel, signUpPayload>;
 }

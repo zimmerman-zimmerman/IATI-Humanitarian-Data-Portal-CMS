@@ -17,10 +17,6 @@ export interface UserResponse {
 
 export interface loginPayload {
   email: string;
-  pass: string;
-  history: History;
-}
-
-export interface signUpPayload extends loginPayload {
-  username: string;
+  password: string;
+  history?: History;
 }

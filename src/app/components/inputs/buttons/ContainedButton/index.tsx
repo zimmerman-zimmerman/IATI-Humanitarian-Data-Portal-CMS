@@ -4,6 +4,8 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
 type Props = {
   text: string;
+  margin?: string;
+  backgroundColor?: string;
   onClick(): void;
   disabled?: boolean;
   fullWidth?: boolean;
@@ -11,11 +13,12 @@ type Props = {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    button: {
-      width: 'fit-content',
+    button: props => ({
+      margin: props.margin || '0',
+      width: props.fullWidth ? '100%' : 'fit-content',
       color: theme.palette.primary.contrastText,
-      backgroundColor: theme.palette.primary.main,
-    },
+      backgroundColor: props.backgroundColor || theme.palette.primary.main,
+    }),
     input: {
       display: 'none',
     },
@@ -23,12 +26,11 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const ContainedButton = (props: Props) => {
-  const { text, ...otherProps } = props;
-  const classes = useStyles();
+  const { text, margin, backgroundColor, fullWidth, ...otherProps } = props;
+  const classes = useStyles({ margin, backgroundColor, fullWidth });
   return (
     <Button variant="contained" className={classes.button} {...otherProps}>
       {text}
     </Button>
   );
 };
-

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { AuthLayout } from 'app/modules/SignIn/layout';
 import { useStoreActions, useStoreState } from 'app/state/store/hooks';
@@ -9,9 +9,7 @@ function Auth(props) {
   const [showPass, setShowPass] = React.useState(false);
   const loginAction = useStoreActions(actions => actions.spaceCloud.login);
 
-  const login = useCallback(() => {
-    loginAction({ email, pass: password, history: props.history });
-  }, [loginAction, email, password]);
+  const login = () => loginAction({ email, password, history: props.history });
 
   const user = useStoreState(state => state.spaceCloud.user);
 

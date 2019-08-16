@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
 
 /* components */
-import { SingleLineTextField } from 'app/components/inputs/textfields/SingleLineTextField';
-import { PasswordTextField } from 'app/components/inputs/textfields/PasswordTextField';
 import { ContainedButton } from 'app/components/inputs/buttons/ContainedButton';
 import { LayoutModel } from 'app/modules/SignIn/models';
+import { FormPasswordField } from '../../../../components/inputs/textfields/FormPasswordField';
+import { FormSingleLineField } from '../../../../components/inputs/textfields/FormSingleLineField';
 
 const Container = styled.div`
   && {
@@ -33,18 +33,6 @@ const Header = styled(Typography)`
   }
 `;
 
-const Username = styled(SingleLineTextField)`
-  && {
-    margin-bottom: 45px;
-  }
-`;
-
-const Password = styled(PasswordTextField)`
-  && {
-    margin-bottom: 45px;
-  }
-`;
-
 export const InputForm = (props: LayoutModel) => {
   return (
     <Container>
@@ -55,14 +43,14 @@ export const InputForm = (props: LayoutModel) => {
           </span>{' '}
           Hello
         </Header>
-        <Username
+        <FormSingleLineField
           fullWidth
           label="Email"
           id="login-email"
           value={props.email}
           setValue={props.setEmail}
         />
-        <Password
+        <FormPasswordField
           fullWidth
           label="Password"
           id="login-password"

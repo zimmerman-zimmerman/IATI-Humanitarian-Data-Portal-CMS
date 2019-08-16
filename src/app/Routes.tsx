@@ -1,6 +1,6 @@
 /* base */
 import React, { Suspense } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, Link } from 'react-router-dom';
 
 /* interface */
 import { User } from 'app/state/api/interfaces/userInterface';
@@ -40,7 +40,15 @@ function Routes() {
         <Route
           exact
           path="/dashboard"
-          render={() => redirectUnAuth(<div> Dashboard </div>, user)}
+          render={() =>
+            redirectUnAuth(
+              <div>
+                {' '}
+                <Link to={'/management'}> Go to user management </Link>{' '}
+              </div>,
+              user
+            )
+          }
         />
 
         <Route

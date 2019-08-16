@@ -11,7 +11,8 @@ export type PageProps = {
 
 const Container = styled.div`
   flex-grow: 1;
-`
+  overflow: hidden;
+`;
 
 const theme = {
   flexboxgrid: {

@@ -13,7 +13,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
-interface Props extends InputBaseProps {
+export interface Props extends InputBaseProps {
   id: string;
   label: string;
   value: string;
@@ -22,7 +22,7 @@ interface Props extends InputBaseProps {
   setShowPass: Function;
 }
 
-const Input = withStyles((theme: Theme) =>
+export const Input = withStyles((theme: Theme) =>
   createStyles({
     root: {
       'label + &': {
@@ -73,4 +73,3 @@ export const PasswordTextField = (props: Props) => {
     </FormControl>
   );
 };
-
