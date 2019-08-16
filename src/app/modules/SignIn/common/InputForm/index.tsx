@@ -2,8 +2,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
-/* api */
-import { client } from 'app/state/api/spaceCloudClient';
 
 /* components */
 import { SingleLineTextField } from 'app/components/inputs/textfields/SingleLineTextField';
