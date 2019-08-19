@@ -7,7 +7,11 @@ import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
 import theme from 'app/theme';
 
-const LinkContainer = styled(Link)`
+export const NavSideBarItem = styled(props => (
+  <Link {...props} to="#">
+    <Typography variant="button">{props.children}</Typography>
+  </Link>
+))`
   && {
     display: flex;
     margin-bottom: 30px;
@@ -17,11 +21,3 @@ const LinkContainer = styled(Link)`
     }
   }
 `;
-
-export const NavSideBarItem = props => {
-  return (
-    <LinkContainer to="#">
-      <Typography variant="button">{props.children}</Typography>
-    </LinkContainer>
-  );
-};
