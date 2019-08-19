@@ -43,7 +43,7 @@ const management: ManagementModel = {
   createAccount: thunk(async (action, payload: signUpPayload) => {
     const res = await db.signUp(
       payload.email,
-      payload.username,
+      payload.name,
       payload.password,
       payload.role
     );
@@ -75,7 +75,7 @@ const management: ManagementModel = {
       .apply();
 
     if (res.status === 200) {
-      action.setUserUpdated(res.data.user);
+      action.setUserUpdated(payload);
     } else {
       action.setError(res);
     }

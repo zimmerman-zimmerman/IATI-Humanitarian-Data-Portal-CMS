@@ -38,10 +38,15 @@ export const UserManLayout = (props: LayoutModel) => {
     setOpen(true);
   }
 
+  function handleUserUpdated(newData) {
+    props.editUserAction(newData);
+    setOpen(false);
+  }
+
   return (
     <Page title="User management">
       <ManageUserDialog
-        editUserAction={props.editUserAction}
+        editUserAction={handleUserUpdated}
         editUser={editUser}
         open={open}
         handleClose={handleClose}

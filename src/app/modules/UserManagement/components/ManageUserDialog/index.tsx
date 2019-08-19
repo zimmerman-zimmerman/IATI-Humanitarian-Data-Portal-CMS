@@ -24,10 +24,10 @@ export const ManageUserDialog = (props: AddUserModel) => {
         props.editUserAction({
           _id: props.editUser && props.editUser._id,
           email,
-          username,
-          role,
+          name: username,
+          role
         })
-    : () => props.addUser({ email, username, password, role });
+    : () => props.addUser({ email, name: username, password, role });
   const title = props.editUser ? 'Edit User' : 'Add User';
 
   React.useEffect(() => {
@@ -35,6 +35,7 @@ export const ManageUserDialog = (props: AddUserModel) => {
       setEmail(props.editUser.email);
       setUsername(props.editUser.name);
       setRole(props.editUser.role);
+      setPassword('doesnt matter');
     }
   }, [props.editUser]);
 
@@ -95,7 +96,7 @@ export const ManageUserDialog = (props: AddUserModel) => {
           disabled={
             email.length === 0 ||
             username.length === 0 ||
-            (props.editUser !== null && password.length === 0)
+            password.length === 0
           }
           text={submitButText}
           onClick={submitAction}

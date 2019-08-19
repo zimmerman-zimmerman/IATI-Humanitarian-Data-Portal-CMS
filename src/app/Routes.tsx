@@ -2,6 +2,9 @@
 import React, { Suspense } from 'react';
 import { Redirect, Route, Switch, Link } from 'react-router-dom';
 
+/* consts */
+import { userRoles } from './__consts__/generalConsts';
+
 /* interface */
 import { User } from 'app/state/api/interfaces/userInterface';
 
@@ -18,10 +21,16 @@ import { UserManagement } from 'app/modules/UserManagement';
 // other wise returns the provided component
 function redirectUnAuth<ReactModule>(
   component: ReactModule,
-  user: User | null
+  user: User | null,
+  role?: string
 ) {
+
   if (!user) {
     return <Redirect to="/login" />;
+  }
+
+  if (role && user.role !== role) {
+    return <Redirect to="/dashboard" />;
   }
 
   return component;
@@ -54,7 +63,7 @@ function Routes() {
         <Route
           exact
           path="/management"
-          render={() => redirectUnAuth(<UserManagement />, user)}
+          render={() => redirectUnAuth(<UserManagement />, user, userRoles.admin)}
         />
       </Switch>
     </Suspense>

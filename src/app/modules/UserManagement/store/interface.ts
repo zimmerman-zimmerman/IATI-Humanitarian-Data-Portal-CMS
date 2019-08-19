@@ -3,7 +3,7 @@ import { Action, Thunk } from 'easy-peasy';
 import { ErrorResponse } from 'app/state/api/interfaces';
 
 export interface signUpPayload extends loginPayload {
-  username: string;
+  name: string;
   role: string;
 }
 
