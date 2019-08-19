@@ -60,10 +60,12 @@ export const Palette = {
     selected: 'rgba(0, 0, 0, 0.14)',
     disabled: '#a1aebd',
     disabledBackground: '#f0f3f7',
-  },
+  }
 };
 
-const Weight = {
+export const boxShadow = '0 0 2px 1px rgba(130, 136, 148, 0.08);';
+
+export const Weight = {
   light: 200,
   regular: 300,
   medium: 500,

@@ -15,6 +15,7 @@ import { useStoreState } from './state/store/hooks';
 import { PageLoader } from 'app/modules/common/PageLoader';
 import { SignIn } from 'app/modules/SignIn';
 import { UserManagement } from 'app/modules/UserManagement';
+import { Faq } from 'app/modules/Faq';
 
 // util function that redirects a user to the login page
 // if they're not signed-in
@@ -65,6 +66,9 @@ function Routes() {
           path="/management"
           render={() => redirectUnAuth(<UserManagement />, user, userRoles.admin)}
         />
+
+        <Route exact path="/faq" render={() => <Faq />} />
+
       </Switch>
     </Suspense>
   );
