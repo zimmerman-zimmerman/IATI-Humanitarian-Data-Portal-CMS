@@ -9,6 +9,7 @@ type Props = {
   onClick(): void;
   disabled?: boolean;
   fullWidth?: boolean;
+  icon?: any;
 };
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -26,11 +27,19 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const ContainedButton = (props: Props) => {
-  const { text, margin, backgroundColor, fullWidth, ...otherProps } = props;
+  const {
+    text,
+    margin,
+    backgroundColor,
+    fullWidth,
+    icon,
+    ...otherProps
+  } = props;
   const classes = useStyles({ margin, backgroundColor, fullWidth });
   return (
     <Button variant="contained" className={classes.button} {...otherProps}>
       {text}
+      {icon}
     </Button>
   );
 };
