@@ -1,20 +1,8 @@
 import React from 'react';
 import { AddUserModel } from './models';
+import { ManageDialogLayout } from './layout';
 
-/* consts */
-import { userRoles } from 'app/__consts__/generalConsts';
-
-/* components */
-import { Dialog } from '@material-ui/core';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogActions from '@material-ui/core/DialogActions';
-import { ContainedButton } from 'app/components/inputs/buttons/ContainedButton';
-import { FormPasswordField } from 'app/components/inputs/textfields/FormPasswordField';
-import { FormSingleLineField } from 'app/components/inputs/textfields/FormSingleLineField';
-import { SimpleSelect } from 'app/components/inputs/Select/SimpleSelect';
-
-export const ManageUserDialog = (props: AddUserModel) => {
+export function ManageUserDialog (props: AddUserModel) {
   const [email, setEmail] = React.useState('');
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -43,68 +31,23 @@ export const ManageUserDialog = (props: AddUserModel) => {
   }, [props.editUser]);
 
   return (
-    <Dialog
+    <ManageDialogLayout
       open={props.open}
-      onClose={() => props.handleClose()}
-      aria-labelledby="form-dialog-title"
-    >
-      <DialogTitle id="form-dialog-title">{title}</DialogTitle>
-      <DialogContent>
-        <FormSingleLineField
-          fullWidth
-          label="Email"
-          id="add-email"
-          value={email}
-          setValue={setEmail}
-        />
-        <FormSingleLineField
-          fullWidth
-          label="username"
-          id="add-username"
-          value={username}
-          setValue={setUsername}
-        />
-        {!props.editUser && (
-          <FormPasswordField
-            fullWidth
-            label="Password"
-            id="login-password"
-            value={password}
-            showPass={showPass}
-            setValue={setPassword}
-            setShowPass={setShowPass}
-          />
-        )}
-        <SimpleSelect
-          fullWidth
-          id="select-role"
-          label="Role"
-          options={[
-            { value: userRoles.reg, label: 'Regular' },
-            { value: userRoles.admin, label: 'Administrator' },
-          ]}
-          value={role}
-          setValue={setRole}
-        />
-      </DialogContent>
-      <DialogActions>
-        <ContainedButton
-          backgroundColor="#ff6961"
-          // margin="0 auto 0 8px"
-          text="Cancel"
-          onClick={() => props.handleClose()}
-        />
-        <ContainedButton
-          // margin="0 8px 0 auto"
-          disabled={
-            email.length === 0 ||
-            username.length === 0 ||
-            password.length === 0
-          }
-          text={submitButText}
-          onClick={submitAction}
-        />
-      </DialogActions>
-    </Dialog>
+      handleClose={props.handleClose}
+      title={title}
+      email={email}
+      setEmail={setEmail}
+      username={username}
+      setUsername={setUsername}
+      editUser={props.editUser}
+      password={password}
+      showPass={showPass}
+      setPassword={setPassword}
+      setShowPass={setShowPass}
+      role={role}
+      setRole={setRole}
+      submitButText={submitButText}
+      submitAction={submitAction}
+    />
   );
-};
+}

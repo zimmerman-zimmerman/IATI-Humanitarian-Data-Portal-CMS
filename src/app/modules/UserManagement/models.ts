@@ -1,8 +1,13 @@
 import { User } from 'app/state/api/interfaces/userInterface';
 
 export type LayoutModel = {
+  open: boolean;
+  editUser: User | null;
+  handleOpen: Function;
+  handleClose: Function;
   allUsers: Array<User>;
-  addUser: Function;
+  handleAddUser: Function;
   deleteUser: Function;
-  editUserAction: Function;
+  handleEditUser: Function;
+  handleUserUpdated: Function;
 };

@@ -16,41 +16,14 @@ const StyledGrid = styled(Grid)`
 `;
 
 export const UserManLayout = (props: LayoutModel) => {
-  const [open, setOpen] = React.useState(false);
-  const [editUser, setEditUser] = React.useState(null);
-
-  function handleOpen() {
-    setEditUser(null);
-    setOpen(true);
-  }
-
-  function handleClose() {
-    setOpen(false);
-  }
-
-  function handleAddUser(payload) {
-    props.addUser(payload);
-    setOpen(false);
-  }
-
-  function handleEditUser(user) {
-    setEditUser(user);
-    setOpen(true);
-  }
-
-  function handleUserUpdated(newData) {
-    props.editUserAction(newData);
-    setOpen(false);
-  }
-
   return (
     <Page title="User management">
       <ManageUserDialog
-        editUserAction={handleUserUpdated}
-        editUser={editUser}
-        open={open}
-        handleClose={handleClose}
-        addUser={handleAddUser}
+        editUserAction={props.handleUserUpdated}
+        editUser={props.editUser}
+        open={props.open}
+        handleClose={props.handleClose}
+        addUser={props.handleAddUser}
       />
       <StyledGrid
         container
@@ -63,14 +36,14 @@ export const UserManLayout = (props: LayoutModel) => {
           <ContainedButton
             text="Add User"
             fullWidth
-            onClick={() => handleOpen()}
+            onClick={() => props.handleOpen()}
           />
         </Grid>
         {props.allUsers.map(user => (
           <UserCard
             name={user.name}
             onDelete={() => props.deleteUser(user._id)}
-            onEdit={() => handleEditUser(user)}
+            onEdit={() => props.handleEditUser(user)}
           />
         ))}
       </StyledGrid>

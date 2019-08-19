@@ -8,10 +8,15 @@ storiesOf('modules | User management ', module).add('layout', () => (
   <div style={{ width: '100%', height: '100%' }}>
     <Providers>
       <UserManLayout
+        open={false}
+        editUser={null}
+        handleOpen={() => console.log('click')}
+        handleClose={() => console.log('click')}
         allUsers={[]}
-        addUser={() => console.log('addUser')}
-        deleteUser={() => console.log('delete user')}
-        editUserAction={() => console.log('edit user')}
+        handleAddUser={() => console.log('click')}
+        deleteUser={() => console.log('click')}
+        handleEditUser={() => console.log('click')}
+        handleUserUpdated={() => console.log('click')}
       />
     </Providers>
   </div>
