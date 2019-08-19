@@ -9,14 +9,13 @@ import color from 'app/theme/color';
 import { DebugBox } from 'app/utils/layout';
 
 const MenuContainer = styled.div`
-  width: 205px;
-  height: calc(100vh - 48px);
-  max-height: 100vh;
-  overflow-y: auto;
   display: flex;
+  overflow-y: auto;
+  max-height: 100vh;
   flex-direction: column;
-  justify-content: space-between;
   padding: 24px 0 24px 24px;
+  height: calc(100vh - 48px);
+  justify-content: space-between;
   background-color: ${color.whiteOrFontlightbase};
 `;
 
