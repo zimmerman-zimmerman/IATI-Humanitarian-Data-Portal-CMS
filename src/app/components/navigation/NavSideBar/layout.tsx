@@ -3,26 +3,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* components */
-import Typography from '@material-ui/core/Typography';
+import { Typography, Grid, Box } from '@material-ui/core';
 import { NavSideBarItem } from 'app/components/navigation/NavSideBar/common/NavSideBarItem';
 import color from 'app/theme/color';
+import { DebugBox } from 'app/utils/layout';
 
-const Container = styled.div`
+const MenuContainer = styled.div`
   width: 205px;
-  height: calc(100% - 48px);
+  height: calc(100vh - 48px);
   max-height: 100vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 24px 0 24px 24px;
   background-color: ${color.whiteOrFontlightbase};
-`;
-
-const MenuContainer = styled.div`
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 `;
 
 const Version = styled(Typography)`
@@ -33,16 +28,17 @@ const Version = styled(Typography)`
 
 export const NavSideBarLayout = () => {
   return (
-    <Container>
+    <MenuContainer>
       <NavSideBarItem>Sign out</NavSideBarItem>
-      <MenuContainer>
+      {/** main navigation container */}
+      <Grid container direction="column" justify="center">
         <NavSideBarItem>Signatories</NavSideBarItem>
         <NavSideBarItem>Settings</NavSideBarItem>
         <NavSideBarItem>FAQ Text</NavSideBarItem>
         <NavSideBarItem>CCTRIs Text</NavSideBarItem>
         <NavSideBarItem>Tooltips Text</NavSideBarItem>
-      </MenuContainer>
+      </Grid>
       <Version variant="caption">V1</Version>
-    </Container>
+    </MenuContainer>
   );
 };
