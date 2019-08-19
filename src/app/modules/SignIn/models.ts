@@ -1,4 +1,4 @@
-import { History } from 'history';
+import { User } from 'app/state/api/interfaces/userInterface';
 
 export type LayoutModel = {
   email: string;
@@ -7,5 +7,6 @@ export type LayoutModel = {
   setEmail: Function;
   setPassword: Function;
   setShowPass: Function;
-  history: History;
+  login: Function;
+  user: User | null;
 };
