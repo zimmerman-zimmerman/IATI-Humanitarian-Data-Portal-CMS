@@ -7,34 +7,13 @@ import { UserCardModel } from './models';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import { ContainedButton } from 'app/components/inputs/buttons/ContainedButton';
-import { Typography } from '@material-ui/core';
 
 /* icons */
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import styled from 'styled-components';
 
-const StyledContent = styled(CardContent)`
-  && {
-    display: flex;
-  }
-`;
-
-const StyledButtonGrid = styled(Grid)`
-  && {
-    display: flex;
-  }
-`;
-
-const StyledName = styled(Typography)`
-  && {
-    height: fit-content;
-    margin: 0 auto 0 20px;
-    font-weight: bold;
-    font-size: 30px;
-  }
-`;
+/* styles */
+import { StyledButtonGrid, StyledContent, StyledName } from './style';
 
 export const UserCard = (props: UserCardModel) => {
   return (
