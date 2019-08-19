@@ -1,6 +1,9 @@
 import React from 'react';
 import { AddUserModel } from './models';
 
+/* consts */
+import { userRoles } from 'app/__consts__/generalConsts';
+
 /* components */
 import { Dialog } from '@material-ui/core';
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -77,8 +80,8 @@ export const ManageUserDialog = (props: AddUserModel) => {
           id="select-role"
           label="Role"
           options={[
-            { value: 'regular', label: 'Regular' },
-            { value: 'admin', label: 'Administrator' },
+            { value: userRoles.reg, label: 'Regular' },
+            { value: userRoles.admin, label: 'Administrator' },
           ]}
           value={role}
           setValue={setRole}
