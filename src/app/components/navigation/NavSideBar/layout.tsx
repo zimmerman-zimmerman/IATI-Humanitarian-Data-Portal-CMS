@@ -3,10 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* components */
-import { Typography, Grid, Box } from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
 import { NavSideBarItem } from 'app/components/navigation/NavSideBar/common/NavSideBarItem';
 import color from 'app/theme/color';
-import { DebugBox } from 'app/utils/layout';
 
 const MenuContainer = styled.div`
   display: flex;
@@ -27,17 +26,19 @@ const Version = styled(Typography)`
 
 export const NavSideBarLayout = () => {
   return (
-    <MenuContainer>
-      <NavSideBarItem>Sign out</NavSideBarItem>
-      {/** main navigation container */}
-      <Grid container direction="column" justify="center">
-        <NavSideBarItem>Signatories</NavSideBarItem>
-        <NavSideBarItem>Settings</NavSideBarItem>
-        <NavSideBarItem>FAQ Text</NavSideBarItem>
-        <NavSideBarItem>CCTRIs Text</NavSideBarItem>
-        <NavSideBarItem>Tooltips Text</NavSideBarItem>
-      </Grid>
-      <Version variant="caption">V1</Version>
-    </MenuContainer>
+    <Grid item xs={3} sm={2} md={2} lg={2} xl={2}>
+      <MenuContainer>
+        <NavSideBarItem>Sign out</NavSideBarItem>
+        {/** main navigation container */}
+        <Grid container direction="column" justify="center">
+          <NavSideBarItem>Signatories</NavSideBarItem>
+          <NavSideBarItem>Settings</NavSideBarItem>
+          <NavSideBarItem>FAQ Text</NavSideBarItem>
+          <NavSideBarItem>CCTRIs Text</NavSideBarItem>
+          <NavSideBarItem>Tooltips Text</NavSideBarItem>
+        </Grid>
+        <Version variant="caption">V1</Version>
+      </MenuContainer>
+    </Grid>
   );
 };

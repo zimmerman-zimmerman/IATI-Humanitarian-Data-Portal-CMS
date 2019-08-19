@@ -13,7 +13,6 @@ import { useStoreState } from './state/store/hooks';
 
 /* modules */
 import { PageLoader } from 'app/modules/common/PageLoader';
-import { SignIn } from 'app/modules/SignIn';
 import { UserManagement } from 'app/modules/UserManagement';
 import { Signatories } from 'app/modules/Signatories';
 
@@ -44,7 +43,7 @@ function Routes() {
       <Switch>
         <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
 
-        <Route exact path="/login" render={() => <SignIn />} />
+        <Route exact path="/login" render={() => <></>} />
 
         <Route
           exact
