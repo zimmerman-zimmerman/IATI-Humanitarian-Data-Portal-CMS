@@ -12,14 +12,8 @@ type AppProps = {
 function App(props: AppProps) {
   return (
     <Providers>
-      <Router>
-        <Grid container direction="row" justify="flex-start">
-          <NavSideBar />
-          <Grid item xs={9} sm={10} md={10} lg={10} xl={10}>
-            <Routes />
-          </Grid>
-        </Grid>
-      </Router>
+      <NavSideBar />
+      <Routes />
     </Providers>
   );
 }
