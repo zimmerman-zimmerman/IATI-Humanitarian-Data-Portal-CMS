@@ -1,8 +1,6 @@
 /* core */
 import React, { ReactNode } from 'react';
-
 import useTitle from 'react-use/lib/useTitle';
-
 import { Container, Grid, Box } from '@material-ui/core';
 
 export type PageProps = {
@@ -16,8 +14,10 @@ const Page = (props: PageProps) => {
   return (
     <Container maxWidth="lg">
       <Grid container>
-        <Grid item xs={9} sm={10} md={12} lg={12} xl={12}>
-          <Box paddingLeft="200px">{props.children}</Box>
+        <Grid item md={12}>
+          <Box padding="4rem 2rem" paddingLeft="200px">
+            {props.children}
+          </Box>
         </Grid>
       </Grid>
     </Container>
