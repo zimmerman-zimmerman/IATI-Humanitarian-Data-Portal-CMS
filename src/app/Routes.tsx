@@ -13,8 +13,8 @@ import { useStoreState } from './state/store/hooks';
 
 /* modules */
 import { PageLoader } from 'app/modules/common/PageLoader';
-import { SignIn } from 'app/modules/SignIn';
 import { UserManagement } from 'app/modules/UserManagement';
+import { Signatories } from 'app/modules/Signatories';
 
 // util function that redirects a user to the login page
 // if they're not signed-in
@@ -24,7 +24,6 @@ function redirectUnAuth<ReactModule>(
   user: User | null,
   role?: string
 ) {
-
   if (!user) {
     return <Redirect to="/login" />;
   }
@@ -44,7 +43,7 @@ function Routes() {
       <Switch>
         <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
 
-        <Route exact path="/login" render={() => <SignIn />} />
+        <Route exact path="/login" render={() => <></>} />
 
         <Route
           exact
@@ -52,8 +51,7 @@ function Routes() {
           render={() =>
             redirectUnAuth(
               <div>
-                {' '}
-                <Link to={'/management'}> Go to user management </Link>{' '}
+                <Link to="/management"> Go to user management </Link>{' '}
               </div>,
               user
             )
@@ -63,8 +61,12 @@ function Routes() {
         <Route
           exact
           path="/management"
-          render={() => redirectUnAuth(<UserManagement />, user, userRoles.admin)}
+          render={() =>
+            redirectUnAuth(<UserManagement />, user, userRoles.admin)
+          }
         />
+
+        <Route exact path="/signatories" render={() => <Signatories />} />
       </Switch>
     </Suspense>
   );
