@@ -1,12 +1,15 @@
+/* core */
 import React from 'react';
 import Page from 'app/modules/common/Page';
 import { PageContent } from 'app/modules/common/PageContent';
-import { ContainedButton } from 'app/components/inputs/buttons/ContainedButton';
-import { Table } from 'app/components/datadisplay/Table';
-import { mockData } from 'app/components/datadisplay/Table/story';
-import AddIcon from '@material-ui/icons/Add';
+import { SignatoriesLayoutModel } from 'app/modules/Signatories/model';
 
-export const SignatoriesLayout = () => {
+/* components */
+import AddIcon from '@material-ui/icons/Add';
+import { Table } from 'app/components/datadisplay/Table';
+import { ContainedButton } from 'app/components/inputs/buttons/ContainedButton';
+
+export const SignatoriesLayout = (props: SignatoriesLayoutModel) => {
   return (
     <Page title="Signatories">
       <PageContent>
@@ -14,9 +17,9 @@ export const SignatoriesLayout = () => {
           icon={<AddIcon />}
           margin="0 0 4rem 0"
           text="Add Signatory"
-          onClick={() => console.log('click')}
+          onClick={props.handleAddNewSignatory}
         />
-        <Table {...mockData} />
+        <Table {...props.tableData} />
       </PageContent>
     </Page>
   );
