@@ -33,13 +33,13 @@ export const NavSideBarLayout = () => {
     <Grid item xs={3} sm={2} md={2} lg={2} xl={2}>
       <MenuContainer>
         <NavSideBarItem>Sign out</NavSideBarItem>
-        {/** main navigation container */}
+        {/* main navigation container */}
         <Grid container direction="column" justify="center">
-          <NavSideBarItem>Signatories</NavSideBarItem>
-          <NavSideBarItem>Settings</NavSideBarItem>
-          <NavSideBarItem>FAQ Text</NavSideBarItem>
-          <NavSideBarItem>CCTRIs Text</NavSideBarItem>
-          <NavSideBarItem>Tooltips Text</NavSideBarItem>
+          <NavSideBarItem to="/signatories">Signatories</NavSideBarItem>
+          <NavSideBarItem to="/settings">Settings</NavSideBarItem>
+          <NavSideBarItem to="/faq">FAQ Text</NavSideBarItem>
+          <NavSideBarItem to="/CCTRIs">CCTRIs Text</NavSideBarItem>
+          <NavSideBarItem to="/tooltips">Tooltips Text</NavSideBarItem>
         </Grid>
         <Version variant="caption">V1</Version>
       </MenuContainer>

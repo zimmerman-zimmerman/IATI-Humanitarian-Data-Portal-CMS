@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import theme from 'app/theme';
 
 export const NavSideBarItem = styled(props => (
-  <Link {...props} to="#">
+  <Link {...props}>
     <Typography variant="button">{props.children}</Typography>
   </Link>
 ))`
