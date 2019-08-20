@@ -1,7 +1,6 @@
 /* core */
 import React from 'react';
 import theme from 'app/theme';
-import deburr from 'lodash/deburr';
 import styled from 'styled-components';
 import Autosuggest from 'react-autosuggest';
 
@@ -11,17 +10,23 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import InputLabel from '@material-ui/core/InputLabel';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import {
+  AutocompleteModel,
+  OptionType,
+} from 'app/components/inputs/Autocomplete/model';
 
-interface OptionType {
-  label: string;
-  secondaryLabel: string;
-}
+const CustomMenuItem = styled(props => (
+  <MenuItem {...props}>{props.children}</MenuItem>
+))`
+  && {
+    display: flex;
+    justify-content: space-between;
 
-const suggestions: OptionType[] = [
-  { label: 'NL-KVK-27264198', secondaryLabel: 'Pub Name' },
-  { label: 'NL-KVK-27264198', secondaryLabel: 'Pub Name' },
-  { label: 'NL-KVK-27264198', secondaryLabel: 'Pub Name' },
-];
+    > #menu-item-secondary-label {
+      color: ${theme.palette.text.secondary};
+    }
+  }
+`;
 
 function renderInputComponent(inputProps: any) {
   const { classes, inputRef = () => {}, ref, ...other } = inputProps;
@@ -44,19 +49,6 @@ function renderInputComponent(inputProps: any) {
   );
 }
 
-const CustomMenuItem = styled(props => (
-  <MenuItem {...props}>{props.children}</MenuItem>
-))`
-  && {
-    display: flex;
-    justify-content: space-between;
-
-    > #menu-item-secondary-label {
-      color: ${theme.palette.text.secondary};
-    }
-  }
-`;
-
 function renderSuggestion(
   suggestion: OptionType,
   { query, isHighlighted }: Autosuggest.RenderSuggestionParams
@@ -69,38 +61,15 @@ function renderSuggestion(
   );
 }
 
-function getSuggestions(value: string) {
-  const inputValue = deburr(value.trim()).toLowerCase();
-  const inputLength = inputValue.length;
-  let count = 0;
-
-  return inputLength === 0
-    ? []
-    : suggestions.filter(suggestion => {
-        const keep =
-          count < 5 &&
-          suggestion.label.slice(0, inputLength).toLowerCase() === inputValue;
-
-        if (keep) {
-          count += 1;
-        }
-
-        return keep;
-      });
-}
-
 function getSuggestionValue(suggestion: OptionType) {
   return suggestion.label;
 }
 
 const useStyles = makeStyles((muiTheme: Theme) =>
   createStyles({
-    root: {
-      flexGrow: 1,
-      marginBottom: '3rem',
-    },
     container: {
       position: 'relative',
+      marginBottom: '3rem',
     },
     input: {
       backgroundColor: muiTheme.palette.grey[40],
@@ -129,42 +98,32 @@ const useStyles = makeStyles((muiTheme: Theme) =>
   })
 );
 
-export function Autocomplete() {
+export function Autocomplete(props: AutocompleteModel) {
   const classes = useStyles();
-  const [selectedValue, setSelectedValue] = React.useState('');
-  const [stateSuggestions, setSuggestions] = React.useState<OptionType[]>([]);
-
-  const handleSuggestionsFetchRequested = ({ value }: any) => {
-    setSuggestions(getSuggestions(value));
-  };
-
-  const handleSuggestionsClearRequested = () => {
-    setSuggestions([]);
-  };
 
   const handleChange = () => (
     event: React.ChangeEvent<{}>,
     { newValue }: Autosuggest.ChangeEvent
   ) => {
-    setSelectedValue(newValue);
+    props.handleSelectValue(newValue);
   };
 
   const autosuggestProps = {
     renderInputComponent,
-    suggestions: stateSuggestions,
-    onSuggestionsFetchRequested: handleSuggestionsFetchRequested,
-    onSuggestionsClearRequested: handleSuggestionsClearRequested,
+    suggestions: props.suggestions,
+    onSuggestionsFetchRequested: props.handleSuggestionsFetchRequested,
+    onSuggestionsClearRequested: props.handleSuggestionsClearRequested,
     getSuggestionValue,
     renderSuggestion,
   };
 
   return (
-    <div className={classes.root}>
+    <>
       <InputLabel
-        className={classes.label}
         shrink
         variant="standard"
-        htmlFor="react-autosuggest-simple"
+        htmlFor={props.inputId}
+        className={classes.label}
       >
         Search by IATI organisation reference
       </InputLabel>
@@ -172,9 +131,9 @@ export function Autocomplete() {
         {...autosuggestProps}
         inputProps={{
           classes,
-          id: 'react-autosuggest-simple',
+          id: props.inputId,
           placeholder: 'Eg. NL-KVK-27264198',
-          value: selectedValue,
+          value: props.selectedValue,
           onChange: handleChange(),
         }}
         theme={{
@@ -189,6 +148,6 @@ export function Autocomplete() {
           </Paper>
         )}
       />
-    </div>
+    </>
   );
 }

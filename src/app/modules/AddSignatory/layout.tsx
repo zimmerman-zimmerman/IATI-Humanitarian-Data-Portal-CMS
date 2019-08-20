@@ -10,6 +10,7 @@ import ArrowBack from '@material-ui/icons/ArrowBack';
 import IconButton from '@material-ui/core/IconButton';
 import { Autocomplete } from 'app/components/inputs/Autocomplete';
 import { ContainedButton } from 'app/components/inputs/buttons/ContainedButton';
+import { AddSignatoryLayoutModel } from 'app/modules/AddSignatory/model';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -17,7 +18,6 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: '50px 80px',
     },
     button: {
-      position: 'absolute',
       margin: theme.spacing(1),
     },
     icon: {
@@ -27,19 +27,34 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export const AddSignatoryLayout = () => {
+export const AddSignatoryLayout = (props: AddSignatoryLayoutModel) => {
   const classes = useStyles();
   return (
     <Page title="Add Signatory">
-      <IconButton className={classes.button}>
+      <IconButton
+        className={classes.button}
+        onClick={() => props.handleGoBack()}
+      >
         <ArrowBack className={classes.icon} />
       </IconButton>
       <Grid container direction="column" justify="center">
         <Paper className={classes.paper}>
-          <Autocomplete />
+          <Autocomplete
+            suggestions={props.suggestions}
+            inputId="add-signatory-autosuggest"
+            selectedValue={props.selectedActivity}
+            handleSelectValue={props.setSelectedActivity}
+            handleSuggestionsFetchRequested={
+              props.handleSuggestionsFetchRequested
+            }
+            handleSuggestionsClearRequested={
+              props.handleSuggestionsClearRequested
+            }
+          />
           <ContainedButton
             text="Add Signatory"
-            onClick={() => console.log('added signatory')}
+            onClick={props.handleAddSignatory}
+            disabled={props.selectedActivity === ''}
           />
         </Paper>
       </Grid>
