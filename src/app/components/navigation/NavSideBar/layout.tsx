@@ -3,21 +3,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* components */
-import { Typography, Grid, Box } from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
 import { NavSideBarItem } from 'app/components/navigation/NavSideBar/common/NavSideBarItem';
 import color from 'app/theme/color';
-import { DebugBox } from 'app/utils/layout';
 
 const MenuContainer = styled.div`
-  width: 205px;
-  height: calc(100vh - 48px);
-  max-height: 100vh;
-  overflow-y: auto;
   display: flex;
+  overflow-y: auto;
+  max-height: 100vh;
   flex-direction: column;
-  justify-content: space-between;
   padding: 24px 0 24px 24px;
+  height: calc(100vh - 48px);
+  justify-content: space-between;
   background-color: ${color.whiteOrFontlightbase};
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 200px;
 `;
 
 const Version = styled(Typography)`
@@ -28,17 +30,19 @@ const Version = styled(Typography)`
 
 export const NavSideBarLayout = () => {
   return (
-    <MenuContainer>
-      <NavSideBarItem>Sign out</NavSideBarItem>
-      {/** main navigation container */}
-      <Grid container direction="column" justify="center">
-        <NavSideBarItem>Signatories</NavSideBarItem>
-        <NavSideBarItem>Settings</NavSideBarItem>
-        <NavSideBarItem>FAQ Text</NavSideBarItem>
-        <NavSideBarItem>CCTRIs Text</NavSideBarItem>
-        <NavSideBarItem>Tooltips Text</NavSideBarItem>
-      </Grid>
-      <Version variant="caption">V1</Version>
-    </MenuContainer>
+    <Grid item xs={3} sm={2} md={2} lg={2} xl={2}>
+      <MenuContainer>
+        <NavSideBarItem>Sign out</NavSideBarItem>
+        {/** main navigation container */}
+        <Grid container direction="column" justify="center">
+          <NavSideBarItem>Signatories</NavSideBarItem>
+          <NavSideBarItem>Settings</NavSideBarItem>
+          <NavSideBarItem>FAQ Text</NavSideBarItem>
+          <NavSideBarItem>CCTRIs Text</NavSideBarItem>
+          <NavSideBarItem>Tooltips Text</NavSideBarItem>
+        </Grid>
+        <Version variant="caption">V1</Version>
+      </MenuContainer>
+    </Grid>
   );
 };
