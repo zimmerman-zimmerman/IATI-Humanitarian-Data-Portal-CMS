@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
+import { HeaderModel } from './model';
 
 /* icons */
 import CloseIcon from '@material-ui/icons/Close';
@@ -8,18 +9,15 @@ import ArrowDown from '@material-ui/icons/KeyboardArrowDown';
 import ArrowUp from '@material-ui/icons/KeyboardArrowUp';
 
 /* style */
-import { Typography, Weight, boxShadow, Palette } from 'app/theme';
+import { Typography, Weight, Palette } from 'app/theme';
 import color from 'app/theme/color';
 
 const StyledGrid = styled(Grid)`
-  background-color: ${color.whiteOrFontlightbase};
-  padding: 10px 0 10px 10px;
-  box-shadow: ${boxShadow};
-  
+  padding: 10px;
+
   &:hover {
     cursor: pointer;
   }
-  
 `;
 
 const HeaderText = styled.div`
@@ -33,8 +31,16 @@ const HeaderText = styled.div`
   color: ${color.black};
 `;
 
-const Arrow = styled(ArrowDown)`
-  margin-left: 10px;
+const ArrowStyleDown = styled(ArrowDown)`
+  margin-left: auto;
+`;
+
+const ArrowStyleUp = styled(ArrowUp)`
+  margin-left: auto;
+`;
+
+const ArrowContainer = styled.div`
+  display: flex;
 `;
 
 const Close = styled(CloseIcon)`
@@ -43,24 +49,35 @@ const Close = styled(CloseIcon)`
   }
 `;
 
-export const ItemHeader = () => {
+export const ItemHeader = (props: HeaderModel) => {
   return (
     <StyledGrid
       container
       direction="row"
       justify="flex-start"
       alignItems="center"
+      onClick={() => props.setOpen()}
     >
       <Grid item xs={1}>
-        <Close color="error" />
+        <Close
+          color="error"
+          onClick={e => {
+            e.stopPropagation();
+            props.onRemove();
+          }}
+        />
       </Grid>
       <Grid item xs={10}>
-        <HeaderText>
-          hello
-        </HeaderText>
+        <HeaderText>{props.title}</HeaderText>
       </Grid>
-      <Grid item xs={1} >
-        <Arrow fontSize="large" />
+      <Grid item xs={1}>
+        <ArrowContainer>
+          {!props.open ? (
+            <ArrowStyleDown fontSize="large" />
+          ) : (
+            <ArrowStyleUp fontSize="large" />
+          )}
+        </ArrowContainer>
       </Grid>
     </StyledGrid>
   );

@@ -1,4 +1,3 @@
-import { API } from 'space-api';
 import { Action, Thunk } from 'easy-peasy';
 import { loginPayload, User, UserResponse } from './userInterface';
 

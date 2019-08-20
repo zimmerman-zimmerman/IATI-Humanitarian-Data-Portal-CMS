@@ -10,6 +10,7 @@ export type PageProps = {
 };
 
 const Container = styled.div`
+  height: 100%;
   flex-grow: 1;
   overflow: hidden;
 `;

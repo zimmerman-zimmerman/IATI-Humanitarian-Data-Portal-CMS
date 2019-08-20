@@ -25,7 +25,6 @@ function redirectUnAuth<ReactModule>(
   user: User | null,
   role?: string
 ) {
-
   if (!user) {
     return <Redirect to="/login" />;
   }
@@ -54,7 +53,7 @@ function Routes() {
             redirectUnAuth(
               <div>
                 {' '}
-                <Link to={'/management'}> Go to user management </Link>{' '}
+                <Link to="/management"> Go to user management </Link>{' '}
               </div>,
               user
             )
@@ -64,11 +63,12 @@ function Routes() {
         <Route
           exact
           path="/management"
-          render={() => redirectUnAuth(<UserManagement />, user, userRoles.admin)}
+          render={() =>
+            redirectUnAuth(<UserManagement />, user, userRoles.admin)
+          }
         />
 
-        <Route exact path="/faq" render={() => <Faq />} />
-
+        <Route exact path="/faq" render={() => redirectUnAuth(<Faq />, user)} />
       </Switch>
     </Suspense>
   );
