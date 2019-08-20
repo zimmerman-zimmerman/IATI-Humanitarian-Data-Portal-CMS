@@ -15,7 +15,7 @@ const Page = (props: PageProps) => {
     <Container maxWidth="lg">
       <Grid container>
         <Grid item md={12}>
-          <Box padding="4rem 2rem" paddingLeft="200px">
+          <Box padding="4rem 2rem" paddingLeft="200px" height="100%">
             {props.children}
           </Box>
         </Grid>

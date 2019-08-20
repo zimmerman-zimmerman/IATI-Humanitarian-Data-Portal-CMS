@@ -14,6 +14,7 @@ import { useStoreState } from './state/store/hooks';
 /* modules */
 import { PageLoader } from 'app/modules/common/PageLoader';
 import { UserManagement } from 'app/modules/UserManagement';
+import { AddSignatory } from 'app/modules/AddSignatory';
 import { Signatories } from 'app/modules/Signatories';
 
 // util function that redirects a user to the login page
@@ -66,6 +67,7 @@ function Routes() {
           }
         />
 
+        <Route exact path="/add-signatory" render={() => <AddSignatory />} />
         <Route exact path="/signatories" render={() => <Signatories />} />
       </Switch>
     </Suspense>
