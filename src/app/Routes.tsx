@@ -15,6 +15,7 @@ import { useStoreState } from './state/store/hooks';
 import { PageLoader } from 'app/modules/common/PageLoader';
 import { SignIn } from 'app/modules/SignIn';
 import { UserManagement } from 'app/modules/UserManagement';
+import { AddSignatory } from 'app/modules/AddSignatory';
 
 // util function that redirects a user to the login page
 // if they're not signed-in
@@ -24,7 +25,6 @@ function redirectUnAuth<ReactModule>(
   user: User | null,
   role?: string
 ) {
-
   if (!user) {
     return <Redirect to="/login" />;
   }
@@ -53,7 +53,7 @@ function Routes() {
             redirectUnAuth(
               <div>
                 {' '}
-                <Link to={'/management'}> Go to user management </Link>{' '}
+                <Link to="/management"> Go to user management </Link>{' '}
               </div>,
               user
             )
@@ -63,8 +63,12 @@ function Routes() {
         <Route
           exact
           path="/management"
-          render={() => redirectUnAuth(<UserManagement />, user, userRoles.admin)}
+          render={() =>
+            redirectUnAuth(<UserManagement />, user, userRoles.admin)
+          }
         />
+
+        <Route exact path="/add-signatory" render={() => <AddSignatory />} />
       </Switch>
     </Suspense>
   );

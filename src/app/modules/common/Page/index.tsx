@@ -1,8 +1,7 @@
 /* core */
 import React, { ReactNode } from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import useTitle from 'react-use/lib/useTitle';
-import { ThemeProvider } from 'styled-components';
 
 export type PageProps = {
   title?: string;
@@ -11,6 +10,7 @@ export type PageProps = {
 
 const Container = styled.div`
   flex-grow: 1;
+  height: 100vh;
   overflow: hidden;
 `;
 
