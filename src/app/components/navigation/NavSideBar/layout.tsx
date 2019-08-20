@@ -16,6 +16,10 @@ const MenuContainer = styled.div`
   height: calc(100vh - 48px);
   justify-content: space-between;
   background-color: ${color.whiteOrFontlightbase};
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 200px;
 `;
 
 const Version = styled(Typography)`
