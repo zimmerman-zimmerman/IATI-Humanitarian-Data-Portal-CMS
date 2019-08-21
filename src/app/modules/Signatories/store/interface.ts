@@ -15,6 +15,7 @@ export interface Signatory {
   reportsToEU: string;
   reportsToFTS: string;
   reportsToFTSViaIATI: string;
+  tracability?: string;
 }
 
 export interface SignatoriesModel {

@@ -7,7 +7,7 @@ import Providers from 'app/Providers';
 storiesOf('Inputs|Buttons', module).add('Contained - Enabled', () => (
   <>
     <Providers>
-      <ContainedButton text="Button" />
+      <ContainedButton onClick={() => console.log('click')} text="Button" />
     </Providers>
   </>
 ));
@@ -15,7 +15,11 @@ storiesOf('Inputs|Buttons', module).add('Contained - Enabled', () => (
 storiesOf('Inputs|Buttons', module).add('Contained - Disabled', () => (
   <>
     <Providers>
-      <ContainedButton text="Button" disabled />
+      <ContainedButton
+        onClick={() => console.log('click')}
+        text="Button"
+        disabled
+      />
     </Providers>
   </>
 ));

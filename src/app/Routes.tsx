@@ -15,8 +15,9 @@ import { useStoreState } from './state/store/hooks';
 import { PageLoader } from 'app/modules/common/PageLoader';
 import { UserManagement } from 'app/modules/UserManagement';
 import { Faq } from 'app/modules/Faq';
-import { AddSignatory } from 'app/modules/AddSignatory';
+// import { AddSignatory } from 'app/modules/AddSignatory';
 import { Signatories } from 'app/modules/Signatories';
+import { Signatory } from 'app/modules/Signatory';
 
 // util function that redirects a user to the login page
 // if they're not signed-in
@@ -73,7 +74,7 @@ function Routes() {
         <Route
           exact
           path="/add-signatory"
-          render={() => redirectUnAuth(<AddSignatory />, user)}
+          render={() => redirectUnAuth(<Signatory />, user)}
         />
         <Route
           exact

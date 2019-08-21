@@ -13,7 +13,7 @@ import FilledInput from '@material-ui/core/FilledInput';
 export interface Props extends SelectProps {
   id: string;
   label: string;
-  value: string;
+  value?: string;
   setValue: Function;
   options: Array<{
     value: string;
