@@ -4,12 +4,15 @@ import { UserManLayout } from './layout';
 
 /* component store */
 import { managementStore } from './store';
+import { useStoreState } from 'app/state/store/hooks';
 
 export function UserManagement() {
   const [open, setOpen] = React.useState(false);
   const [editUser, setEditUser] = React.useState(null);
 
   const [state, actions] = managementStore();
+
+  const currUser = useStoreState(globalState => globalState.spaceCloud.user);
 
   // so basically this loads all users initiall
   // and whenever the added user variable updates
@@ -41,6 +44,16 @@ export function UserManagement() {
     setOpen(false);
   }
 
+  function handleDeleteUser(id) {
+    if(currUser && currUser._id === id) {
+      if (confirm('Are you sure you want to delete yourself?')) {
+        actions.deleteUser(id);
+      }
+    } else {
+      actions.deleteUser(id);
+    }
+  }
+
   return (
     <UserManLayout
       open={open}
@@ -49,7 +62,7 @@ export function UserManagement() {
       handleClose={handleClose}
       allUsers={state.allUsers}
       handleAddUser={handleAddUser}
-      deleteUser={actions.deleteUser}
+      deleteUser={handleDeleteUser}
       handleEditUser={handleEditUser}
       handleUserUpdated={handleUserUpdated}
     />

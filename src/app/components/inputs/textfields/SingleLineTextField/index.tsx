@@ -13,7 +13,8 @@ import FormControl from '@material-ui/core/FormControl';
 export interface Props extends InputBaseProps {
   id: string;
   label: string;
-  value: string;
+  value?: string;
+  defaultValue?: string;
   setValue: Function;
 }
 
@@ -37,6 +38,10 @@ const Input = withStyles((theme: Theme) =>
         boxShadow: `${fade(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
         borderColor: theme.palette.primary.main,
       },
+    },
+    inputMultiline: {
+      minHeight: '160px',
+      paddingBottom: '30px'
     },
   })
 )(InputBase);

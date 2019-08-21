@@ -14,6 +14,9 @@ import { AddSignatoryLayoutModel } from 'app/modules/AddSignatory/model';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    mainGrid: {
+      height: 'calc(100% - 128px)',
+    },
     paper: {
       padding: '50px 80px',
     },
@@ -37,7 +40,12 @@ export const AddSignatoryLayout = (props: AddSignatoryLayoutModel) => {
       >
         <ArrowBack className={classes.icon} />
       </IconButton>
-      <Grid container direction="column" justify="center">
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        className={classes.mainGrid}
+      >
         <Paper className={classes.paper}>
           <Autocomplete
             suggestions={props.suggestions}

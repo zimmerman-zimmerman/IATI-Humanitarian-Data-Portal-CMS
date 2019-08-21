@@ -14,6 +14,7 @@ import { useStoreState } from './state/store/hooks';
 /* modules */
 import { PageLoader } from 'app/modules/common/PageLoader';
 import { UserManagement } from 'app/modules/UserManagement';
+import { Faq } from 'app/modules/Faq';
 import { AddSignatory } from 'app/modules/AddSignatory';
 import { Signatories } from 'app/modules/Signatories';
 
@@ -66,6 +67,8 @@ function Routes() {
             redirectUnAuth(<UserManagement />, user, userRoles.admin)
           }
         />
+
+        <Route exact path="/faq" render={() => redirectUnAuth(<Faq />, user)} />
 
         <Route exact path="/add-signatory" render={() => <AddSignatory />} />
         <Route exact path="/signatories" render={() => <Signatories />} />
