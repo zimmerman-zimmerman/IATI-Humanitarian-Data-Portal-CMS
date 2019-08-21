@@ -1,8 +1,7 @@
 import { db } from 'app/state/api/actionsReducers';
 import { generateId } from 'app/state/utils/general';
 
-const publishers = require('./data/publishers.json');
-
+import publishers from './data/publishers.json';
 // so this is a random dirty script
 // to run on the frontend locally
 // to pump up signatories from the json
@@ -16,7 +15,7 @@ export function loadSignatories() {
       name: publisher.Signatory,
       regPubId: publisher.RegistryPubID,
       IATIOrgRef: publisher.IATIOrgRef,
-      suppInfoUrl: publisher.SuppInfoUrl,
+      suppInfoUrl: publisher.SuppInfoURL,
       fiscalStart: publisher.FiscalYearStart,
       fiscalEnd: publisher.FiscalYearEnd,
       firstPubDate: publisher.FirstPublished,
@@ -29,4 +28,6 @@ export function loadSignatories() {
       .doc(pubDoc)
       .apply();
   });
+
+  console.log('done');
 }
