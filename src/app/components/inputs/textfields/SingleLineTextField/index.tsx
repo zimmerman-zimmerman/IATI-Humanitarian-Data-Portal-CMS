@@ -41,7 +41,7 @@ const Input = withStyles((theme: Theme) =>
     },
     inputMultiline: {
       minHeight: '160px',
-      paddingBottom: '30px'
+      paddingBottom: '30px',
     },
   })
 )(InputBase);
