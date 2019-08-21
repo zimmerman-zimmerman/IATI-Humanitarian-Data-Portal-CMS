@@ -4,7 +4,7 @@ import color from 'app/theme/color';
 
 const StyledDivider = styled.div`
   height: 1px;
-  background-color: ${color.greylight30OrFontdisablet}
+  background-color: ${color.greylight30OrFontdisablet};
 `;
 
 interface DividerModel {
@@ -12,10 +12,7 @@ interface DividerModel {
 }
 
 export const Divider = (props: DividerModel) => {
-
   const width = props.width || '100%';
 
-  return (
-    <StyledDivider style={{ width }}/>
-  );
+  return <StyledDivider style={{ width }} />;
 };

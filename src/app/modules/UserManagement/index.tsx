@@ -45,7 +45,7 @@ export function UserManagement() {
   }
 
   function handleDeleteUser(id) {
-    if(currUser && currUser._id === id) {
+    if (currUser && currUser._id === id) {
       if (confirm('Are you sure you want to delete yourself?')) {
         actions.deleteUser(id);
       }

@@ -198,7 +198,6 @@
     "analyse": "madge src/index.tsx",
     "depcheck": "depcheck",
     "why": "whybundled build/stats.json --duplicatesOnly ",
-    "postbuild": "react-snap",
     "version": "npm version `auto version` -m 'Bump version to: %s [skip ci]'",
     "release": "auto changelog && npm run version && npm run publish && auto release",
     "change": "beachball change",

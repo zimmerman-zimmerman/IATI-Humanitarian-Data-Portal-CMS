@@ -7,7 +7,7 @@ export interface FaqItem {
   expl: string;
 }
 
-export interface ItemEditPayload extends FaqItem{
+export interface ItemEditPayload extends FaqItem {
   index: number;
 }
 
