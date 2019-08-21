@@ -9,6 +9,7 @@ type Props = {
   onClick(): void;
   disabled?: boolean;
   fullWidth?: boolean;
+  icon?: any;
   specWidth?: string;
 };
 
@@ -27,15 +28,23 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const ContainedButton = (props: Props) => {
-  const { text, margin, backgroundColor, fullWidth, specWidth, ...otherProps } = props;
+  const {
+    text,
+    margin,
+    backgroundColor,
+    fullWidth,
+    icon,
+    specWidth,
+    ...otherProps
+  } = props;
 
   let width = 'fit-content';
 
-  if (fullWidth){
+  if (fullWidth) {
     width = '100%';
   }
 
-  if (specWidth){
+  if (specWidth) {
     width = specWidth;
   }
 
@@ -43,6 +52,7 @@ export const ContainedButton = (props: Props) => {
   return (
     <Button variant="contained" className={classes.button} {...otherProps}>
       {text}
+      {icon}
     </Button>
   );
 };

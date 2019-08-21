@@ -29,7 +29,8 @@ export const UserManLayout = (props: LayoutModel) => {
         container
         direction="row"
         justify="flex-start"
-        alignItems="center"
+        alignItems="flex-start"
+        alignContent="flex-start"
         spacing={3}
       >
         <Grid item xs={12}>

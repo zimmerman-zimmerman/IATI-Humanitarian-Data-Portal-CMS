@@ -1,48 +1,37 @@
 /* core */
 import React, { ReactNode } from 'react';
-import styled from 'styled-components';
 import useTitle from 'react-use/lib/useTitle';
-import { ThemeProvider } from 'styled-components';
+import { Container, Grid, Box } from '@material-ui/core';
+import styled from 'styled-components';
 
 export type PageProps = {
   title?: string;
   children?: ReactNode;
 };
 
-const Container = styled.div`
+const GridItem = styled(Grid)`
   height: 100%;
-  flex-grow: 1;
-  overflow: hidden;
 `;
-
-const theme = {
-  flexboxgrid: {
-    // Defaults
-    gridSize: 12, // columns
-    gutterWidth: 1, // rem
-    outerMargin: 2, // rem
-    mediaQuery: 'only screen',
-    container: {
-      sm: 46, // rem
-      md: 61, // rem
-      lg: 76, // rem
-    },
-    breakpoints: {
-      xs: 0, // em
-      sm: 48, // em
-      md: 64, // em
-      lg: 75, // em
-    },
-  },
-};
+const MainGrid = styled(Grid)`
+  height: 100%;
+`;
+const MainContainer = styled(Container)`
+  height: 100%;
+`;
 
 const Page = (props: PageProps) => {
   useTitle(`MLT CMS - ${props.title}`);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container>{props.children}</Container>
-    </ThemeProvider>
+    <MainContainer maxWidth="lg">
+      <MainGrid container>
+        <GridItem item md={12}>
+          <Box paddingLeft="200px" height="100%">
+            {props.children}
+          </Box>
+        </GridItem>
+      </MainGrid>
+    </MainContainer>
   );
 };
 

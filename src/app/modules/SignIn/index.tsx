@@ -1,9 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { AuthLayout } from 'app/modules/SignIn/layout';
+import { SignInLayout } from 'app/modules/SignIn/layout';
 import { useStoreActions, useStoreState } from 'app/state/store/hooks';
 
-function Auth(props) {
+function SignInComp(props) {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [showPass, setShowPass] = React.useState(false);
@@ -14,7 +14,7 @@ function Auth(props) {
   const user = useStoreState(state => state.spaceCloud.user);
 
   return (
-    <AuthLayout
+    <SignInLayout
       email={email}
       password={password}
       showPass={showPass}
@@ -27,4 +27,4 @@ function Auth(props) {
   );
 }
 
-export const SignIn = withRouter(Auth);
+export const SignIn = withRouter(SignInComp);

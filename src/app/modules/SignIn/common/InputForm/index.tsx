@@ -11,10 +11,13 @@ import { FormSingleLineField } from '../../../../components/inputs/textfields/Fo
 
 const Container = styled.div`
   && {
+    top: 0;
     left: 0;
     height: 100vh;
     display: flex;
+    min-width: 500px;
     overflow-y: auto;
+    position: absolute;
     align-items: center;
     justify-content: center;
     background-color: #ffffff;

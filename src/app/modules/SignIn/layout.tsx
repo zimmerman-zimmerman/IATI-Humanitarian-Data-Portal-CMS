@@ -4,7 +4,7 @@ import Page from 'app/modules/common/Page';
 import { InputForm } from 'app/modules/SignIn/common/InputForm';
 import { LayoutModel } from 'app/modules/SignIn/models';
 
-export const AuthLayout = (props: LayoutModel) => {
+export const SignInLayout = (props: LayoutModel) => {
   return (
     <Page title="Sign in">
       <Grid container direction="row" justify="flex-start" alignItems="center">

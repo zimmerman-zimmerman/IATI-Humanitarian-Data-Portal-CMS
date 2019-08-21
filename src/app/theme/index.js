@@ -277,5 +277,13 @@ export default createMuiTheme({
         fontWeight: 'normal',
       },
     },
+    MuiOutlinedInput: {
+      notchedOutline: {
+        borderColor: 'transparent',
+      },
+    },
+    MuiGrid: {
+      container: { width: '100%', height: '100%' },
+    },
   },
 });

@@ -6,9 +6,6 @@ import { FaqModel } from './model';
 /* utils */
 import isEqual from 'lodash/isEqual';
 
-/* store */
-import { faqStore } from './store';
-
 /* components */
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
@@ -22,8 +19,9 @@ import { boxShadow } from 'app/theme';
 
 const StyledBox = styled(Box)`
   && {
-    height: calc(100% - 120px);
-    padding: 90px 74px 30px 74px;
+    height: calc(100% - 40px);
+    padding-left: 40px;
+    padding-top: 40px;
   }
 `;
 
