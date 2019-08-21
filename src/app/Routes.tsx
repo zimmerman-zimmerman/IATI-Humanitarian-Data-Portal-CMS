@@ -70,8 +70,16 @@ function Routes() {
 
         <Route exact path="/faq" render={() => redirectUnAuth(<Faq />, user)} />
 
-        <Route exact path="/add-signatory" render={() => <AddSignatory />} />
-        <Route exact path="/signatories" render={() => <Signatories />} />
+        <Route
+          exact
+          path="/add-signatory"
+          render={() => redirectUnAuth(<AddSignatory />, user)}
+        />
+        <Route
+          exact
+          path="/signatories"
+          render={() => redirectUnAuth(<Signatories />, user)}
+        />
       </Switch>
     </Suspense>
   );
