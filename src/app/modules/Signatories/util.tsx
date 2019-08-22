@@ -4,12 +4,19 @@ import React from 'react';
 import { TableCell } from '@material-ui/core';
 
 /* interfaces */
-import { Signatory } from './store/interface';
+import { Signatory } from 'app/modules/Signatory/store/interface';
+
+// so apperantly this is how we need to pass in the display
+// option as a columns option parameter 'display'
+type displayType = 'false' | 'true' | 'excluded' | undefined;
+
+const display: displayType = 'false';
 
 export const tableBase = {
   title: 'Signatories',
   data: [
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -18,6 +25,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -26,6 +34,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -34,6 +43,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -42,6 +52,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -50,6 +61,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -58,6 +70,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -66,6 +79,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -74,6 +88,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -82,6 +97,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -90,6 +106,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -98,6 +115,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -106,6 +124,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -114,6 +133,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -122,6 +142,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -130,6 +151,7 @@ export const tableBase = {
       'No',
     ],
     [
+      '1',
       'ActionAid UK',
       'International NGO',
       'ActionAid UK',
@@ -139,6 +161,12 @@ export const tableBase = {
     ],
   ],
   columns: [
+    {
+      name: 'id',
+      options: {
+        display,
+      },
+    },
     {
       name: 'Publisher',
       options: {
@@ -166,12 +194,13 @@ export const tableBase = {
     search: true,
     filter: true,
     download: true,
-    rowHover: false,
+    rowHover: true,
     pagination: false,
     viewColumns: true,
     responsive: 'scroll' as any,
     filterType: 'checkbox' as any,
     selectableRows: 'none' as any,
+    onRowClick: e => console.log(e),
   },
 };
 
@@ -181,7 +210,7 @@ export function formatTable(
 ): Array<Array<string>> {
   const tableData: Array<Array<string>> = [];
 
-  signatories.forEach(signatory => {
+  signatories.forEach((signatory, index) => {
     tableData.push([
       signatory.pubName,
       signatory.orgType,
@@ -190,6 +219,10 @@ export function formatTable(
       signatory.IATIOrgRef,
       signatory.suppInfoUrl,
     ]);
+
+    if (signatory._id) {
+      tableData[index].unshift(signatory._id);
+    }
   });
 
   return tableData;
