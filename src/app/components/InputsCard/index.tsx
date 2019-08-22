@@ -14,6 +14,8 @@ const CardGrid = styled(Grid)`
   padding: 32px; 96px; 56px; 32px;
 `;
 
+//TODO: this should be just MuiTypography component
+//But no solid typography theme defined in visual design
 const CardTitle = styled.div`
   font-family: ${Typography.fontFamily};
   font-size: 23.9px;

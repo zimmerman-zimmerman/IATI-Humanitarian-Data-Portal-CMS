@@ -1,6 +1,6 @@
 import { Action, Thunk } from 'easy-peasy';
 
-/* interfces */
+/* interfaces */
 import { ErrorResponse } from 'app/state/api/interfaces';
 import { Signatory } from 'app/modules/Signatory/store/interface';
 

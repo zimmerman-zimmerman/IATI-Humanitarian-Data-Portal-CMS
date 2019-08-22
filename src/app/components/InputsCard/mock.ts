@@ -1,4 +1,6 @@
-export const mockCardData = {
+import { InputsCardModel } from './model';
+
+export const mockCardData : InputsCardModel = {
   title: 'Financial',
   data: [
     {
