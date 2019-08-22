@@ -37,7 +37,7 @@ export const InputsCard = (props: InputsCardModel) => {
             label={props.titleInput.label}
             id={`text-${props.title}-title-input`}
             placeholder={props.titleInput.placeholder || ''}
-            defaultValue={props.titleInput.defValue}
+            value={props.titleInput.value}
             setValue={props.titleInput.setValue}
           />
         ) : (
@@ -52,7 +52,7 @@ export const InputsCard = (props: InputsCardModel) => {
               id={`select-${props.title}-${index}`}
               label={input.label}
               options={input.options || []}
-              value={input.defValue}
+              value={input.value}
               setValue={input.setValue}
             />
           ) : (
@@ -61,7 +61,7 @@ export const InputsCard = (props: InputsCardModel) => {
               label={input.label}
               id={`text-${props.title}-${index}`}
               placeholder={input.placeholder || ''}
-              defaultValue={input.defValue}
+              value={input.value}
               setValue={input.setValue}
             />
           )}

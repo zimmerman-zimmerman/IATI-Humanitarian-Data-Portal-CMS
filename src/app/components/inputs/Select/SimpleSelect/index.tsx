@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import {
   fade,
   Theme,
@@ -7,7 +8,6 @@ import {
 } from '@material-ui/core/styles';
 import SelectBase, { SelectProps } from '@material-ui/core/Select';
 import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
 import FilledInput from '@material-ui/core/FilledInput';
 
 export interface Props extends SelectProps {
@@ -29,7 +29,7 @@ export const Select = withStyles((theme: Theme) =>
       backgroundColor: theme.palette.grey[40],
       border: '1px solid transparent',
       fontSize: 16,
-      padding: '20px 12px 10px 12px',
+      padding: '10px 12px',
       transition: theme.transitions.create(['border-color', 'box-shadow']),
       fontFamily: 'Inter',
       '&:focus': {
@@ -39,6 +39,14 @@ export const Select = withStyles((theme: Theme) =>
     },
   })
 )(SelectBase);
+
+const SelectLabel = styled.div`
+  margin-bottom: 11px;
+  font-size: 11px;
+  font-weight: normal;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+`;
 
 export const SimpleSelect = (props: Props) => {
   const {
@@ -51,10 +59,8 @@ export const SimpleSelect = (props: Props) => {
     ...otherProps
   } = props;
   return (
-    <FormControl variant="filled" fullWidth={fullWidth}>
-      <InputLabel htmlFor={id} shrink>
-        {label}
-      </InputLabel>
+    <FormControl variant="outlined" fullWidth={fullWidth}>
+      <SelectLabel>{label}</SelectLabel>
       <Select
         native
         value={value}

@@ -4,8 +4,9 @@ import { action, createComponentStore, thunk } from 'easy-peasy';
 import { db } from 'app/state/api/actionsReducers';
 
 /* interfaces */
-import { SignatoriesModel, Signatory } from './interface';
+import { SignatoriesModel } from './interface';
 import { ErrorResponse } from 'app/state/api/interfaces';
+import { Signatory } from 'app/modules/Signatory/store/interface';
 
 const signatories: SignatoriesModel = {
   allSignatories: [],
@@ -26,4 +27,4 @@ const signatories: SignatoriesModel = {
   }),
 };
 
-export const signatoryStore = createComponentStore(signatories);
+export const signatoriesStore = createComponentStore(signatories);

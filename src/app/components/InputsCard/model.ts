@@ -6,7 +6,7 @@ export interface OptionItem {
 export interface InputItem {
   label: string;
   type: string;
-  defValue?: string;
+  value?: string;
   setValue: Function;
   placeholder?: string;
   options?: Array<OptionItem>;

@@ -76,6 +76,13 @@ function Routes() {
           path="/add-signatory"
           render={() => redirectUnAuth(<Signatory />, user)}
         />
+
+        <Route
+          exact
+          path="/edit-signatory/:id"
+          render={() => redirectUnAuth(<Signatory />, user)}
+        />
+
         <Route
           exact
           path="/signatories"

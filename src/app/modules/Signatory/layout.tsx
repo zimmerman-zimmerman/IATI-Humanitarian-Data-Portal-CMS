@@ -1,6 +1,9 @@
 import React from 'react';
 import Page from 'app/modules/common/Page';
 
+/* utils */
+import isEqual from 'lodash/isEqual';
+
 /* styles */
 import { Palette } from 'app/theme';
 
@@ -41,24 +44,34 @@ export const SignatoryLayout = (props: SignatoryModel) => {
           <Divider />
         </SectionItem>
         <SectionItem>
-          <ContainedButton
-            specWidth="241px"
-            margin="0 32px 0 0"
-            text="Save Change"
-            // disabled={noChanges}
-            onClick={() => console.log('save')}
-          />
-          <ContainedButton
-            // disabled={noChanges}
-            text="Discard Change"
-            onClick={() => console.log('discard')}
-          />
-          <ContainedButton
-            margin="0 0 0 32px"
-            text="Remove Signatory"
-            backgroundColor={Palette.error.light}
-            onClick={() => console.log('remove')}
-          />
+          {props.edit ? (
+            <div>
+              <ContainedButton
+                specWidth="241px"
+                margin="0 32px 0 0"
+                text="Save Change"
+                disabled={isEqual(props.signitem, props.orgSignitem)}
+                onClick={() => props.updateSignatory()}
+              />
+              <ContainedButton
+                disabled={isEqual(props.signitem, props.orgSignitem)}
+                text="Discard Change"
+                onClick={() => props.discardChanges()}
+              />
+              <ContainedButton
+                margin="0 0 0 32px"
+                text="Remove Signatory"
+                backgroundColor={Palette.error.light}
+                onClick={() => props.deleteSignatory()}
+              />
+            </div>
+          ) : (
+            <ContainedButton
+              specWidth="241px"
+              text="Add"
+              onClick={() => props.addSignatory()}
+            />
+          )}
         </SectionItem>
       </StyledBox>
     </Page>
