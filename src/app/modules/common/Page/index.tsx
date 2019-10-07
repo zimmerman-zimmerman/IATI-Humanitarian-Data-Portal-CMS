@@ -23,10 +23,10 @@ const Page = (props: PageProps) => {
   useTitle(`MLT CMS - ${props.title}`);
 
   return (
-    <MainContainer maxWidth="lg">
+    <MainContainer maxWidth="xl">
       <MainGrid container>
         <GridItem item md={12}>
-          <Box paddingLeft="200px" height="100%">
+          <Box paddingLeft="240px" height="100%">
             {props.children}
           </Box>
         </GridItem>

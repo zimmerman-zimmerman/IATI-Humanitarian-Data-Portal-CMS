@@ -12,12 +12,14 @@ import { User } from 'app/state/api/interfaces/userInterface';
 import { useStoreState } from './state/store/hooks';
 
 /* modules */
+import Page from 'app/modules/common/Page';
 import { PageLoader } from 'app/modules/common/PageLoader';
 import { UserManagement } from 'app/modules/UserManagement';
 import { Faq } from 'app/modules/Faq';
 // import { AddSignatory } from 'app/modules/AddSignatory';
 import { Signatories } from 'app/modules/Signatories';
 import { Signatory } from 'app/modules/Signatory';
+import { Tooltips } from 'app/modules/Tooltips';
 
 // util function that redirects a user to the login page
 // if they're not signed-in
@@ -53,9 +55,9 @@ function Routes() {
           path="/dashboard"
           render={() =>
             redirectUnAuth(
-              <div>
+              <Page>
                 <Link to="/management"> Go to user management </Link>{' '}
-              </div>,
+              </Page>,
               user
             )
           }
@@ -87,6 +89,12 @@ function Routes() {
           exact
           path="/signatories"
           render={() => redirectUnAuth(<Signatories />, user)}
+        />
+
+        <Route
+          exact
+          path="/tooltips"
+          render={() => redirectUnAuth(<Tooltips />, user)}
         />
       </Switch>
     </Suspense>

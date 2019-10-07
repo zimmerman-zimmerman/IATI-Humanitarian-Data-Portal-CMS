@@ -83,3 +83,7 @@ a {
   color: #ffffff !important;
   background: #3d3d3d !important;
 }
+
+#simple-popper {
+  z-index: 1;
+}

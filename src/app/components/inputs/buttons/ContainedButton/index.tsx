@@ -18,7 +18,10 @@ const useStyles = makeStyles((theme: Theme) =>
     button: props => ({
       margin: props.margin || '0',
       width: props.width,
-      color: theme.palette.primary.contrastText,
+      color:
+        props.backgroundColor === 'transparent'
+          ? '#ed6060'
+          : theme.palette.primary.contrastText,
       backgroundColor: props.backgroundColor || theme.palette.primary.main,
     }),
     input: {
