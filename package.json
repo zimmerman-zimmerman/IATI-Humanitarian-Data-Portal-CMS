@@ -10,6 +10,7 @@
     "@nivo/bar": "^0.59.2",
     "@nivo/line": "^0.59.3",
     "@types/lodash": "^4.14.136",
+    "axios": "^0.19.0",
     "circle-github-bot": "^2.0.1",
     "cuid": "^2.1.6",
     "dexie": "^2.0.4",
@@ -27,7 +28,7 @@
     "react-styled-flexboxgrid": "^3.1.0",
     "react-use": "^10.1.0",
     "redux-persist": "^5.10.0",
-    "space-api": "^0.11.0",
+    "space-api": "^0.12.1",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {

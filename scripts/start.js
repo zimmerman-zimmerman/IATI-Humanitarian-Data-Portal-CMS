@@ -143,3 +143,11 @@ checkBrowsers(paths.appPath, isInteractive)
     }
     process.exit(1);
   });
+
+const { startSignUpdate } = require('./periodic_scripts.js');
+
+// we start the signatory updates
+setTimeout(
+  () => startSignUpdate(),
+  5000
+);
