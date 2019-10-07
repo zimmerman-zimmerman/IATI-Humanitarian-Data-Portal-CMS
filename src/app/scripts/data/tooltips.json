@@ -1,0 +1,342 @@
+[
+	{
+		"page": "Signatory Progress",
+		"title": "Total no. of Grand Bargain signatories",
+		"tooltip": "Total no. of Grand Bargain signatories"
+	},
+	{
+		"page": "Signatory Progress",
+		"title": "Organisations* publishing to IATI",
+		"tooltip": "How many signatories are publishing via the IATI Standard?"
+	},
+	{
+		"page": "Signatory Progress",
+		"title": "Publishing hum. activity data",
+		"tooltip": "How many signatories are using the features in IATI to make their specific humanitarian activities identifiable"
+	},
+	{
+		"page": "Signatory Progress",
+		"title": "Provides granular v2.02 data",
+		"tooltip": "How many Signatories are using any of the specific humanitarian fields that were added into the IATI Standard at v2.02"
+	},
+	{
+		"page": "Signatory Progress",
+		"title": "Publishing IATI tracability info",
+		"tooltip": "How many Signatories are using the mechanisms within IATI to enable data users to potentially ‘follow the money’ through the funding and delivery chain"
+	},
+	{
+		"page": "Signatory Progress",
+		"title": "Providing granular v2.03 data",
+		"tooltip": "How many Signatories are using any of the specific humanitarian fields that were added into the IATI Standard at v2.03"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Latest version of the IATI standard used",
+		"tooltip": "What is the latest version of the IATI Standard that this publisher is using"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Latest update",
+		"tooltip": "The actual date when the publisher’s data was last updated (related to timeliness)"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Data errors",
+		"tooltip": "Indicates if they publisher has errors in their data in that the published information is not compliant with the IATI Standard and any associated rulesets. Not all publishers consistently validate or check the data they publish so errors do occur quite frequently"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Data first published",
+		"tooltip": "Data first published"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "All activities",
+		"tooltip": "The total number of IATI activities published"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Humanitarian OECD DAC sector code 700 or 70000 range",
+		"tooltip": "The no. of hum activities where one or more OECD DAC codes has been specified. OECD DAC codes provide a list of sector that an activity might relate to eg Primary Education, STD control including HIV etc."
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Humanitarian indicator",
+		"tooltip": "Activities that the publisher has positively identified as ‘humanitarian’ by marking with the humanitarian indicator"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "UN humanitarian response plan(s)",
+		"tooltip": "Activities that the publisher has identified as contributing to meeting the requirements of one or more UN hum. response plan."
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "GLIDE code(s)",
+		"tooltip": "Activities that the publisher has identified as relating to a specific crisis. Can be provided in addition to UN HRP plan codes. NB Glide codes are managed by the Asian Reduction Disaster centre and a Glide code is allocated for most natural disasters or other incidents requiring hum. assistance"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Organisation's own internal crisis codes(ie using vocab '99')",
+		"tooltip": "Historically many organisation have used their own internal bespoke codes for each individual crisis (rather than using the external & generic UN HRP or GLIDE codes). These internal codes can also be included in the IATI data that is published"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Clusters",
+		"tooltip": "Activities that the publisher has specifically identified as being relevant for one or more UN crisis cluster(s) (aka sectors) eg Education, Logistics, Nutrition etc"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Earmarked for Grand Bargain (categories)",
+		"tooltip": "No of activities which have a Grand Bargain earmarking category applied to indicate the earmarking of both/either the received and disbursed funding eg Unearmarked, Softly earmarked etc. NB there are two levels of earmarking and this count is for  category"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Earmarked for Grand Bargain (modalities)",
+		"tooltip": "No of activities which have a Grand Bargain earmarking category applied to indicate the earmarking of both/either the received and disbursed funding eg Unearmarked, Softly earmarked etc. NB there are two levels of earmarking and this count is for  modality"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Partner country based (I)NGO organisation type used",
+		"tooltip": "No of hum activities where a partner country NGO has been referenced as either an implementing partner and/or is receiving funds"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Cash transfer (not yet available in IATI standard)",
+		"tooltip": "No of hum activities which have been specifically flagged to indicate that the activity and/or funding is related to a cash transfer programme. NB the cash codes have not yet been agreed and have therefore not as yet been added to IATI Standard v2.03"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "OECD DAC sector codes",
+		"tooltip": "The no. of hum activities where one or more OECD DAC codes has been specified. OECD DAC codes provide a list of sector that an activity might relate to eg Primary Education, STD control including HIV etc."
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "OECD DAC aid types",
+		"tooltip": "The no. of hum activities where one or more OECD DAC aid type(s) has been specified. OECD aid type codes provide an indication of what type of aid or aid financing is being provided eg Core contributions, project type interventions"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Sustainable Development Goals (SDGs)",
+		"tooltip": "The no. of hum activities which have been assessed as relating to 1 or more of the Sustainable Development Goals (SDGs)"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "OECD DAC gender marker",
+		"tooltip": "The no. of hum activities which have been flagged as having a gender component to it. NB more work needs to be done within the GB to potentially align the DAC and the Grand Bargain gender markers?"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Results",
+		"tooltip": "No of hum. activities which have some type of results information specified. "
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Results documents links",
+		"tooltip": "Publishers can provide URL links to documents or web sites where their results information are held. NB Publishers are encouraged to provide results information in a structured format ie with baselines and targets so that data across publishers can be aggregated etc. rather than using this approach"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Result indicators with baseline and target values",
+		"tooltip": "No of hum activities that have structured result information provided and which have specific baseline and targets set."
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Result indicator documents links",
+		"tooltip": "Similarly to result document links above. Publishers can provide URL links to documents or web sites where their specific results indicator information are held."
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Recipient countries",
+		"tooltip": "The no. of hum activities where the intended beneficial recipient country(s) has been specified"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Recipient regions",
+		"tooltip": "The no. of hum activities where the intended beneficial recipient region(s) has been specified"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Latitude / longitude coordinates",
+		"tooltip": "The no of hum activities where information specifying the actual location for an activity is taking place via latitude and longitude coordinates"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Describing location according to a recognised geo-location gazetteer",
+		"tooltip": "The no of hum activities where information specifying the actual location for an activity is taking place via a value from a recognised geo-location gazetteer"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Using any other type of sub-national location data",
+		"tooltip": "The no of hum activities where information specifying the actual location or area within a country where the activity or intervention is taking place. Sub-national data may be provided as lat/long coordinates, the name of a village or town or other place, an administrative area etc"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Duration > 24 months",
+		"tooltip": "No of humanitarian activities that relate to interventions that are currently ‘in progress’ and which have been planned / programmed to last more than 24 months. NB the 24 months threshold will need to be replaced by whatever duration of interest is ultimately identified by the Multi Year funding workstream"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Current hum. activities > 24 months budget exempt",
+		"tooltip": "As above but where the activity has been specifically marked to indicate that a forward looking budget cannot be provided"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Current hum. activities > 24 months & budgets for > 'next' 12 months",
+		"tooltip": "As above but only those activities that have also had actual funding allocated beyond the normal 12 month planning cycle are counted"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Default currency",
+		"tooltip": "What currency is the publisher providing its financial information in?"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Reports to UN OCHA Financial Tracking Service (FTS)",
+		"tooltip": "Does this organisation currently report to UN OCHA’s Financial Tracking Service"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Reports to UN OCHA for FTS via IATI",
+		"tooltip": "Does this organisation report to the UN OCHA’s Financial Tracking Service by having its published IATI data automatically imported"
+	},
+	{
+		"page": "Signatory Data - Overview",
+		"title": "Reports to European Union (EDRIS)",
+		"tooltip": "Reports to European Union (EDRIS)"
+	},
+	{
+		"page": "Signatory Data - Coverage",
+		"title": "Operational funds available",
+		"tooltip": "Operational funds available"
+	},
+	{
+		"page": "Signatory Data - Coverage",
+		"title": "Disbursements & expenditure",
+		"tooltip": "Disbursements & expenditure"
+	},
+	{
+		"page": "Signatory Data - Coverage",
+		"title": "Rating",
+		"tooltip": "Rating"
+	},
+	{
+		"page": "Signatory Data - Incoming - Pledges",
+		"title": "Total no. of activities",
+		"tooltip": "Total no. of activities"
+	},
+	{
+		"page": "Signatory Data - Incoming - Pledges",
+		"title": "Funding provider details",
+		"tooltip": "Funding provider details"
+	},
+	{
+		"page": "Signatory Data - Incoming - Pledges",
+		"title": "Organisation type provided",
+		"tooltip": "Organisation type provided"
+	},
+	{
+		"page": "Signatory Data - Incoming - Commitments",
+		"title": "Total no. of activities",
+		"tooltip": "Total no. of activities"
+	},
+	{
+		"page": "Signatory Data - Incoming - Commitments",
+		"title": "Funding provider details",
+		"tooltip": "Funding provider details"
+	},
+	{
+		"page": "Signatory Data - Incoming - Commitments",
+		"title": "Organisation type provided",
+		"tooltip": "Organisation type provided"
+	},
+	{
+		"page": "Signatory Data - Incoming - Funds",
+		"title": "Total no. of activities",
+		"tooltip": "Total no. of activities"
+	},
+	{
+		"page": "Signatory Data - Incoming - Funds",
+		"title": "Funding provider details",
+		"tooltip": "Funding provider details"
+	},
+	{
+		"page": "Signatory Data - Incoming - Funds",
+		"title": "Organisation type provided",
+		"tooltip": "Organisation type provided"
+	},
+	{
+		"page": "Signatory Data - Incoming - Funds",
+		"title": "Source traceability information",
+		"tooltip": "Source traceability information"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Pledges",
+		"title": "For humanitarian activities",
+		"tooltip": "For humanitarian activities"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Pledges",
+		"title": "Funding recipient details",
+		"tooltip": "Funding recipient details"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Pledges",
+		"title": "Organisation type provided",
+		"tooltip": "Organisation type provided"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Commitments",
+		"title": "For humanitarian activities",
+		"tooltip": "For humanitarian activities"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Commitments",
+		"title": "Funding recipient details",
+		"tooltip": "Funding recipient details"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Commitments",
+		"title": "Organisation type provided",
+		"tooltip": "Organisation type provided"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Disbursements",
+		"title": "For humanitarian activities",
+		"tooltip": "For humanitarian activities"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Disbursements",
+		"title": "Funding recipient details",
+		"tooltip": "Funding recipient details"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Disbursements",
+		"title": "Organisation type provided",
+		"tooltip": "Organisation type provided"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Disbursements",
+		"title": "Source traceability information",
+		"tooltip": "Source traceability information"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Expenditure",
+		"title": "Total",
+		"tooltip": "Total"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Expenditure",
+		"title": "For humanitarian activities",
+		"tooltip": "For humanitarian activities"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Expenditure",
+		"title": "Funding recipient details",
+		"tooltip": "Funding recipient details"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Expenditure",
+		"title": "Organisation type provided",
+		"tooltip": "Organisation type provided"
+	}
+]
