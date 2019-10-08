@@ -227,7 +227,7 @@ export default createMuiTheme({
         backgroundColor: 'transparent',
       },
       responsiveScroll: {
-        maxHeight: '700px'
+        maxHeight: 'calc(100vh - 10vh - 67px - 20px)'
       }
     },
     MUIDataTableToolbar: {

@@ -8,8 +8,8 @@ import { boxShadow } from 'app/theme';
 
 export const StyledBox = styled(Box)`
   && {
-    height: calc(100% - 40px);
-    padding-left: 40px;
+    height: calc(100% - 50px);
+    // padding-left: 40px;
     padding-top: 40px;
   }
 `;

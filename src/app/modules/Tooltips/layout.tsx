@@ -9,7 +9,7 @@ import { Table } from 'app/components/datadisplay/Table';
 import styled from 'styled-components';
 
 const BasePage = styled.div`
-  padding-top: 100px;
+  padding-top: 10vh;
 `;
 
 export const TooltipsLayout = (props: TooltipsLayoutModel) => {

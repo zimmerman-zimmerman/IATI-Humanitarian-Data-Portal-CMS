@@ -19,7 +19,7 @@ export const SignatoriesLayout = (props: SignatoriesLayoutModel) => {
       <BasePage>
         <ContainedButton
           icon={<AddIcon />}
-          margin="0 0 4rem 0"
+          margin="0 0 1rem 0"
           text="Add Signatory"
           onClick={props.handleAddNewSignatory}
         />
