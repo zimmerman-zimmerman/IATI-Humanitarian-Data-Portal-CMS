@@ -88,11 +88,11 @@ service.registerFunc('updateSignatories', (params, auth, cb) => {
 // Start the service
 service.start();
 
-setTimeout(() => api.call('db-update', 'updateSignatories', { }, 1000)
+setTimeout(() => api.call('db-update', 'updateSignatories', { }, 5000)
   .then(res => {
     if (res.status === 200) {
       console.log(res.data && res.data.result && res.data.result.message);
     }
   }).catch(ex => {
     // Exception occured while processing request
-  }), 5000);
+  }), 10000);
