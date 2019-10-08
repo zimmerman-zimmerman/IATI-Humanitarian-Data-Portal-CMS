@@ -69,7 +69,7 @@ function updateSignatories (db){
 
 // We will set up space cloud services here
 const api = new API(process.env.REACT_APP_PROJECT_ID,
-  'http://localhost:4122');
+  process.env.REACT_APP_SPACE_CLOUD_URL);
 
 const db = api.Mongo();
 
