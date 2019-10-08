@@ -2,8 +2,6 @@ const { API } = require('space-api');
 const axios = require('axios');
 const { cond } = require('space-api');
 
-let serviceStarted = false;
-
 function updateSignatories (db){
   db.get('signatories').apply().then(resp => {
     const signatories = resp.data.result;
@@ -65,39 +63,32 @@ function updateSignatories (db){
   });
 }
 
-if(!serviceStarted) {
-  // We will set up space cloud services here
-  const api = new API(process.env.REACT_APP_PROJECT_ID,
-    process.env.REACT_APP_SPACE_CLOUD_URL);
+// We will set up space cloud services here
+const api = new API(process.env.REACT_APP_PROJECT_ID,
+  process.env.REACT_APP_SPACE_CLOUD_URL);
 
-  const db = api.Mongo();
+const db = api.Mongo();
 
-  const service = api.Service('db-update');
+const service = api.Service('db-update');
 
-  // Register function to a service
-  service.registerFunc('updateSignatories', (params, auth, cb) => {
-    // Response to be returned to client
-    const res = { ack: true, message: 'Signatories update started' };
-    // and we start the worker to update signatories every 24hours
-    setInterval(() => updateSignatories(db), 60000);
-    cb('response', res);
-  });
+// Register function to a service
+service.registerFunc('updateSignatories', (params, auth, cb) => {
+  // Response to be returned to client
+  const res = { ack: true, message: 'Signatories update started' };
+  // and we start the worker to update signatories every 24hours
+  // 86400000
+  setInterval(() => updateSignatories(db), 40000);
+  cb('response', res);
+});
 
-  serviceStarted = true;
+// Start the service
+service.start();
 
-  // Start the service
-  service.start();
-}
-
-module.exports = {
-  startSignUpdate: () => {
-    api.call('db-update', 'updateSignatories', { }, 1000)
-      .then(res => {
-        if (res.status === 200) {
-          console.log(res.data && res.data.result && res.data.result.message);
-        }
-      }).catch(ex => {
-      // Exception occured while processing request
-    })
-  }
-};
+setTimeout(() => api.call('db-update', 'updateSignatories', { }, 1000)
+  .then(res => {
+    if (res.status === 200) {
+      console.log(res.data && res.data.result && res.data.result.message);
+    }
+  }).catch(ex => {
+    // Exception occured while processing request
+  }), 5000);
