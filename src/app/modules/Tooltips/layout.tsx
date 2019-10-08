@@ -16,14 +16,14 @@ export const TooltipsLayout = (props: TooltipsLayoutModel) => {
   return (
     <Page title="Tooltips">
       <BasePage>
-        {process.env.NODE_ENV === 'development' && (
+        {/* {process.env.NODE_ENV === 'development' && (
           <>
             <button onClick={loadTooltips}>load default</button>
             <button onClick={deleteTooltips}>delete all</button>
             <br />
             <br />
           </>
-        )}
+        )} */}
         <Table {...props.tableData} />
       </BasePage>
     </Page>

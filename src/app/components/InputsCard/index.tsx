@@ -10,7 +10,7 @@ import styled from 'styled-components';
 /* styles */
 import { Typography } from 'app/theme';
 
-const CardGrid = styled(Grid)`
+export const CardGrid = styled(Grid)`
   padding: 32px; 96px; 56px; 32px;
 `;
 

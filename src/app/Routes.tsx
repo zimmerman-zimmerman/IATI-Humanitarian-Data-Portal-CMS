@@ -20,6 +20,7 @@ import { Faq } from 'app/modules/Faq';
 import { Signatories } from 'app/modules/Signatories';
 import { Signatory } from 'app/modules/Signatory';
 import { Tooltips } from 'app/modules/Tooltips';
+import { CCTRI } from 'app/modules/CCTRI';
 
 // util function that redirects a user to the login page
 // if they're not signed-in
@@ -95,6 +96,12 @@ function Routes() {
           exact
           path="/tooltips"
           render={() => redirectUnAuth(<Tooltips />, user)}
+        />
+
+        <Route
+          exact
+          path="/CCTRIs"
+          render={() => redirectUnAuth(<CCTRI />, user)}
         />
       </Switch>
     </Suspense>
