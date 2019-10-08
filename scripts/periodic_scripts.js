@@ -34,7 +34,7 @@ function updateSignatories (db){
                 regPubId: iatiItem.publisher_name
               })
               .apply().then(() => {
-              console.log('signatory date and name successfully updated');
+              console.log(`[${new Date()}] - signatory date and name successfully updated`);
             });
           }
         });
@@ -58,7 +58,7 @@ function updateSignatories (db){
                 orgType: iatiItem.reporting_org_type_name,
               })
               .apply().then(() => {
-              console.log('signatory type successfully updated');
+              console.log(`[${new Date()}] - signatory type successfully updated`);
             });
           }
         });
