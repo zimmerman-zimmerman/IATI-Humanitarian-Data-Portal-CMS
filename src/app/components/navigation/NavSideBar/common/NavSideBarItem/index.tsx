@@ -1,6 +1,6 @@
 /* base */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 /* components */
@@ -9,9 +9,13 @@ import theme from 'app/theme';
 
 export const NavSideBarItem = styled(props =>
   props.to ? (
-    <Link {...props}>
+    <NavLink
+      exact
+      activeStyle={{ color: theme.palette.primary.light }}
+      {...props}
+    >
       <Typography variant="button">{props.children}</Typography>
-    </Link>
+    </NavLink>
   ) : (
     <a {...props}>
       <Typography variant="button">{props.children}</Typography>
