@@ -91,11 +91,7 @@ jobs:
               ssh "$SSH_USER"@"$SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$SSH_PASS"' | sudo -S service supervisor restart"
             elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
               ssh "$SSH_USER"@"$SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$SSH_PASS"' | sudo -S service supervisor restart"
-            elif [ "${CIRCLE_BRANCH}" == "feature" ]; then
-              ssh "$SSH_USER"@"$SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$SSH_PASS"' | sudo -S service supervisor restart"
             elif [ "${CIRCLE_BRANCH}" == "production" ]; then
-              ssh "$SSH_USER"@"$SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$SSH_PASS"' | sudo -S service supervisor restart"
-            else
               ssh "$SSH_USER"@"$SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$SSH_PASS"' | sudo -S service supervisor restart"
             fi
 
