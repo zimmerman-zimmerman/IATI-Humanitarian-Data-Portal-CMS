@@ -80,8 +80,7 @@ service.registerFunc('updateSignatories', (params, auth, cb) => {
   // Response to be returned to client
   const res = { ack: true, message: 'Signatories update started' };
   // and we start the worker to update signatories every 24hours
-  // 86400000
-  setInterval(() => updateSignatories(db), 40000);
+  setInterval(() => updateSignatories(db), 86400000);
   cb('response', res);
 });
 
