@@ -1,3 +1,7 @@
+process.env.NODE_ENV = 'production';
+
+require('../config/env');
+
 const { API } = require('space-api');
 const axios = require('axios');
 const { cond } = require('space-api');
