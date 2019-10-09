@@ -235,7 +235,7 @@ service.registerFunc('updateSignatories', (params, auth, cb) => {
 
 service.registerFunc('updateFrequency', (params, auth, cb) => {
   // and we start the worker to update frequencies every 24hours
-  setInterval(() => updateFrequency(db), 40000);
+  setInterval(() => updateFrequency(db), 86400000);
   cb('response', 'Frequency updates started');
 });
 
