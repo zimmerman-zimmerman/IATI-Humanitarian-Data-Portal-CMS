@@ -47,8 +47,12 @@ export function UploadDialog(props: any) {
         aria-labelledby="text-button-file-label"
       />
       <label htmlFor="text-button-file" id="text-button-file-label">
-        <Button component="span">Upload CSV</Button>
+        <Button component="span" color="primary" variant="contained">
+          Upload CSV
+        </Button>
       </label>
+      <br />
+      <br />
       <Dialog
         open={open}
         onClose={handleClose}
