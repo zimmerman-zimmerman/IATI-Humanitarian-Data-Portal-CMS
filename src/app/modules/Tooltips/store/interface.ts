@@ -5,7 +5,9 @@ export interface Tooltip {
   _id: string;
   page: string;
   title: string;
-  tooltip: string;
+  purpose: string;
+  whyGB: string;
+  calculation: string;
 }
 
 export interface TooltipsModel {

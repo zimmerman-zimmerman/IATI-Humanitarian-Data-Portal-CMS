@@ -10,7 +10,7 @@ import { FilterType, Display, SortDirection } from 'mui-datatables';
 export const tableBase = props => {
   return {
     title: 'Tooltips',
-    data: [['', '', '']],
+    data: [['', '', '', '', '']],
     columns: [
       {
         name: 'Page',
@@ -26,7 +26,7 @@ export const tableBase = props => {
         },
       },
       {
-        name: 'Tooltip',
+        name: 'Purpose',
         options: {
           filterType: 'dropdown' as FilterType,
           customBodyRender: (value, tableMeta, updateValue) => {
@@ -37,11 +37,67 @@ export const tableBase = props => {
                 updateValue={updateValue}
                 updateValueOnDB={newValue =>
                   props.editTooltip({
-                    id: rowData[3],
+                    id: rowData[5],
                     object: {
                       page: rowData[0],
                       title: rowData[1],
-                      tooltip: newValue,
+                      purpose: newValue,
+                      whyGB: rowData[3],
+                      calculation: rowData[4],
+                    },
+                  })
+                }
+              />
+            );
+          },
+        },
+      },
+      {
+        name: 'Why GB',
+        options: {
+          filterType: 'dropdown' as FilterType,
+          customBodyRender: (value, tableMeta, updateValue) => {
+            const rowData = props.data[tableMeta.rowIndex];
+            return (
+              <EditValueForm
+                value={value}
+                updateValue={updateValue}
+                updateValueOnDB={newValue =>
+                  props.editTooltip({
+                    id: rowData[5],
+                    object: {
+                      page: rowData[0],
+                      title: rowData[1],
+                      purpose: rowData[2],
+                      whyGB: newValue,
+                      calculation: rowData[4],
+                    },
+                  })
+                }
+              />
+            );
+          },
+        },
+      },
+      {
+        name: 'Calculation',
+        options: {
+          filterType: 'dropdown' as FilterType,
+          customBodyRender: (value, tableMeta, updateValue) => {
+            const rowData = props.data[tableMeta.rowIndex];
+            return (
+              <EditValueForm
+                value={value}
+                updateValue={updateValue}
+                updateValueOnDB={newValue =>
+                  props.editTooltip({
+                    id: rowData[5],
+                    object: {
+                      page: rowData[0],
+                      title: rowData[1],
+                      purpose: rowData[2],
+                      whyGB: rowData[3],
+                      calculation: newValue,
                     },
                   })
                 }
@@ -87,7 +143,14 @@ export function formatTable(tooltips: Array<Tooltip>): Array<Array<string>> {
   const tableData: Array<Array<string>> = [];
 
   tooltips.forEach(tooltip => {
-    tableData.push([tooltip.page, tooltip.title, tooltip.tooltip, tooltip._id]);
+    tableData.push([
+      tooltip.page,
+      tooltip.title,
+      tooltip.purpose,
+      tooltip.whyGB,
+      tooltip.calculation,
+      tooltip._id,
+    ]);
   });
 
   return tableData;
