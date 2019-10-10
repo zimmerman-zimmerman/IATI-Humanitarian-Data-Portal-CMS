@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* core */
-import React, { useEffect } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 /* store */
@@ -14,18 +14,27 @@ import { TooltipsLayout } from 'app/modules/Tooltips/layout';
 
 function TooltipsPage(props) {
   const [state, actions] = tooltipStore();
+  const [data, setData] = React.useState([]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     actions.getAllTooltips();
   }, []);
 
-  const data = formatTable(state.allTooltips);
+  React.useEffect(() => {
+    setData(formatTable(state.allTooltips) as never);
+  }, [state.allTooltips]);
+
   const tableBaseObj = tableBase({
     editTooltip: actions.editTooltip,
     data: data,
   });
 
-  return <TooltipsLayout tableData={{ ...tableBaseObj, data: data }} />;
+  return (
+    <TooltipsLayout
+      actions={actions}
+      tableData={{ ...tableBaseObj, data: data }}
+    />
+  );
 }
 
 export const Tooltips = withRouter(TooltipsPage);
