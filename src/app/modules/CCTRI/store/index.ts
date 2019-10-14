@@ -11,8 +11,13 @@ import { ErrorResponse } from 'app/state/api/interfaces';
 const cctri: CCTRIModel = {
   cctri: { _id: '', title: '', summary: '', body: '' },
   error: null,
+  status: null,
   setError: action((state, payload: ErrorResponse) => {
     state.error = payload.data.error;
+    state.status = payload.data.error;
+  }),
+  setStatus: action((state, payload: ErrorResponse) => {
+    state.status = payload.status === 200 ? 'Success' : null;
   }),
   setCCTRI: action((state, payload: CCTRI) => {
     state.cctri = payload;
@@ -35,6 +40,7 @@ const cctri: CCTRIModel = {
         body: payload.body,
       })
       .apply()
+      .then(res => actions.setStatus(res));;
     actions.setCCTRI(payload);
   }),
 };

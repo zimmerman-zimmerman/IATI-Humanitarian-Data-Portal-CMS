@@ -57,29 +57,29 @@ export const FaqLayout = (props: FaqModel) => {
             </StyledGridItem>
           ))}
         </StyledGrid>
-        <SectionItem>
-          <Divider width="90%" />
-        </SectionItem>
-        <SectionItem>
-          <ContainedButton
-            specWidth="241px"
-            margin="0 32px 0 0"
-            text="Save Change"
-            disabled={noChanges}
-            onClick={() => props.saveChanges()}
-          />
-          <ContainedButton
-            disabled={noChanges}
-            text="Discard Change"
-            onClick={() => props.discardChanges()}
-          />
-          <ContainedButton
-            margin="0 0 0 32px"
-            text={<AddFaqText />}
-            onClick={() => props.addItem()}
-          />
-        </SectionItem>
       </StyledBox>
+      <SectionItem>
+        <Divider width="90%" />
+      </SectionItem>
+      <SectionItem>
+        <ContainedButton
+          specWidth="241px"
+          margin="0 32px 0 0"
+          text="Save Change"
+          disabled={noChanges}
+          onClick={() => props.saveChanges()}
+        />
+        <ContainedButton
+          disabled={noChanges}
+          text="Discard Change"
+          onClick={() => props.discardChanges()}
+        />
+        <ContainedButton
+          margin="0 0 0 32px"
+          text={<AddFaqText />}
+          onClick={() => props.addItem()}
+        />
+      </SectionItem>
     </Page>
   );
 };

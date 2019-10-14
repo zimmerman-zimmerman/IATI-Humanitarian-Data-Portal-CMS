@@ -37,6 +37,7 @@ export const NavSideBarLayout = () => {
         <Grid container direction="column" justify="center">
           {/** todo: this can be optimised by moving the paths and names of the items to a mock file and then map through that data */}
           <NavSideBarItem to="/signatories">Signatories</NavSideBarItem>
+          <NavSideBarItem to="/about">About Text</NavSideBarItem>
           <NavSideBarItem to="/settings">Settings</NavSideBarItem>
           <NavSideBarItem to="/faq">FAQ Text</NavSideBarItem>
           <NavSideBarItem to="/CCTRIs">CCTRIs Text</NavSideBarItem>

@@ -21,6 +21,7 @@ import { Signatories } from 'app/modules/Signatories';
 import { Signatory } from 'app/modules/Signatory';
 import { Tooltips } from 'app/modules/Tooltips';
 import { CCTRI } from 'app/modules/CCTRI';
+import { About } from 'app/modules/About';
 
 // util function that redirects a user to the login page
 // if they're not signed-in
@@ -57,7 +58,7 @@ function Routes() {
           render={() =>
             redirectUnAuth(
               <Page>
-                <Link to="/management"> Go to user management </Link>{' '}
+                <Link to="/management"> Go to user management </Link>
               </Page>,
               user
             )
@@ -102,6 +103,12 @@ function Routes() {
           exact
           path="/CCTRIs"
           render={() => redirectUnAuth(<CCTRI />, user)}
+        />
+
+        <Route
+          exact
+          path="/about"
+          render={() => redirectUnAuth(<About />, user)}
         />
       </Switch>
     </Suspense>

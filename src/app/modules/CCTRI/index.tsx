@@ -5,9 +5,11 @@ import { withRouter } from 'react-router-dom';
 
 /* utils */
 import isEqual from 'lodash/isEqual';
+import { beautifyCode } from 'app/utils/beautifyCode';
 
 /* store */
 import { cctriStore } from './store';
+import { useStoreActions } from 'app/state/store/hooks';
 
 export function CCTRIcomp(props) {
   const [state, actions] = cctriStore();
@@ -17,16 +19,22 @@ export function CCTRIcomp(props) {
     summary: '',
     body: '',
   });
+  const snackbarAction = useStoreActions(
+    globalState => globalState.syncVariables.setSnackbar
+  );
 
   React.useEffect(() => {
     actions.getCCTRI();
   }, []);
   React.useEffect(() => {
+    state.status && snackbarAction(state.status as string);
+  }, [state.status]);
+  React.useEffect(() => {
     setLocalCCTRI({
       _id: state.cctri._id as string,
       title: state.cctri.title,
-      summary: state.cctri.summary,
-      body: state.cctri.body,
+      summary: beautifyCode(state.cctri.summary),
+      body: beautifyCode(state.cctri.body),
     });
   }, [state.cctri]);
 
@@ -44,9 +52,9 @@ export function CCTRIcomp(props) {
       discardChanges={() =>
         setLocalCCTRI({
           ...localCCTRI,
-          title: state.cctri.title as string,
-          summary: state.cctri.summary as string,
-          body: state.cctri.body as string,
+          title: state.cctri.title,
+          summary: beautifyCode(state.cctri.summary),
+          body: beautifyCode(state.cctri.body),
         })
       }
       saveChanges={() => actions.editCCTRI(localCCTRI)}
