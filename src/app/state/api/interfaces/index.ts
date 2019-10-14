@@ -15,3 +15,8 @@ export interface SpaceCloudModel {
   setUser: Action<SpaceCloudModel, UserResponse>;
   login: Thunk<SpaceCloudModel, loginPayload>;
 }
+
+export interface SyncVariablesModel {
+  snackbar: string;
+  setSnackbar: Action<SyncVariablesModel, string>;
+}

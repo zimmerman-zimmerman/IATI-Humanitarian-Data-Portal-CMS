@@ -287,25 +287,123 @@
 		"calculation": "Status is provided by the publishing organisation"
 	},
 	{
-		"page": "Signatory Data - Coverage",
-		"title": "Operational funds available",
-		"purpose": "The total amount of funding available to spend on actual interventions (ie programmes &/or projects etc)",
+		"page": "Signatory Data - Outgoing - Pledges",
+		"title": "Total no. of activities",
+		"purpose": "The total number of humanitarian activities that have outgoing pledge transactions",
 		"whyGB": "",
-		"calculation": "Total operational spend figure for each period derived from the publishers organisation file from total-expenditure/expense-line/value where total-expenditure/expense-line/@ref = ‘HUMTOT’"
+		"calculation": "Total number of humanitarian IATI activities which have 1 or more transaction where transaction/transaction-type/@code = 12"
 	},
 	{
-		"page": "Signatory Data - Coverage",
-		"title": "Disbursements & expenditure",
-		"purpose": "The total actual spend on interventions for the specified period",
+		"page": "Signatory Data - Outgoing - Pledges",
+		"title": "Total no. of outgoing pledge transactions",
+		"purpose": "The total number of outgoing pledge transactions for all humanitarian activities",
 		"whyGB": "",
-		"calculation": "Total value of all disbursement and expenditure transaction amounts for the specified period"
+		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 12"
 	},
 	{
-		"page": "Signatory Data - Coverage",
-		"title": "Rating",
-		"purpose": "The percentage value of 'Disbursements & expenditure' in relation to 'Operational funds available'",
+		"page": "Signatory Data - Outgoing - Pledges",
+		"title": "Funding Recipient details",
+		"purpose": "The total number of outgoing pledge transactions for all humanitarian activities that have the funding recipient specified",
 		"whyGB": "",
-		"calculation": "Calculated as ((Operational funds / Disbursements & expenditure * 100)"
+		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 12 and transaction/recipient-org/narrative is not empty"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Pledges",
+		"title": "Organisation type provided",
+		"purpose": "The total number of outgoing pledge transactions for all humanitarian activities that have the funding recipient organisation type specified",
+		"whyGB": "",
+		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 12 transaction/recipient-org/@type is specified"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Expenditure",
+		"title": "Total no. of Activities",
+		"purpose": "The total number of humanitarian activities that have expenditure transactions",
+		"whyGB": "",
+		"calculation": "Total number of humanitarian IATI activities which have 1 or more transaction where transaction/transaction-type/@code = 4"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Expenditure",
+		"title": "Total no. of expenditure transactions",
+		"purpose": "The total number of expenditure transactions for all humanitarian activities",
+		"whyGB": "",
+		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 4"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Expenditure",
+		"title": "Funding Recipient details",
+		"purpose": "The total number of expenditure transactions for all humanitarian activities that have the funding recipient specified",
+		"whyGB": "",
+		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 4 and transaction/recipient-org/narrative is not empty"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Expenditure",
+		"title": "Organisation type provided",
+		"purpose": "The total number of expenditure transactions for all humanitarian activities that have the funding recipient organisation type specified",
+		"whyGB": "",
+		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 4 transaction/recipient-org/@type is specified"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Disbursements",
+		"title": "Total no. of Activities",
+		"purpose": "The total number of humanitarian activities that have disbursement transactions",
+		"whyGB": "",
+		"calculation": "Total number of humanitarian IATI activities which have 1 or more transaction where transaction/transaction-type/@code = 3"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Disbursements",
+		"title": "Total no. of disbursement transactions",
+		"purpose": "The total number of disbursement transactions for all humanitarian activities",
+		"whyGB": "",
+		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 3"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Disbursements",
+		"title": "Funding Recipient details",
+		"purpose": "The total number of disbursement transactions for all humanitarian activities that have the funding recipient specified",
+		"whyGB": "",
+		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 3 and transaction/recipient-org/narrative is not empty"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Disbursements",
+		"title": "Organisation type provided",
+		"purpose": "The total number of disbursement transactions for all humanitarian activities that have the funding recipient organisation type specified",
+		"whyGB": "",
+		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 3 transaction/recipient-org/@type is specified"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Disbursements",
+		"title": "Source traceability information",
+		"purpose": "Source traceability information",
+		"whyGB": "",
+		"calculation": "Not required. To be removed"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Commitments",
+		"title": "For humanitarian activities",
+		"purpose": "The total number of humanitarian activities that have outgoing commitment transactions",
+		"whyGB": "",
+		"calculation": "Total number of humanitarian IATI activities which have 1 or more transaction where transaction/transaction-type/@code = 2"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Commitments",
+		"title": "Total no. of outgoing commitment transactions",
+		"purpose": "The total number of outgoing commitment transactions for all humanitarian activities",
+		"whyGB": "",
+		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 2"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Commitments",
+		"title": "Funding Recipient details",
+		"purpose": "The total number of outgoing commitment transactions for all humanitarian activities that have the funding recipient specified",
+		"whyGB": "",
+		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 2 and transaction/recipient-org/narrative is not empty"
+	},
+	{
+		"page": "Signatory Data - Outgoing - Commitments",
+		"title": "Organisation type provided",
+		"purpose": "The total number of outgoing commitment transactions for all humanitarian activities that have the funding recipient organisation type specified",
+		"whyGB": "",
+		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 2 transaction/recipient-org/@type is specified"
 	},
 	{
 		"page": "Signatory Data - Incoming - Pledges",
@@ -399,122 +497,24 @@
 		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 11 transaction/provider-org/@type is specified"
 	},
 	{
-		"page": "Signatory Data - Outgoing - Pledges",
-		"title": "For humanitarian activities (NB title should be 'Total no. of activities' etc.)",
-		"purpose": "The total number of humanitarian activities that have outgoing pledge transactions",
+		"page": "Signatory Data - Coverage",
+		"title": "Operational funds available",
+		"purpose": "The total amount of funding available to spend on actual interventions (ie programmes &/or projects etc)",
 		"whyGB": "",
-		"calculation": "Total number of humanitarian IATI activities which have 1 or more transaction where transaction/transaction-type/@code = 12"
+		"calculation": "Total operational spend figure for each period derived from the publishers organisation file from total-expenditure/expense-line/value where total-expenditure/expense-line/@ref = ‘HUMTOT’"
 	},
 	{
-		"page": "Signatory Data - Outgoing - Pledges",
-		"title": "Total no. of outgoing pledge transactions",
-		"purpose": "The total number of outgoing pledge transactions for all humanitarian activities",
+		"page": "Signatory Data - Coverage",
+		"title": "Disbursements & expenditure",
+		"purpose": "The total actual spend on interventions for the specified period",
 		"whyGB": "",
-		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 12"
+		"calculation": "Total value of all disbursement and expenditure transaction amounts for the specified period"
 	},
 	{
-		"page": "Signatory Data - Outgoing - Pledges",
-		"title": "Funding Recipient details",
-		"purpose": "The total number of outgoing pledge transactions for all humanitarian activities that have the funding provider specified",
+		"page": "Signatory Data - Coverage",
+		"title": "Rating",
+		"purpose": "The percentage value of 'Disbursements & expenditure' in relation to 'Operational funds available'",
 		"whyGB": "",
-		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 12 and transaction/recipient-org/narrative is not empty"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Pledges",
-		"title": "Organisation type provided",
-		"purpose": "The total number of outgoing pledge transactions for all humanitarian activities that have the funding provider organisation type specified",
-		"whyGB": "",
-		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 12 transaction/recipient-org/@type is specified"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Expenditure",
-		"title": "Total No of Activities",
-		"purpose": "The total number of humanitarian activities that have expenditure transactions",
-		"whyGB": "",
-		"calculation": "Total number of humanitarian IATI activities which have 1 or more transaction where transaction/transaction-type/@code = 4"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Expenditure",
-		"title": "Total no. of expenditure transactions",
-		"purpose": "The total number of expenditure transactions for all humanitarian activities",
-		"whyGB": "",
-		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 4"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Expenditure",
-		"title": "Funding Recipient details",
-		"purpose": "The total number of expenditure transactions for all humanitarian activities that have the funding provider specified",
-		"whyGB": "",
-		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 4 and transaction/recipient-org/narrative is not empty"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Expenditure",
-		"title": "Organisation type provided",
-		"purpose": "The total number of expenditure transactions for all humanitarian activities that have the funding provider organisation type specified",
-		"whyGB": "",
-		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 4 transaction/recipient-org/@type is specified"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Disbursements",
-		"title": "Total No of Activities",
-		"purpose": "The total number of humanitarian activities that have disbursement transactions",
-		"whyGB": "",
-		"calculation": "Total number of humanitarian IATI activities which have 1 or more transaction where transaction/transaction-type/@code = 3"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Disbursements",
-		"title": "Total no. of disbursement transactions",
-		"purpose": "The total number of disbursement transactions for all humanitarian activities",
-		"whyGB": "",
-		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 3"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Disbursements",
-		"title": "Funding Recipient details",
-		"purpose": "The total number of disbursement transactions for all humanitarian activities that have the funding provider specified",
-		"whyGB": "",
-		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 3 and transaction/recipient-org/narrative is not empty"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Disbursements",
-		"title": "Organisation type provided",
-		"purpose": "The total number of disbursement transactions for all humanitarian activities that have the funding provider organisation type specified",
-		"whyGB": "",
-		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 3 transaction/recipient-org/@type is specified"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Disbursements",
-		"title": "Source traceability information",
-		"purpose": "Source traceability information",
-		"whyGB": "",
-		"calculation": "Not required. To be removed"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Commitments",
-		"title": "For humanitarian activities",
-		"purpose": "The total number of humanitarian activities that have outgoing commitment transactions",
-		"whyGB": "",
-		"calculation": "Total number of humanitarian IATI activities which have 1 or more transaction where transaction/transaction-type/@code = 2"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Commitments",
-		"title": "Total no. of outgoing commitment transactions",
-		"purpose": "The total number of outgoing commitment transactions for all humanitarian activities",
-		"whyGB": "",
-		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 2"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Commitments",
-		"title": "Funding recipient details",
-		"purpose": "The total number of outgoing commitment transactions for all humanitarian activities that have the funding provider specified",
-		"whyGB": "",
-		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 2 and transaction/recipient-org/narrative is not empty"
-	},
-	{
-		"page": "Signatory Data - Outgoing - Commitments",
-		"title": "Organisation type provided",
-		"purpose": "The total number of outgoing commitment transactions for all humanitarian activities that have the funding provider organisation type specified",
-		"whyGB": "",
-		"calculation": "Total number of transactions for humanitarian IATI activities where transaction/transaction-type/@code = 2 transaction/recipient-org/@type is specified"
+		"calculation": "Calculated as ((Operational funds / Disbursements & expenditure * 100)"
 	}
 ]

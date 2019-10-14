@@ -1,9 +1,6 @@
 import React from 'react';
 import Page from 'app/modules/common/Page';
 
-/* styles */
-import beautify from 'js-beautify';
-
 /* components */
 import { Divider } from 'app/components/general/divider/divider';
 import { ContainedButton } from 'app/components/inputs/buttons/ContainedButton';
@@ -52,29 +49,10 @@ export const CCTRILayout = (props: CCTRIModel) => {
               <MultiLineTextField
                 fullWidth
                 multiline
-                rows="5"
                 label="Summary"
                 margin="normal"
                 variant="filled"
-                value={beautify.html(props.summaryValue, {
-                  indent_size: '4',
-                  indent_char: ' ',
-                  max_preserve_newlines: '5',
-                  preserve_newlines: true,
-                  keep_array_indentation: false,
-                  break_chained_methods: false,
-                  indent_scripts: 'normal',
-                  brace_style: 'expand',
-                  space_before_conditional: true,
-                  unescape_strings: false,
-                  jslint_happy: false,
-                  end_with_newline: false,
-                  wrap_line_length: '80',
-                  indent_inner_html: true,
-                  comma_first: false,
-                  e4x: false,
-                  wrap_attributes: 'preserve',
-                })}
+                value={props.summaryValue}
                 id="text-cctri-summary-input"
                 setValue={props.setSummaryValue}
               />
@@ -85,53 +63,34 @@ export const CCTRILayout = (props: CCTRIModel) => {
               <MultiLineTextField
                 fullWidth
                 multiline
-                rows="50"
                 label="Body"
                 margin="normal"
                 variant="filled"
-                value={beautify.html(props.bodyValue, {
-                  indent_size: '4',
-                  indent_char: ' ',
-                  max_preserve_newlines: '5',
-                  preserve_newlines: true,
-                  keep_array_indentation: false,
-                  break_chained_methods: false,
-                  indent_scripts: 'normal',
-                  brace_style: 'expand',
-                  space_before_conditional: true,
-                  unescape_strings: false,
-                  jslint_happy: false,
-                  end_with_newline: false,
-                  wrap_line_length: '80',
-                  indent_inner_html: true,
-                  comma_first: false,
-                  e4x: false,
-                  wrap_attributes: 'preserve',
-                })}
+                value={props.bodyValue}
                 id="text-cctri-body-input"
                 setValue={props.setBodyValue}
               />
             </CardGrid>
           </StyledGridItem>
         </StyledGrid>
-        <SectionItem>
-          <Divider />
-        </SectionItem>
-        <SectionItem>
-          <ContainedButton
-            specWidth="241px"
-            margin="0 32px 0 0"
-            text="Save Change"
-            disabled={!props.areChanges}
-            onClick={props.saveChanges}
-          />
-          <ContainedButton
-            text="Discard Change"
-            disabled={!props.areChanges}
-            onClick={props.discardChanges}
-          />
-        </SectionItem>
       </StyledBox>
+      <SectionItem>
+        <Divider />
+      </SectionItem>
+      <SectionItem>
+        <ContainedButton
+          specWidth="241px"
+          margin="0 32px 0 0"
+          text="Save Change"
+          disabled={!props.areChanges}
+          onClick={props.saveChanges}
+        />
+        <ContainedButton
+          text="Discard Change"
+          disabled={!props.areChanges}
+          onClick={props.discardChanges}
+        />
+      </SectionItem>
     </Page>
   );
 };
