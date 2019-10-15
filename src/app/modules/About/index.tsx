@@ -4,13 +4,13 @@ import { AboutLayout } from './layout';
 import { withRouter } from 'react-router-dom';
 
 /* utils */
-import isEqual from 'lodash/isEqual';
 import findIndex from 'lodash/findIndex';
 import { beautifyCode } from 'app/utils/beautifyCode';
 
 /* store */
-import { aboutStore } from './store';
+import { aboutStore } from 'app/modules/About/store';
 import { useStoreActions } from 'app/state/store/hooks';
+import { checkIfChanged } from 'app/modules/About/utils';
 
 export function Aboutcomp(props) {
   const [state, actions] = aboutStore();
@@ -49,7 +49,6 @@ export function Aboutcomp(props) {
   return (
     <AboutLayout
       textBlocks={localAboutTextBlocks}
-      areChanges={!isEqual(localAboutTextBlocks, state.aboutTextBlocks)}
       discardChanges={() =>
         setLocalAboutTextBlocks(
           state.aboutTextBlocks.map(block => ({
@@ -62,6 +61,7 @@ export function Aboutcomp(props) {
       }
       setTextBlockFields={setTextBlockFields}
       saveChanges={() => actions.editAboutTextBlocks(localAboutTextBlocks)}
+      areChanges={checkIfChanged(state.aboutTextBlocks, localAboutTextBlocks)}
     />
   );
 }
