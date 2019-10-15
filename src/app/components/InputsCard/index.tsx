@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { InputsCardModel } from './model';
@@ -47,10 +48,11 @@ export const InputsCard = (props: InputsCardModel) => {
         )}
       </Grid>
       {props.data.map((input, index) => (
-        <Grid item xs={6}>
+        <Grid item xs={6} md={6}>
           {input.type === 'dropdown' ? (
             <SimpleSelect
               fullWidth
+              key={`select-${props.title}-${index}`}
               id={`select-${props.title}-${index}`}
               label={input.label}
               options={input.options || []}
@@ -61,6 +63,7 @@ export const InputsCard = (props: InputsCardModel) => {
             <SingleLineTextField
               fullWidth
               label={input.label}
+              key={`text-${props.title}-${index}`}
               id={`text-${props.title}-${index}`}
               placeholder={input.placeholder || ''}
               value={input.value}
