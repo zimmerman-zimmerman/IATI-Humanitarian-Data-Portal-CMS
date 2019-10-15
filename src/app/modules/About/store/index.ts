@@ -1,9 +1,8 @@
 import { action, createComponentStore, thunk } from 'easy-peasy';
-import { cond } from 'space-api';
 
 /* api */
 import { db } from 'app/state/api/actionsReducers';
-import { generateId } from 'app/state/utils/general';
+import { generateId, getDBTableData } from 'app/state/utils/general';
 
 /* interfaces */
 import { AboutTextBlock, AboutTextBlockModel } from './interface';
@@ -23,14 +22,13 @@ const about: AboutTextBlockModel = {
   setAboutTextBlocks: action((state, payload: AboutTextBlock[]) => {
     state.aboutTextBlocks = payload;
   }),
-  getAboutTextBlocks: thunk(async actions => {
-    const res = await db.get('aboutTextBlocks').apply();
-    if (res.status === 200) {
-      actions.setAboutTextBlocks(res.data.result);
-    } else {
-      actions.setError(res);
-    }
-  }),
+  getAboutTextBlocks: thunk(async actions =>
+    getDBTableData(
+      'aboutTextBlocks',
+      actions.setAboutTextBlocks,
+      actions.setError
+    )
+  ),
   editAboutTextBlocks: thunk(async (actions, payload: AboutTextBlock[]) => {
     db.delete('aboutTextBlocks')
       .apply()

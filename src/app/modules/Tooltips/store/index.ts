@@ -3,6 +3,7 @@ import { action, createComponentStore, thunk } from 'easy-peasy';
 /* api */
 import { cond } from 'space-api';
 import { db } from 'app/state/api/actionsReducers';
+import { getDBTableData } from 'app/state/utils/general';
 
 /* interfaces */
 import { TooltipsModel, Tooltip } from './interface';
@@ -19,26 +20,13 @@ const tooltips: TooltipsModel = {
   }),
   editTooltip: thunk(async (actions, payload: any) => {
     db.updateOne('tooltips')
-      .where(cond('_id', "==", payload.id))
+      .where(cond('_id', '==', payload.id))
       .set({ ...payload.object })
-      .apply()
-      .then(async () => {
-        // const res = await db.get('tooltips').apply();
-        // if (res.status === 200) {
-        //   actions.setAllTooltips(res.data.result);
-        // } else {
-        //   actions.setError(res);
-        // }
-      });
+      .apply();
   }),
-  getAllTooltips: thunk(async actions => {
-    const res = await db.get('tooltips').apply();
-    if (res.status === 200) {
-      actions.setAllTooltips(res.data.result);
-    } else {
-      actions.setError(res);
-    }
-  }),
+  getAllTooltips: thunk(async actions =>
+    getDBTableData('tooltips', actions.setAllTooltips, actions.setError)
+  ),
 };
 
 export const tooltipStore = createComponentStore(tooltips);

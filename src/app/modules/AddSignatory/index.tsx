@@ -11,7 +11,7 @@ const suggestionsMock: OptionType[] = [
   { label: 'NL-KVK-27264198', secondaryLabel: 'Pub Name' },
 ];
 
-function getSuggestions(value: string, suggestions: OptionType[]) {
+export function getSuggestions(value: string, suggestions: OptionType[]) {
   const inputValue = deburr(value.trim()).toLowerCase();
   const inputLength = inputValue.length;
   let count = 0;

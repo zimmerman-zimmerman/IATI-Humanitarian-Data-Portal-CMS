@@ -12,8 +12,7 @@ import {
   StyledGridItem,
 } from 'app/components/actionPage';
 import { CCTRIModel } from './model';
-import { SingleLineTextField } from 'app/components/inputs/textfields/SingleLineTextField';
-import { MultiLineTextField } from 'app/components/inputs/textfields/MultiLineTextField';
+import { SingleMultiLineTextField } from 'app/components/inputs/textfields/SingleMultiLineTextField';
 import { loadCCTRI, deleteCCTRI } from 'app/scripts/loadCCTRI';
 
 export const CCTRILayout = (props: CCTRIModel) => {
@@ -35,7 +34,7 @@ export const CCTRILayout = (props: CCTRIModel) => {
         >
           <StyledGridItem item xs={12}>
             <CardGrid>
-              <SingleLineTextField
+              <SingleMultiLineTextField
                 fullWidth
                 label="Title"
                 value={props.titleValue}
@@ -46,11 +45,10 @@ export const CCTRILayout = (props: CCTRIModel) => {
               <br />
               <br />
               <br />
-              <MultiLineTextField
+              <SingleMultiLineTextField
                 fullWidth
                 multiline
                 label="Summary"
-                margin="normal"
                 variant="filled"
                 value={props.summaryValue}
                 id="text-cctri-summary-input"
@@ -60,11 +58,10 @@ export const CCTRILayout = (props: CCTRIModel) => {
               <br />
               <br />
               <br />
-              <MultiLineTextField
+              <SingleMultiLineTextField
                 fullWidth
                 multiline
                 label="Body"
-                margin="normal"
                 variant="filled"
                 value={props.bodyValue}
                 id="text-cctri-body-input"

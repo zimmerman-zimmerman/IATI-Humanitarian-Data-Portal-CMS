@@ -1,17 +1,13 @@
 import React from 'react';
-import {
-  fade,
-  Theme,
-  withStyles,
-  createStyles,
-} from '@material-ui/core/styles';
-import InputBase, { InputBaseProps } from '@material-ui/core/InputBase';
 import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
 import IconButton from '@material-ui/core/IconButton';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import Visibility from '@material-ui/icons/Visibility';
+import FormControl from '@material-ui/core/FormControl';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import InputBase, { InputBaseProps } from '@material-ui/core/InputBase';
+import { getInputGeneralStyle } from 'app/components/inputs/common/mock';
+import { Theme, withStyles, createStyles } from '@material-ui/core/styles';
 
 export interface Props extends InputBaseProps {
   id: string;
@@ -29,20 +25,7 @@ export const Input = withStyles((theme: Theme) =>
         marginTop: theme.spacing(3),
       },
     },
-    input: {
-      borderRadius: 2,
-      position: 'relative',
-      backgroundColor: theme.palette.grey[40],
-      border: '1px solid transparent',
-      fontSize: 16,
-      padding: '10px 12px',
-      transition: theme.transitions.create(['border-color', 'box-shadow']),
-      fontFamily: 'Inter',
-      '&:focus': {
-        boxShadow: `${fade(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
-        borderColor: theme.palette.primary.main,
-      },
-    },
+    input: getInputGeneralStyle(theme),
   })
 )(InputBase);
 

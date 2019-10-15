@@ -1,7 +1,7 @@
 import { action, createComponentStore, thunk } from 'easy-peasy';
 
 /* api */
-import { db } from 'app/state/api/actionsReducers';
+import { getDBTableData } from 'app/state/utils/general';
 
 /* interfaces */
 import { SignatoriesModel } from './interface';
@@ -17,14 +17,9 @@ const signatories: SignatoriesModel = {
   setAllSign: action((state, payload: Array<Signatory>) => {
     state.allSignatories = payload;
   }),
-  getAllSign: thunk(async actions => {
-    const res = await db.get('signatories').apply();
-    if (res.status === 200) {
-      actions.setAllSign(res.data.result);
-    } else {
-      actions.setError(res);
-    }
-  }),
+  getAllSign: thunk(async actions =>
+    getDBTableData('signatories', actions.setAllSign, actions.setError)
+  ),
 };
 
 export const signatoriesStore = createComponentStore(signatories);
