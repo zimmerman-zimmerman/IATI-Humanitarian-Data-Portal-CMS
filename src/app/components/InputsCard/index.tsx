@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import { InputsCardModel } from './model';
 
 /* components */
-import { SingleLineTextField } from 'app/components/inputs/textfields/SingleLineTextField';
+import { SingleMultiLineTextField } from 'app/components/inputs/textfields/SingleMultiLineTextField';
 import { SimpleSelect } from 'app/components/inputs/Select/SimpleSelect';
 import styled from 'styled-components';
 
@@ -35,7 +35,7 @@ export const InputsCard = (props: InputsCardModel) => {
     >
       <Grid item xs={12}>
         {props.titleInput ? (
-          <SingleLineTextField
+          <SingleMultiLineTextField
             fullWidth
             label={props.titleInput.label}
             id={`text-${props.title}-title-input`}
@@ -60,7 +60,7 @@ export const InputsCard = (props: InputsCardModel) => {
               setValue={input.setValue}
             />
           ) : (
-            <SingleLineTextField
+            <SingleMultiLineTextField
               fullWidth
               label={input.label}
               key={`text-${props.title}-${index}`}

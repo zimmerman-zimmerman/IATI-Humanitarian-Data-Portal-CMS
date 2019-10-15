@@ -12,8 +12,7 @@ import {
   StyledGridItem,
 } from 'app/components/actionPage';
 import { AboutLayoutModel } from './model';
-import { SingleLineTextField } from 'app/components/inputs/textfields/SingleLineTextField';
-import { MultiLineTextField } from 'app/components/inputs/textfields/MultiLineTextField';
+import { SingleMultiLineTextField } from 'app/components/inputs/textfields/SingleMultiLineTextField';
 import {
   loadAboutTextBlocks,
   deleteAboutTextBlocks,
@@ -40,7 +39,7 @@ export const AboutLayout = (props: AboutLayoutModel) => {
             >
               <StyledGridItem item xs={12}>
                 <CardGrid>
-                  <SingleLineTextField
+                  <SingleMultiLineTextField
                     fullWidth
                     label="Title"
                     value={block.title}
@@ -58,11 +57,10 @@ export const AboutLayout = (props: AboutLayoutModel) => {
                   <br />
                   <br />
                   <br />
-                  <MultiLineTextField
+                  <SingleMultiLineTextField
                     fullWidth
                     multiline
                     label="Body"
-                    margin="normal"
                     variant="filled"
                     value={block.body}
                     id={`about-text-block-body-input${block._id}`}
@@ -79,7 +77,7 @@ export const AboutLayout = (props: AboutLayoutModel) => {
                   <br />
                   <br />
                   <br />
-                  <SingleLineTextField
+                  <SingleMultiLineTextField
                     fullWidth
                     label="More link (optional)"
                     value={block.moreLink}

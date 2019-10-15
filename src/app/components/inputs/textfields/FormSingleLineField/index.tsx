@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { SingleLineTextField } from '../SingleLineTextField';
+import { SingleMultiLineTextField } from '../SingleMultiLineTextField';
 
-export const FormSingleLineField = styled(SingleLineTextField)`
+export const FormSingleLineField = styled(SingleMultiLineTextField)`
   && {
     margin-bottom: 45px;
   }
