@@ -41,10 +41,11 @@ export const Select = withStyles((theme: Theme) =>
 )(SelectBase);
 
 const SelectLabel = styled.div`
+font-size: 9px;
   margin-bottom: 11px;
-  font-size: 11px;
   font-weight: normal;
-  font-family: inherit;
+  font-family: 'Inter';
+  color: rgba(0, 0, 0, 0.87);
   -webkit-font-smoothing: antialiased;
 `;
 

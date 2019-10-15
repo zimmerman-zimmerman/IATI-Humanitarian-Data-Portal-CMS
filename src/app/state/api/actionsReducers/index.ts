@@ -43,6 +43,9 @@ export const spaceCloud: SpaceCloudModel = {
       payload.history && payload.history.push('/dashboard');
     }
   }),
+  logout: action((state) => {
+    state.user = null;
+  })
 };
 
 export const syncVariables: SyncVariablesModel = {
