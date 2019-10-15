@@ -1,5 +1,6 @@
 /* core */
 import React from 'react';
+import styled from 'styled-components';
 import Page from 'app/modules/common/Page';
 import { SignatoriesLayoutModel } from 'app/modules/Signatories/model';
 
@@ -7,6 +8,17 @@ import { SignatoriesLayoutModel } from 'app/modules/Signatories/model';
 import AddIcon from '@material-ui/icons/Add';
 import { Table } from 'app/components/datadisplay/Table';
 import { ContainedButton } from 'app/components/inputs/buttons/ContainedButton';
+
+const TableWrapper = styled.div`
+  tr:hover {
+    cursor: pointer;
+    background: #a1ae979797 !important;
+    td {
+      background: transparent !important;
+    }
+  }
+`;
+
 export const SignatoriesLayout = (props: SignatoriesLayoutModel) => {
   return (
     <Page title="Signatories">
@@ -16,7 +28,9 @@ export const SignatoriesLayout = (props: SignatoriesLayoutModel) => {
         text="Add Signatory"
         onClick={props.handleAddNewSignatory}
       />
-      <Table {...props.tableData} />
+      <TableWrapper>
+        <Table {...props.tableData} />
+      </TableWrapper>
     </Page>
   );
 };
