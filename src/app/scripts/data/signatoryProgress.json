@@ -1,0 +1,17 @@
+{
+  "publishingOpenDataIATIJune2017" : "37",
+  "publishingOpenDataIATIMay2018": "44",
+  "publishingOpenDataIATIMay2019": "48",
+
+  "publishingHumanitarianActivitiesJune2017": "31",
+  "publishingHumanitarianActivitiesMay2018": "36",
+  "publishingHumanitarianActivitiesMay2019": "43",
+
+  "using202OrLaterJune2017": "16",
+  "using202OrLaterMay2018": "31",
+  "using202OrLaterMay2019": "41",
+
+  "providingGranular202DataJune2017": "0",
+  "providingGranular202DataMay2018": "8",
+  "providingGranular202DataMay2019": "14"
+}
