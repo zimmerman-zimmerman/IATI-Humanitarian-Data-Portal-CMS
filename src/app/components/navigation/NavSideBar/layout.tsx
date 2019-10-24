@@ -37,7 +37,7 @@ export const NavSideBarLayout = (props: any) => {
         {/* main navigation container */}
         <Grid container direction="column" justify="center">
           {navLinks.map(navLink => (
-            <NavSideBarItem key={navLink.label} to={navLink.to}>
+            <NavSideBarItem key={navLink.label} to={navLink.to} data-testid={navLink.label}>
               {navLink.label}
             </NavSideBarItem>
           ))}
