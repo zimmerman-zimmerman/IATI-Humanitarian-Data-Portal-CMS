@@ -93,3 +93,7 @@ yarn-error.log*
 .out
 
 yarn.lock
+
+
+/cypress/videos
+/cypress/screenshots

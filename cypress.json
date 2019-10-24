@@ -4,18 +4,15 @@
   "chromeWebSecurity": false,
   "viewportWidth": 1440,
   "viewportHeight": 900,
-  "ignoreTestFiles": [
-    "**/__snapshots__/*",
-    "**/__image_snapshots__/*"
-  ],
+  "ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"],
   "env": {
+    "username": "mlt",
+    "password": "z9pQ~AfjJ[*;mV#:",
     "cypress-plugin-snapshots": {
       "autoCleanUp": false,
       "autopassNewSnapshots": true,
       "diffLines": 3,
-      "excludeFields": [
-        "svg"
-      ],
+      "excludeFields": ["svg"],
       "ignoreExtraArrayItems": false,
       "ignoreExtraFields": false,
       "normalizeJson": true,

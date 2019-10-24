@@ -1,15 +1,7 @@
 /// <reference types="cypress" />
 
-const textSignatory = [
-  'Add Signatory',
-  'Name',
-  'Organisation type',
-  'GB signatory',
-  'Registred Pub. ID',
-];
-
-describe('Signatory Progress', () => {
-
+describe('FAQ', () => {
+  const text = [''];
 
   it('should login ', () => {
     cy.visit('/login');
@@ -24,11 +16,11 @@ describe('Signatory Progress', () => {
       .click();
   });
 
-  it('should go to signatories page ', () => {
-    cy.visit('/signatories');
+  it('should go to faq page ', () => {
+    cy.visit('/faq');
   });
 
-  it('should show the correct texts', function() {
-    textSignatory.map(text => cy.findAllByText(text).should('exist'));
-  });
+  /*  it('should show the correct texts', function() {
+    text.map(text => cy.findAllByText(text).should('exist'));
+  });*/
 });
