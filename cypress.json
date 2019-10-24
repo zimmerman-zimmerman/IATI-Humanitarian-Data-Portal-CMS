@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://cms.mlt.nyuki.io",
+  "baseUrl": "http://localhost:3000",
   "projectId": "fgkn7a",
   "chromeWebSecurity": false,
   "viewportWidth": 1440,
