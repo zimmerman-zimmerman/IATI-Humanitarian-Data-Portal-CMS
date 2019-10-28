@@ -5,6 +5,11 @@ import { ErrorResponse } from 'app/state/api/interfaces';
 
 export interface SignatoryProgress {
   _id: string;
+
+  totalSigJune2017: string;
+  totalSigMay2018: string;
+  totalSigMay2019: string;
+
   publishingOpenDataIATIJune2017: string;
   publishingOpenDataIATIMay2018: string;
   publishingOpenDataIATIMay2019: string;

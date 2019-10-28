@@ -10,6 +10,10 @@ function SignatoryProgressPage() {
   const [state, actions] = signatoryProgressStore();
   const [localSignatoryProgress, setLocalSignatoryProgress] = React.useState({
     _id: '',
+    totalSigJune2017: '',
+    totalSigMay2018: '',
+    totalSigMay2019: '',
+
     publishingOpenDataIATIJune2017: '',
     publishingOpenDataIATIMay2018: '',
     publishingOpenDataIATIMay2019: '',
@@ -34,6 +38,10 @@ function SignatoryProgressPage() {
   React.useEffect(() => {
     setLocalSignatoryProgress({
       _id: state.SignatoryProgress._id as string,
+      totalSigJune2017: state.SignatoryProgress.totalSigJune2017,
+      totalSigMay2018: state.SignatoryProgress.totalSigMay2018,
+      totalSigMay2019: state.SignatoryProgress.totalSigMay2019,
+
       publishingOpenDataIATIJune2017:
         state.SignatoryProgress.publishingOpenDataIATIJune2017,
       publishingOpenDataIATIMay2018:
@@ -63,6 +71,27 @@ function SignatoryProgressPage() {
 
   return (
     <SignatoryProgressLayout
+      totalSigJune2017={localSignatoryProgress.totalSigJune2017}
+      setTotalSigJune2017={value =>
+        setLocalSignatoryProgress({
+          ...localSignatoryProgress,
+          totalSigJune2017: value,
+        })
+      }
+      totalSigMay2018={localSignatoryProgress.totalSigMay2018}
+      setTotalSigMay2018={value =>
+        setLocalSignatoryProgress({
+          ...localSignatoryProgress,
+          totalSigMay2018: value,
+        })
+      }
+      totalSigMay2019={localSignatoryProgress.totalSigMay2018}
+      setTotalSigMay2019={value =>
+        setLocalSignatoryProgress({
+          ...localSignatoryProgress,
+          totalSigMay2019: value,
+        })
+      }
       publishingOpenDataIATIJune2017={
         localSignatoryProgress.publishingOpenDataIATIJune2017
       }
@@ -169,6 +198,10 @@ function SignatoryProgressPage() {
       discardChanges={() =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
+          totalSigJune2017: state.SignatoryProgress.totalSigJune2017 as string,
+          totalSigMay2018: state.SignatoryProgress.totalSigMay2018 as string,
+          totalSigMay2019: state.SignatoryProgress.totalSigMay2019 as string,
+
           publishingOpenDataIATIJune2017: state.SignatoryProgress
             .publishingOpenDataIATIJune2017 as string,
           publishingOpenDataIATIMay2018: state.SignatoryProgress

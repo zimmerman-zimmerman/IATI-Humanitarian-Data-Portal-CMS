@@ -11,6 +11,9 @@ import { ErrorResponse } from 'app/state/api/interfaces';
 const signatoryProgress: SignatoryProgressModel = {
   SignatoryProgress: {
     _id: '',
+    totalSigJune2017: '',
+    totalSigMay2018: '',
+    totalSigMay2019: '',
     publishingOpenDataIATIJune2017: '',
     publishingOpenDataIATIMay2018: '',
     publishingOpenDataIATIMay2019: '',
@@ -45,6 +48,10 @@ const signatoryProgress: SignatoryProgressModel = {
     db.updateOne('signatoryProgress')
       .where(cond('_id', '==', payload._id))
       .set({
+        totalSigJune2017: payload.totalSigJune2017,
+        totalSigMay2018: payload.totalSigMay2018,
+        totalSigMay2019: payload.totalSigMay2019,
+
         publishingOpenDataIATIJune2017: payload.publishingOpenDataIATIJune2017,
         publishingOpenDataIATIMay2018: payload.publishingOpenDataIATIMay2018,
         publishingOpenDataIATIMay2019: payload.publishingOpenDataIATIMay2019,

@@ -24,14 +24,14 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
   return (
     <>
       <Page title="Signatory Progress">
-        {process.env.NODE_ENV === 'development' && (
+        {/*process.env.NODE_ENV === 'development' && (
           <>
             <button onClick={loadSignatoryProgress}>load default</button>
             <button onClick={deleteSignatoryProgress}>
               delete signatoryProgress
             </button>
           </>
-        )}
+        )*/}
         <StyledBox>
           <StyledGrid
             container
@@ -39,8 +39,46 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
             justify="flex-start"
             alignItems="flex-start"
             alignContent="flex-start"
+            spacing={0}
           >
-            <StyledGridItem item xs={12}>
+            <StyledGridItem item xs={4}>
+              <CardGrid>
+                <Typography variant="subtitle1" color="primary">
+                  Total Signatories
+                </Typography>
+                <br />
+                <SingleLineTextField
+                  fullWidth={false}
+                  label="June 2017"
+                  value={props.totalSigJune2017}
+                  id="text-org-june-input"
+                  setValue={props.setTotalSigJune2017}
+                  //setValue={()=>null}
+                />
+                <br />
+                <br />
+                <SingleLineTextField
+                  fullWidth={false}
+                  label="1st May, 2018"
+                  value={props.totalSigMay2018}
+                  id="text-org-may-2018-input"
+                  setValue={props.setTotalSigMay2018}
+                  //setValue={()=>null}
+                />
+                <br />
+                <br />
+                <SingleLineTextField
+                  fullWidth={false}
+                  label="May, 2019"
+                  value={props.totalSigMay2019}
+                  id="text-org-may-2019-input"
+                  setValue={props.setTotalSigMay2019}
+                  //setValue={()=>null}
+                />
+              </CardGrid>
+            </StyledGridItem>
+
+            <StyledGridItem item xs={4}>
               <CardGrid>
                 <Typography variant="subtitle1" color="primary">
                   Publishing open data using IATI
@@ -76,7 +114,8 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                 />
               </CardGrid>
             </StyledGridItem>
-            <StyledGridItem item xs={12}>
+
+            <StyledGridItem item xs={4}>
               <CardGrid>
                 <Typography variant="subtitle1" color="primary">
                   Publishing data on their humanitarian activities
@@ -113,7 +152,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               </CardGrid>
             </StyledGridItem>
 
-            <StyledGridItem item xs={12}>
+            <StyledGridItem item xs={4}>
               <CardGrid>
                 <Typography variant="subtitle1" color="primary">
                   using v2.02 of the IATI standard or later
@@ -150,7 +189,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               </CardGrid>
             </StyledGridItem>
 
-            <StyledGridItem item xs={12}>
+            <StyledGridItem item xs={4}>
               <CardGrid>
                 <Typography variant="subtitle1" color="primary">
                   providing more granular v2.02 data
@@ -188,6 +227,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               </CardGrid>
             </StyledGridItem>
           </StyledGrid>
+
           <SectionItem>
             <Divider />
           </SectionItem>

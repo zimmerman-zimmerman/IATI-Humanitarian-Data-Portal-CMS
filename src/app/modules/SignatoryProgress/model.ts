@@ -1,4 +1,11 @@
 export type SignatoryProgressModel = {
+  totalSigJune2017: string;
+  setTotalSigJune2017: Function;
+  totalSigMay2018: string;
+  setTotalSigMay2018: Function;
+  totalSigMay2019: string;
+  setTotalSigMay2019: Function;
+
   publishingOpenDataIATIJune2017: string;
   setPublishingOpenDataIATIJune2017: Function;
   publishingOpenDataIATIMay2018: string;
