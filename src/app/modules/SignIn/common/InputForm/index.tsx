@@ -52,6 +52,7 @@ export const InputForm = (props: LayoutModel) => {
           id="login-email"
           value={props.email}
           setValue={props.setEmail}
+          data-testid="login-email"
         />
         <FormPasswordField
           fullWidth
@@ -61,11 +62,13 @@ export const InputForm = (props: LayoutModel) => {
           showPass={props.showPass}
           setValue={props.setPassword}
           setShowPass={props.setShowPass}
+          data-testid="login-password"
         />
         <ContainedButton
           text="Sign in"
           onClick={() => props.login()}
           disabled={props.email === '' || props.password === ''}
+          data-testid="login-button"
         />
       </Form>
     </Container>

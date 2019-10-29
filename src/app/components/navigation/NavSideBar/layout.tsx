@@ -3,9 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* components */
-import { Typography, Grid } from '@material-ui/core';
-import { NavSideBarItem } from 'app/components/navigation/NavSideBar/common/NavSideBarItem';
 import color from 'app/theme/color';
+import { Typography, Grid } from '@material-ui/core';
+import { navLinks } from 'app/components/navigation/NavSideBar/mock';
+import { NavSideBarItem } from 'app/components/navigation/NavSideBar/common/NavSideBarItem';
 
 const MenuContainer = styled.div`
   display: flex;
@@ -28,22 +29,18 @@ const Version = styled(Typography)`
   }
 `;
 
-export const NavSideBarLayout = () => {
+export const NavSideBarLayout = (props: any) => {
   return (
     <Grid item xs={3} sm={2} md={2} lg={2} xl={2}>
       <MenuContainer>
-        <NavSideBarItem>Sign out</NavSideBarItem>
+        <NavSideBarItem onClick={props.logout}>Sign out</NavSideBarItem>
         {/* main navigation container */}
         <Grid container direction="column" justify="center">
-          {/** todo: this can be optimised by moving the paths and names of the items to a mock file and then map through that data */}
-          <NavSideBarItem to="/signatoryProgress">
-            Signatory Progress
-          </NavSideBarItem>
-          <NavSideBarItem to="/signatories">Signatories</NavSideBarItem>
-          <NavSideBarItem to="/settings">Settings</NavSideBarItem>
-          <NavSideBarItem to="/faq">FAQ Text</NavSideBarItem>
-          <NavSideBarItem to="/CCTRIs">CCTRIs Text</NavSideBarItem>
-          <NavSideBarItem to="/tooltips">Tooltips Text</NavSideBarItem>
+          {navLinks.map(navLink => (
+            <NavSideBarItem key={navLink.label} to={navLink.to} data-testid={navLink.label}>
+              {navLink.label}
+            </NavSideBarItem>
+          ))}
         </Grid>
         <Version variant="caption">V1</Version>
       </MenuContainer>

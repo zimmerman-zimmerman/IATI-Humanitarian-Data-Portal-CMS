@@ -4,10 +4,10 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storageSession from 'redux-persist/lib/storage/session';
 
 /* interfaces */
-import { SpaceCloudModel } from 'app/state/api/interfaces';
+import { SpaceCloudModel, SyncVariablesModel } from 'app/state/api/interfaces';
 
 /* action reducers */
-import { spaceCloud } from 'app/state/api/actionsReducers';
+import { spaceCloud, syncVariables } from 'app/state/api/actionsReducers';
 
 const persistSessionConfig = {
   key: 'session',
@@ -16,10 +16,12 @@ const persistSessionConfig = {
 
 export interface ApplicationStoreModel {
   spaceCloud: SpaceCloudModel;
+  syncVariables: SyncVariablesModel;
 }
 
 const applicationStore: ApplicationStoreModel = {
   spaceCloud,
+  syncVariables,
 };
 
 export const appStore = createStore(applicationStore, {

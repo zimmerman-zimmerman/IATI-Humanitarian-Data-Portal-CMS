@@ -13,7 +13,9 @@ export interface CCTRI {
 export interface CCTRIModel {
   cctri: CCTRI;
   error: string | null;
+  status: string | null;
   setError: Action<CCTRIModel, ErrorResponse>;
+  setStatus: Action<CCTRIModel, ErrorResponse>;
   setCCTRI: Action<CCTRIModel, CCTRI>;
   getCCTRI: Thunk<CCTRIModel>;
   editCCTRI: Thunk<CCTRIModel, CCTRI>;

@@ -21,6 +21,7 @@ import { Signatories } from 'app/modules/Signatories';
 import { Signatory } from 'app/modules/Signatory';
 import { Tooltips } from 'app/modules/Tooltips';
 import { CCTRI } from 'app/modules/CCTRI';
+import { About } from 'app/modules/About';
 import { SignatoryProgress } from 'app/modules/SignatoryProgress';
 
 // util function that redirects a user to the login page
@@ -48,26 +49,13 @@ function Routes() {
   return (
     <Suspense fallback={<PageLoader />}>
       <Switch>
-        <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
+        <Route exact path="/" render={() => <Redirect to="/signatories" />} />
 
         <Route exact path="/login" render={() => <></>} />
 
         <Route
           exact
-          path="/dashboard"
-          render={() =>
-            redirectUnAuth(
-              <Page>
-                <Link to="/management"> Go to user management </Link>{' '}
-              </Page>,
-              user
-            )
-          }
-        />
-
-        <Route
-          exact
-          path="/management"
+          path="/user-management"
           render={() =>
             redirectUnAuth(<UserManagement />, user, userRoles.admin)
           }
@@ -109,6 +97,12 @@ function Routes() {
           exact
           path="/CCTRIs"
           render={() => redirectUnAuth(<CCTRI />, user)}
+        />
+
+        <Route
+          exact
+          path="/about"
+          render={() => redirectUnAuth(<About />, user)}
         />
       </Switch>
     </Suspense>

@@ -63,12 +63,11 @@ export const ManageDialogLayout = (props: ManageDialogModel) => {
       <DialogActions>
         <ContainedButton
           backgroundColor="#ff6961"
-          // margin="0 auto 0 8px"
+          margin="0 5px"
           text="Cancel"
           onClick={() => props.handleClose()}
         />
         <ContainedButton
-          // margin="0 8px 0 auto"
           disabled={
             props.email.length === 0 ||
             props.username.length === 0 ||

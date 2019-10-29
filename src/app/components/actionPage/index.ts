@@ -8,20 +8,20 @@ import { boxShadow } from 'app/theme';
 
 export const StyledBox = styled(Box)`
   && {
-    height: calc(100% - 50px);
-    // padding-left: 40px;
-    padding-top: 40px;
-  }
-`;
-
-export const SectionItem = styled.div`
-  padding: 16px 0;
-`;
-
-export const StyledGrid = styled(Grid)`
-  && {
-    height: calc(100% - 110px);
     overflow-y: auto;
+    height: calc(100% - 113px);
+  }
+  `;
+  
+  export const SectionItem = styled.div`
+  padding: 16px 0;
+  `;
+  
+  export const StyledGrid = styled(Grid)`
+  && {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: fit-content;
   }
 `;
 

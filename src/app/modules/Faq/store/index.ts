@@ -1,6 +1,7 @@
 import { action, createComponentStore, thunk } from 'easy-peasy';
 import { cond } from 'space-api';
 import { db } from 'app/state/api/actionsReducers';
+import { getDBTableData , generateId } from 'app/state/utils/general';
 
 /* interfaces */
 import { FaqItem, FaqStoreModel, ItemEditPayload } from './interface';
@@ -9,7 +10,7 @@ import { ErrorResponse } from 'app/state/api/interfaces';
 /* utils */
 import find from 'lodash/find';
 import isEqual from 'lodash/isEqual';
-import { generateId } from 'app/state/utils/general';
+
 
 const faqs: FaqStoreModel = {
   orgFaqItems: [],
@@ -22,14 +23,9 @@ const faqs: FaqStoreModel = {
     state.faqItems = payload;
     state.orgFaqItems = payload;
   }),
-  getAllItems: thunk(async actions => {
-    const res = await db.get('faq_items').apply();
-    if (res.status === 200) {
-      actions.setAllItems(res.data.result);
-    } else {
-      actions.setError(res);
-    }
-  }),
+  getAllItems: thunk(async actions =>
+    getDBTableData('faq_items', actions.setAllItems, actions.setError)
+  ),
   addItem: action(state => {
     // state.faqItems = state.faqItems.push(payload);
     state.faqItems.push({ title: '', expl: '' });

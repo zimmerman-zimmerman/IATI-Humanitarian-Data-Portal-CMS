@@ -17,9 +17,9 @@ export const NavSideBarItem = styled(props =>
       <Typography variant="button">{props.children}</Typography>
     </NavLink>
   ) : (
-    <a {...props}>
-      <Typography variant="button">{props.children}</Typography>
-    </a>
+    <Typography variant="button" {...props}>
+      {props.children}
+    </Typography>
   )
 )`
   && {
@@ -27,6 +27,7 @@ export const NavSideBarItem = styled(props =>
     margin-bottom: 30px;
     color: ${theme.palette.text.primary};
     &:hover {
+      cursor: pointer;
       color: ${theme.palette.primary.main};
     }
   }

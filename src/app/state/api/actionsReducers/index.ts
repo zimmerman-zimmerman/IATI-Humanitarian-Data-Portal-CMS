@@ -1,7 +1,11 @@
 import { action, thunk } from 'easy-peasy';
 import { API } from 'space-api';
 
-import { SpaceCloudModel, ErrorResponse } from 'app/state/api/interfaces';
+import {
+  SpaceCloudModel,
+  SyncVariablesModel,
+  ErrorResponse,
+} from 'app/state/api/interfaces';
 import {
   loginPayload,
   UserResponse,
@@ -35,8 +39,18 @@ export const spaceCloud: SpaceCloudModel = {
       // we set the user data
       action.setUser(res);
 
-      // and load the dashboard
-      payload.history && payload.history.push('/dashboard');
+      // direct to home/signatories page
+      payload.history && payload.history.push('/');
     }
+  }),
+  logout: action((state) => {
+    state.user = null;
+  })
+};
+
+export const syncVariables: SyncVariablesModel = {
+  snackbar: '',
+  setSnackbar: action((state, payload: string) => {
+    state.snackbar = payload;
   }),
 };

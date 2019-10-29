@@ -2,15 +2,10 @@ import React from 'react';
 
 /* components */
 import { TableCell } from '@material-ui/core';
+import { Display, FilterType } from 'mui-datatables';
 
 /* interfaces */
 import { Signatory } from 'app/modules/Signatory/store/interface';
-
-// so apperantly this is how we need to pass in the display
-// option as a columns option parameter 'display'
-type displayType = 'false' | 'true' | 'excluded' | undefined;
-
-const display: displayType = 'false';
 
 export const tableBase = {
   title: 'Signatories',
@@ -164,12 +159,15 @@ export const tableBase = {
     {
       name: 'id',
       options: {
-        display,
+        filter: false,
+        viewColumns: false,
+        display: 'false' as Display,
       },
     },
     {
       name: 'Publisher',
       options: {
+        filterType: 'dropdown' as FilterType,
         customHeadRender: () => (
           <TableCell
             key="name"
@@ -183,11 +181,84 @@ export const tableBase = {
         }),
       },
     },
-    'Organisation type',
-    'GB signatory',
-    'Registred Pub. ID',
-    'IATI organisation reference',
-    'Supp. URL',
+    {
+      name: 'Organisation type',
+      options: {
+        filterType: 'dropdown' as FilterType,
+      },
+    },
+    {
+      name: 'GB signatory',
+      options: {
+        filterType: 'dropdown' as FilterType,
+      },
+    },
+    {
+      name: 'Registred Pub. ID',
+      options: {
+        filterType: 'dropdown' as FilterType,
+      },
+    },
+    {
+      name: 'IATI organisation reference',
+      options: {
+        filterType: 'dropdown' as FilterType,
+      },
+    },
+    {
+      name: 'Supp. URL',
+      options: {
+        filterType: 'dropdown' as FilterType,
+      },
+    },
+    {
+      name: 'fiscalStart',
+      options: {
+        filter: false,
+        viewColumns: false,
+        display: 'false' as Display,
+      },
+    },
+    {
+      name: 'fiscalEnd',
+      options: {
+        filter: false,
+        viewColumns: false,
+        display: 'false' as Display,
+      },
+    },
+    {
+      name: 'reportsToEU',
+      options: {
+        filter: false,
+        viewColumns: false,
+        display: 'false' as Display,
+      },
+    },
+    {
+      name: 'reportsToFTS',
+      options: {
+        filter: false,
+        viewColumns: false,
+        display: 'false' as Display,
+      },
+    },
+    {
+      name: 'reportsToFTSViaIATI',
+      options: {
+        filter: false,
+        viewColumns: false,
+        display: 'false' as Display,
+      },
+    },
+    {
+      name: 'tracability',
+      options: {
+        filter: false,
+        viewColumns: false,
+        display: 'false' as Display,
+      },
+    },
   ],
   options: {
     print: false,
@@ -218,6 +289,12 @@ export function formatTable(
       signatory.regPubId,
       signatory.IATIOrgRef,
       signatory.suppInfoUrl,
+      signatory.fiscalStart || '',
+      signatory.fiscalEnd || '',
+      signatory.reportsToEU,
+      signatory.reportsToFTS,
+      signatory.reportsToFTSViaIATI,
+      signatory.tracability || '',
     ]);
 
     if (signatory._id) {

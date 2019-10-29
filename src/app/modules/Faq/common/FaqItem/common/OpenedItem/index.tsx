@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { OpenedItModel } from './model';
 
 /* components */
-import { SingleLineTextField } from 'app/components/inputs/textfields/SingleLineTextField';
+import { SingleMultiLineTextField } from 'app/components/inputs/textfields/SingleMultiLineTextField';
 
 const ItemBase = styled.div`
   padding: 0 72px 34px 72px;
 `;
 
-const StyledTextField = styled(SingleLineTextField)`
+const StyledTextField = styled(SingleMultiLineTextField)`
   margin-bottom: 27px;
 `;
 

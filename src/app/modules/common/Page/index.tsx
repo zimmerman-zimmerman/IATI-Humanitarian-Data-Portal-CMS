@@ -16,7 +16,11 @@ const MainGrid = styled(Grid)`
   height: 100%;
 `;
 const MainContainer = styled(Container)`
-  height: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  max-height: 100vh;
+  min-height: 100vh;
+  padding-top: 40px;
 `;
 
 const Page = (props: PageProps) => {

@@ -40,40 +40,40 @@ export const SignatoryLayout = (props: SignatoryModel) => {
             <InputsCard {...props.descriptive} />
           </StyledGridItem>
         </StyledGrid>
-        <SectionItem>
-          <Divider />
-        </SectionItem>
-        <SectionItem>
-          {props.edit ? (
-            <div>
-              <ContainedButton
-                specWidth="241px"
-                margin="0 32px 0 0"
-                text="Save Change"
-                disabled={isEqual(props.signitem, props.orgSignitem)}
-                onClick={() => props.updateSignatory()}
-              />
-              <ContainedButton
-                disabled={isEqual(props.signitem, props.orgSignitem)}
-                text="Discard Change"
-                onClick={() => props.discardChanges()}
-              />
-              <ContainedButton
-                margin="0 0 0 32px"
-                text="Remove Signatory"
-                backgroundColor={Palette.error.light}
-                onClick={() => props.deleteSignatory()}
-              />
-            </div>
-          ) : (
+      </StyledBox>
+      <SectionItem>
+        <Divider />
+      </SectionItem>
+      <SectionItem>
+        {props.edit ? (
+          <div>
             <ContainedButton
               specWidth="241px"
-              text="Add"
-              onClick={() => props.addSignatory()}
+              margin="0 32px 0 0"
+              text="Save Change"
+              disabled={isEqual(props.signitem, props.orgSignitem)}
+              onClick={() => props.updateSignatory()}
             />
-          )}
-        </SectionItem>
-      </StyledBox>
+            <ContainedButton
+              disabled={isEqual(props.signitem, props.orgSignitem)}
+              text="Discard Change"
+              onClick={() => props.discardChanges()}
+            />
+            <ContainedButton
+              margin="0 0 0 32px"
+              text="Remove Signatory"
+              backgroundColor={Palette.error.light}
+              onClick={() => props.deleteSignatory()}
+            />
+          </div>
+        ) : (
+          <ContainedButton
+            specWidth="241px"
+            text="Add"
+            onClick={() => props.addSignatory()}
+          />
+        )}
+      </SectionItem>
     </Page>
   );
 };
