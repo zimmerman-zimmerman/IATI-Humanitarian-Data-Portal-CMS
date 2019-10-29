@@ -9,8 +9,6 @@ const textSignatory = [
 ];
 
 describe('Signatory Progress', () => {
-
-
   it('should login ', () => {
     cy.visit('/login');
     cy.findByTestId('login-email')
@@ -28,7 +26,7 @@ describe('Signatory Progress', () => {
     cy.visit('/signatories');
   });
 
- /* it('should show the correct texts', function() {
+  /* it('should show the correct texts', function() {
     textSignatory.map(text => cy.findAllByText(text).should('exist'));
   });*/
 });

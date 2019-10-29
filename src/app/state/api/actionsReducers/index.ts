@@ -43,9 +43,9 @@ export const spaceCloud: SpaceCloudModel = {
       payload.history && payload.history.push('/');
     }
   }),
-  logout: action((state) => {
+  logout: action(state => {
     state.user = null;
-  })
+  }),
 };
 
 export const syncVariables: SyncVariablesModel = {

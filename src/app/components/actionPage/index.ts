@@ -11,13 +11,13 @@ export const StyledBox = styled(Box)`
     overflow-y: auto;
     height: calc(100% - 113px);
   }
-  `;
-  
-  export const SectionItem = styled.div`
+`;
+
+export const SectionItem = styled.div`
   padding: 16px 0;
-  `;
-  
-  export const StyledGrid = styled(Grid)`
+`;
+
+export const StyledGrid = styled(Grid)`
   && {
     overflow-y: auto;
     overflow-x: hidden;

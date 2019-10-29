@@ -11,7 +11,7 @@ import { SignatoryProgressModel } from './model';
 
 import { Divider } from 'app/components/general/divider/divider';
 
-import { SingleLineTextField } from '../../components/inputs/textfields/SingleLineTextField';
+import { SingleMultiLineTextField } from '../../components/inputs/textfields/SingleMultiLineTextField';
 import { ContainedButton } from '../../components/inputs/buttons/ContainedButton';
 import {
   loadSignatoryProgress,
@@ -47,7 +47,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                   Total Signatories
                 </Typography>
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="June 2017"
                   value={props.totalSigJune2017}
@@ -57,7 +57,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                 />
                 <br />
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="1st May, 2018"
                   value={props.totalSigMay2018}
@@ -67,7 +67,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                 />
                 <br />
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="May, 2019"
                   value={props.totalSigMay2019}
@@ -84,7 +84,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                   Publishing open data using IATI
                 </Typography>
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="June 2017"
                   value={props.publishingOpenDataIATIJune2017}
@@ -94,7 +94,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                 />
                 <br />
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="1st May, 2018"
                   value={props.publishingOpenDataIATIMay2018}
@@ -104,7 +104,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                 />
                 <br />
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="May, 2019"
                   value={props.publishingOpenDataIATIMay2019}
@@ -121,7 +121,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                   Publishing data on their humanitarian activities
                 </Typography>
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="June 2017"
                   value={props.publishingHumanitarianActivitiesJune2017}
@@ -131,7 +131,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                 />
                 <br />
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="1st May, 2018"
                   value={props.publishingHumanitarianActivitiesMay2018}
@@ -141,7 +141,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                 />
                 <br />
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="May, 2019"
                   value={props.publishingHumanitarianActivitiesMay2019}
@@ -158,7 +158,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                   using v2.02 of the IATI standard or later
                 </Typography>
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="June 2017"
                   value={props.using202OrLaterJune2017}
@@ -168,7 +168,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                 />
                 <br />
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="1st May, 2018"
                   value={props.using202OrLaterMay2018}
@@ -178,7 +178,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                 />
                 <br />
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="May, 2019"
                   value={props.using202OrLaterMay2019}
@@ -196,7 +196,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                 </Typography>
                 <br />
 
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="June 2017"
                   value={props.providingGranular202DataJune2017}
@@ -206,7 +206,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                 />
                 <br />
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="1st May, 2018"
                   value={props.providingGranular202DataMay2018}
@@ -216,7 +216,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                 />
                 <br />
                 <br />
-                <SingleLineTextField
+                <SingleMultiLineTextField
                   fullWidth={false}
                   label="May, 2019"
                   value={props.providingGranular202DataMay2019}

@@ -40,7 +40,7 @@ const cctri: CCTRIModel = {
         body: payload.body,
       })
       .apply()
-      .then(res => actions.setStatus(res));;
+      .then(res => actions.setStatus(res));
     actions.setCCTRI(payload);
   }),
 };
