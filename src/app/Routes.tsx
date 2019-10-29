@@ -21,7 +21,7 @@ import { Signatories } from 'app/modules/Signatories';
 import { Signatory } from 'app/modules/Signatory';
 import { Tooltips } from 'app/modules/Tooltips';
 import { CCTRI } from 'app/modules/CCTRI';
-import { SignatoryProgress} from 'app/modules/SignatoryProgress';
+import { SignatoryProgress } from 'app/modules/SignatoryProgress';
 
 // util function that redirects a user to the login page
 // if they're not signed-in

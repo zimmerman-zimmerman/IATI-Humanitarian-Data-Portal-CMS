@@ -34,7 +34,7 @@ const cctri: CCTRIModel = {
         summary: payload.summary,
         body: payload.body,
       })
-      .apply()
+      .apply();
     actions.setCCTRI(payload);
   }),
 };

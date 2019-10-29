@@ -19,7 +19,7 @@ const tooltips: TooltipsModel = {
   }),
   editTooltip: thunk(async (actions, payload: any) => {
     db.updateOne('tooltips')
-      .where(cond('_id', "==", payload.id))
+      .where(cond('_id', '==', payload.id))
       .set({ ...payload.object })
       .apply()
       .then(async () => {
