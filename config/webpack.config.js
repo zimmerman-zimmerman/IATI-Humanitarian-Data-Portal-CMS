@@ -488,7 +488,7 @@ module.exports = function(webpackEnv) {
                 minify: {
                   removeComments: true,
                   collapseWhitespace: true,
-                  removeRedundantAttributes: false,
+                  removeRedundantAttributes: true,
                   useShortDoctype: true,
                   removeEmptyAttributes: true,
                   removeStyleLinkTypeAttributes: true,
