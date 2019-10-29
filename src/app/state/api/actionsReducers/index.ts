@@ -39,8 +39,8 @@ export const spaceCloud: SpaceCloudModel = {
       // we set the user data
       action.setUser(res);
 
-      // and load the dashboard
-      payload.history && payload.history.push('/dashboard');
+      // direct to home/signatories page
+      payload.history && payload.history.push('/');
     }
   }),
   logout: action((state) => {

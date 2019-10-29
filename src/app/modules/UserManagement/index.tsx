@@ -40,7 +40,7 @@ export function UserManagement() {
   }
 
   function handleUserUpdated(newData) {
-    actions.createAccount(newData);
+    actions.updateUser(newData);
     setOpen(false);
   }
 

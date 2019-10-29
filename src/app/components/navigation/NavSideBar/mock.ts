@@ -1,4 +1,5 @@
 export const navLinks = [
+  { to: '/user-management', label: 'User Management' },
   { to: '/signatories', label: 'Signatories' },
   { to: '/about', label: 'About Text' },
   { to: '/settings', label: 'Settings' },

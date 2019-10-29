@@ -48,26 +48,13 @@ function Routes() {
   return (
     <Suspense fallback={<PageLoader />}>
       <Switch>
-        <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
+        <Route exact path="/" render={() => <Redirect to="/signatories" />} />
 
         <Route exact path="/login" render={() => <></>} />
 
         <Route
           exact
-          path="/dashboard"
-          render={() =>
-            redirectUnAuth(
-              <Page>
-                <Link to="/management"> Go to user management </Link>
-              </Page>,
-              user
-            )
-          }
-        />
-
-        <Route
-          exact
-          path="/management"
+          path="/user-management"
           render={() =>
             redirectUnAuth(<UserManagement />, user, userRoles.admin)
           }
