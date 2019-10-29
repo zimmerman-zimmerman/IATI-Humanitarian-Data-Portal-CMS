@@ -8,7 +8,7 @@
 	},
 	{
 		"page": "Signatory Progress",
-		"title": "Provides granular v2.02 data",
+		"title": "Providing granular v2.02 data",
 		"purpose": "How many Signatories are using any of the specific humanitarian fields that were added into the IATI Standard at v2.02",
 		"whyGB": "",
 		"calculation": "No of Signatories that have at least 1 IATI activity that are using any of: Glide codes (via humanitarian-scope) UN HRP codes  (via humanitarian-scope) Clusters (via sector/@vocab = 10)"
@@ -36,7 +36,7 @@
 	},
 	{
 		"page": "Signatory Progress",
-		"title": "Publishing IATI tracability info",
+		"title": "Publishing IATI traceability info",
 		"purpose": "How many Signatories are using the mechanisms within IATI to enable data users to potentially â€˜follow the moneyâ€™ through the funding and delivery chain",
 		"whyGB": "",
 		"calculation": "No of Signatories that have at least 1 IATI activity where at least 1 Incoming Fund type transaction has the following specified and it contains a valid format value: transaction/provider-org/@provider-activity-id"
