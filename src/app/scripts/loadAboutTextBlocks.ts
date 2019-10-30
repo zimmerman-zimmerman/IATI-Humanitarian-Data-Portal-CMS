@@ -10,7 +10,7 @@ export function loadAboutTextBlocks() {
         _id: generateId(),
         title: block.title,
         body: block.body,
-        moreLink: block.moreLink
+        moreLink: block.moreLink,
       }))
     )
     .apply();

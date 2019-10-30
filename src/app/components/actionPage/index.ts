@@ -11,13 +11,13 @@ export const StyledBox = styled(Box)`
     overflow-y: auto;
     height: calc(100% - 113px);
   }
-  `;
-  
-  export const SectionItem = styled.div`
+`;
+
+export const SectionItem = styled.div`
   padding: 16px 0;
-  `;
-  
-  export const StyledGrid = styled(Grid)`
+`;
+
+export const StyledGrid = styled(Grid)`
   && {
     overflow-y: auto;
     overflow-x: hidden;
@@ -30,11 +30,11 @@ export const StyledGridItem = styled(Grid)`
     background-color: ${color.whiteOrFontlightbase};
     margin: 16px 0;
     box-shadow: ${boxShadow};
-    &:first-child {
-      margin-top: 0;
-    }
-    &:last-child {
-      padding-bottom: 0;
-    }
+    // &:first-child {
+    //   margin-top: 0;
+    // }
+    // &:last-child {
+    //   padding-bottom: 0;
+    // }
   }
 `;

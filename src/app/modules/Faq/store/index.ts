@@ -1,7 +1,7 @@
 import { action, createComponentStore, thunk } from 'easy-peasy';
 import { cond } from 'space-api';
 import { db } from 'app/state/api/actionsReducers';
-import { getDBTableData , generateId } from 'app/state/utils/general';
+import { getDBTableData, generateId } from 'app/state/utils/general';
 
 /* interfaces */
 import { FaqItem, FaqStoreModel, ItemEditPayload } from './interface';
@@ -10,7 +10,6 @@ import { ErrorResponse } from 'app/state/api/interfaces';
 /* utils */
 import find from 'lodash/find';
 import isEqual from 'lodash/isEqual';
-
 
 const faqs: FaqStoreModel = {
   orgFaqItems: [],

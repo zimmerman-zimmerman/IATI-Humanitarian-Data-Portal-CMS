@@ -12,7 +12,7 @@ import styled from 'styled-components';
 import { Typography } from 'app/theme';
 
 export const CardGrid = styled(Grid)`
-  padding: 32px; 96px; 56px; 32px;
+  padding: 32px;96px; 56px; 32px;
 `;
 
 //TODO: this should be just MuiTypography component

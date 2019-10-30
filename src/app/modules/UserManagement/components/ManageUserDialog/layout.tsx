@@ -15,7 +15,6 @@ import { FormSingleLineField } from 'app/components/inputs/textfields/FormSingle
 import { SimpleSelect } from 'app/components/inputs/Select/SimpleSelect';
 
 export const ManageDialogLayout = (props: ManageDialogModel) => {
-
   return (
     <Dialog
       open={props.open}

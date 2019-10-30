@@ -2,8 +2,6 @@
 const textAbout = ['Title', 'Body', 'More link (optional)'];
 
 describe('About', () => {
-
-
   it('should login ', () => {
     cy.visit('/login');
     cy.findByTestId('login-email')
