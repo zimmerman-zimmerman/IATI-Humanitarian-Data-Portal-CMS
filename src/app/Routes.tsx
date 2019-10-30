@@ -83,7 +83,7 @@ function Routes() {
 
         <Route
           exact
-          path="/signatoryProgress"
+          path="/signatory-progress"
           render={() => redirectUnAuth(<SignatoryProgress />, user)}
         />
 
