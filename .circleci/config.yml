@@ -69,7 +69,7 @@ jobs:
           name: Upload build folder to target host
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              rsync -O -ave ssh ~/mlt-cms/build/ "$PROD_SSH_USER"@"$PROD_SSH_HOST":~/mlt-cms/build
+              rsync -O -ave ssh ~/mlt-cms/build/ "$SSH_USER"@"$PROD_SSH_HOST":~/mlt-cms/build
             elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
               rsync -O -ave ssh ~/mlt-cms/build/ "$SSH_USER"@"$SSH_HOST":~/mlt-cms/build
             elif [ "${CIRCLE_BRANCH}" == "feature" ]; then
@@ -92,7 +92,7 @@ jobs:
           # TODO: update update this deployment accordingly when we have more than one environment
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ssh "$PROD_SSH_USER"@"$PROD_SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$PROD_SSH_PASS"' | sudo -S service supervisor restart"
+              ssh "$SSH_USER"@"$PROD_SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$PROD_SSH_PASS"' | sudo -S service supervisor restart"
             elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
               ssh "$SSH_USER"@"$SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$SSH_PASS"' | sudo -S service supervisor restart"
             elif [ "${CIRCLE_BRANCH}" == "production" ]; then
@@ -211,7 +211,7 @@ jobs:
           name: Send report files to droplet
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                rsync -O -ave ssh ./reports/ "$PROD_SSH_USER"@"$PROD_SSH_HOST":~/mlt-cms/lighthouse-reports
+                rsync -O -ave ssh ./reports/ "$SSH_USER"@"$PROD_SSH_HOST":~/mlt-cms/lighthouse-reports
             elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
                 rsync -O -ave ssh ./reports/ "$SSH_USER"@"$SSH_HOST":~/mlt-cms/lighthouse-reports
             elif [ "${CIRCLE_BRANCH}" == "feature" ]; then
