@@ -63,6 +63,7 @@
   "better-comments.highlightPlainText": true,
   "sync.quietSync": true,
   "editor.suggestSelection": "first",
+  "vsintellicode.typescript.completionsEnabled": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "vsintellicode.python.completionsEnabled": false,
   "git.autofetch": false,
@@ -132,5 +133,7 @@
       "name": "Vue Green",
       "value": "#42b883"
     }
-  ]
+  ],
+  "peacock.affectAccentBorders": true,
+  "peacock.affectTabActiveBorder": true
 }

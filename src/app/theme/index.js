@@ -60,10 +60,12 @@ export const Palette = {
     selected: 'rgba(0, 0, 0, 0.14)',
     disabled: '#a1aebd',
     disabledBackground: '#f0f3f7',
-  },
+  }
 };
 
-const Weight = {
+export const boxShadow = '0 0 2px 1px rgba(130, 136, 148, 0.08);';
+
+export const Weight = {
   light: 200,
   regular: 300,
   medium: 500,
@@ -212,11 +214,21 @@ export default createMuiTheme({
   shape: Shape,
   zIndex: zIndex,
   overrides: {
+    MuiInputLabel: {
+      root: {
+        fontSize: 12,
+        fontWeight: 'normal',
+        color: Palette.text.primary,
+      },
+    },
     MUIDataTable: {
       paper: {
         boxShadow: 'none',
         backgroundColor: 'transparent',
       },
+      responsiveScroll: {
+        maxHeight: 'calc(100vh - 10vh - 67px - 20px)'
+      }
     },
     MUIDataTableToolbar: {
       root: {
@@ -228,6 +240,23 @@ export default createMuiTheme({
       },
       titleText: {
         fontSize: 20,
+      },
+    },
+    MuiInputAdornment: {
+      positionEnd: {
+        right: 0,
+        position: 'absolute',
+      },
+    },
+    MuiButton: {
+      root: {
+        '&disabled': {
+          background: Palette.grey[40],
+          color: Palette.text.disabled,
+        },
+      },
+      label: {
+        padding: '6px 15px',
       },
     },
     MuiTableBody: {
@@ -250,6 +279,14 @@ export default createMuiTheme({
       body: {
         fontWeight: 'normal',
       },
+    },
+    MuiOutlinedInput: {
+      notchedOutline: {
+        borderColor: 'transparent',
+      },
+    },
+    MuiGrid: {
+      container: { width: '100%', height: '100%' },
     },
   },
 });

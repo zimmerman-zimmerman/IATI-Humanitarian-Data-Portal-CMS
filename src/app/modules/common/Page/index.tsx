@@ -1,54 +1,41 @@
 /* core */
 import React, { ReactNode } from 'react';
-import { Grid, Col, Row } from 'react-styled-flexboxgrid';
-import { Typography, Container } from '@material-ui/core';
 import useTitle from 'react-use/lib/useTitle';
-import { ThemeProvider } from 'styled-components';
+import { Container, Grid, Box } from '@material-ui/core';
+import styled from 'styled-components';
 
 export type PageProps = {
   title?: string;
   children?: ReactNode;
 };
 
-const theme = {
-  flexboxgrid: {
-    // Defaults
-    gridSize: 12, // columns
-    gutterWidth: 1, // rem
-    outerMargin: 2, // rem
-    mediaQuery: 'only screen',
-    container: {
-      sm: 46, // rem
-      md: 61, // rem
-      lg: 76, // rem
-    },
-    breakpoints: {
-      xs: 0, // em
-      sm: 48, // em
-      md: 64, // em
-      lg: 75, // em
-    },
-  },
-};
+const GridItem = styled(Grid)`
+  height: 100%;
+`;
+const MainGrid = styled(Grid)`
+  height: 100%;
+`;
+const MainContainer = styled(Container)`
+  height: 100vh;
+  overflow-y: auto;
+  max-height: 100vh;
+  min-height: 100vh;
+  padding-top: 40px;
+`;
 
 const Page = (props: PageProps) => {
-  useTitle(`MLT-CMS - ${props.title}`);
+  useTitle(`MLT CMS - ${props.title}`);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container>
-        <Grid>
-          <Row>
-            <Col lg={7}>
-              <Typography variant="h3" color="textPrimary">
-                {props.title}
-              </Typography>
-            </Col>
-          </Row>
-        </Grid>
-        {props.children}
-      </Container>
-    </ThemeProvider>
+    <MainContainer maxWidth="xl">
+      <MainGrid container>
+        <GridItem item md={12}>
+          <Box paddingLeft="240px" height="100%">
+            {props.children}
+          </Box>
+        </GridItem>
+      </MainGrid>
+    </MainContainer>
   );
 };
 

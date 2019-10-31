@@ -1,9 +1,9 @@
 import React from 'react';
 import { hydrate, render } from 'react-dom';
-import { createBrowserHistory } from 'history';
+// import { createBrowserHistory } from 'history';
 import App from 'app';
-import { setupNotification } from './notification';
-import * as serviceWorker from 'serviceWorker';
+// import { setupNotification } from './notification';
+// import * as serviceWorker from 'serviceWorker';
 
 const rootElement = document.getElementById('root');
 
@@ -15,10 +15,10 @@ if (rootElement != null) {
   }
 }
 
-if (process.env.REACT_APP_NODE_ENV === 'development') {
+/*if (process.env.REACT_APP_NODE_ENV === 'development') {
   serviceWorker.unregister();
 } else {
   serviceWorker.register();
-}
+}*/
 
-setupNotification();
+// setupNotification();

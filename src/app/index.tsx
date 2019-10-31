@@ -1,6 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import Providers from 'app/Providers';
+import Routes from 'app/Routes';
+import { NavSideBar } from 'app/components/navigation/NavSideBar';
+import { PositionedSnackbar } from 'app/components/general/snackbar';
 
 type AppProps = {
   openSnackbar?: boolean;
@@ -9,8 +11,9 @@ type AppProps = {
 function App(props: AppProps) {
   return (
     <Providers>
-      <Router>
-      </Router>
+      <PositionedSnackbar />
+      <NavSideBar />
+      <Routes />
     </Providers>
   );
 }

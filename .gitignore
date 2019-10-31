@@ -91,3 +91,9 @@ yarn-error.log*
 
 # storybook build ouptput
 .out
+
+yarn.lock
+
+
+/cypress/videos
+/cypress/screenshots
