@@ -84,7 +84,7 @@ jobs:
               rsync -O -ave ssh ~/mlt-cms/.out/ "$SSH_USER"@"$SSH_HOST":~/storybook
             elif [ "${CIRCLE_BRANCH}" == "feature" ]; then
               rsync -O -ave ssh ~/mlt-cms/.out/ "$SSH_USER"@"$SSH_HOST":~/storybook
-            else
+            elif [ "${CIRCLE_BRANCH}" != "master" ]; then
               rsync -O -ave ssh ~/mlt-cms/.out/ "$SSH_USER"@"$SSH_HOST":~/storybook
             fi
       - run:
