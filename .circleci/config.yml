@@ -40,6 +40,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               echo 'export REACT_APP_PROJECT_URL="$REACT_APP_PROJECT_URL_PROD"' >> $BASH_ENV
               echo 'export REACT_APP_SPACE_CLOUD_URL="$REACT_APP_SPACE_CLOUD_URL_PROD"' >> $BASH_ENV
+              echo 'export REACT_APP_PROJECT_ID="$REACT_APP_PROJECT_ID_PROD"' >> $BASH_ENV
             elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
               echo 'export REACT_APP_PROJECT_URL="$REACT_APP_PROJECT_URL_TEST"' >> $BASH_ENV
             elif [ "${CIRCLE_BRANCH}" == "feature" ]; then
@@ -117,6 +118,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                echo 'export CYPRESS_baseUrl="$REACT_APP_PROJECT_URL_PROD"' >> $BASH_ENV
                echo 'export REACT_APP_SPACE_CLOUD_URL="$REACT_APP_SPACE_CLOUD_URL_PROD"' >> $BASH_ENV
+               echo 'export REACT_APP_PROJECT_ID="$REACT_APP_PROJECT_ID_PROD"' >> $BASH_ENV
             elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
                echo 'export CYPRESS_baseUrl="$REACT_APP_PROJECT_URL"' >> $BASH_ENV
             elif [ "${CIRCLE_BRANCH}" == "feature" ]; then
