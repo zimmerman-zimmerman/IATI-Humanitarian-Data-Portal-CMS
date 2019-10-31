@@ -38,7 +38,8 @@ jobs:
           name: Set REACT_APP_PROJECT_URL env var
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              echo 'export REACT_APP_PROJECT_URL="$REACT_APP_PROJECT_URL_STAGING"' >> $BASH_ENV
+              echo 'export REACT_APP_PROJECT_URL="$REACT_APP_PROJECT_URL_PROD"' >> $BASH_ENV
+              echo 'export REACT_APP_SPACE_CLOUD_URL="$REACT_APP_SPACE_CLOUD_URL_PROD"' >> $BASH_ENV
             elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
               echo 'export REACT_APP_PROJECT_URL="$REACT_APP_PROJECT_URL_TEST"' >> $BASH_ENV
             elif [ "${CIRCLE_BRANCH}" == "feature" ]; then
@@ -52,7 +53,11 @@ jobs:
       - run:
           name: Add target host to known_hosts files
           command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              ssh-keyscan "$PROD_SSH_HOST" >> ~/.ssh/known_hosts
+            else
               ssh-keyscan "$SSH_HOST" >> ~/.ssh/known_hosts
+            fi
       - add_ssh_keys:
           name: Add SSH KEY
           fingerprints:
@@ -63,7 +68,7 @@ jobs:
           name: Upload build folder to target host
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              rsync -O -ave ssh ~/mlt-cms/build/ "$SSH_USER"@"$SSH_HOST":~/mlt-cms/build
+              rsync -O -ave ssh ~/mlt-cms/build/ "$PROD_SSH_USER"@"$PROD_SSH_HOST":~/mlt-cms/build
             elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
               rsync -O -ave ssh ~/mlt-cms/build/ "$SSH_USER"@"$SSH_HOST":~/mlt-cms/build
             elif [ "${CIRCLE_BRANCH}" == "feature" ]; then
@@ -74,9 +79,7 @@ jobs:
       - run:
           name: Upload storybook build folder to target host
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              rsync -O -ave ssh ~/mlt-cms/.out/ "$SSH_USER"@"$SSH_HOST":~/storybook
-            elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
+            if [ "${CIRCLE_BRANCH}" == "develop" ]; then
               rsync -O -ave ssh ~/mlt-cms/.out/ "$SSH_USER"@"$SSH_HOST":~/storybook
             elif [ "${CIRCLE_BRANCH}" == "feature" ]; then
               rsync -O -ave ssh ~/mlt-cms/.out/ "$SSH_USER"@"$SSH_HOST":~/storybook
@@ -88,7 +91,7 @@ jobs:
           # TODO: update update this deployment accordingly when we have more than one environment
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ssh "$SSH_USER"@"$SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$SSH_PASS"' | sudo -S service supervisor restart"
+              ssh "$PROD_SSH_USER"@"$PROD_SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$PROD_SSH_PASS"' | sudo -S service supervisor restart"
             elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
               ssh "$SSH_USER"@"$SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$SSH_PASS"' | sudo -S service supervisor restart"
             elif [ "${CIRCLE_BRANCH}" == "production" ]; then
@@ -112,7 +115,8 @@ jobs:
           name: Set CYPRESS_BASEURL
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-               echo 'export CYPRESS_baseUrl="$REACT_APP_PROJECT_URL"' >> $BASH_ENV
+               echo 'export CYPRESS_baseUrl="$REACT_APP_PROJECT_URL_PROD"' >> $BASH_ENV
+               echo 'export REACT_APP_SPACE_CLOUD_URL="$REACT_APP_SPACE_CLOUD_URL_PROD"' >> $BASH_ENV
             elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
                echo 'export CYPRESS_baseUrl="$REACT_APP_PROJECT_URL"' >> $BASH_ENV
             elif [ "${CIRCLE_BRANCH}" == "feature" ]; then
@@ -140,7 +144,7 @@ jobs:
           name: Run lighthouse against deployment
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-               lighthouse "$REACT_APP_PROJECT_URL" \
+               lighthouse "$REACT_APP_PROJECT_URL_PROD" \
                 --port=9222 \
                       --chrome-flags=\"--headless\" \
                       --output-path=/home/chrome/reports/anonymous-"$(echo -n $CIRCLE_SHELL_ENV | md5sum | awk '{print $1}')"-$(date +'%Y-%m-%d') \
@@ -190,7 +194,11 @@ jobs:
       - run:
           name: Add target host to known_hosts files
           command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              ssh-keyscan "$PROD_SSH_HOST" >> ~/.ssh/known_hosts
+            else
               ssh-keyscan "$SSH_HOST" >> ~/.ssh/known_hosts
+            fi
       - add_ssh_keys:
           name: Add SSH KEY
           fingerprints:
@@ -201,7 +209,7 @@ jobs:
           name: Send report files to droplet
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                rsync -O -ave ssh ./reports/ "$SSH_USER"@"$SSH_HOST":~/mlt-cms/lighthouse-reports
+                rsync -O -ave ssh ./reports/ "$PROD_SSH_USER"@"$PROD_SSH_HOST":~/mlt-cms/lighthouse-reports
             elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
                 rsync -O -ave ssh ./reports/ "$SSH_USER"@"$SSH_HOST":~/mlt-cms/lighthouse-reports
             elif [ "${CIRCLE_BRANCH}" == "feature" ]; then
