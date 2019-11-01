@@ -23,7 +23,7 @@ const BaseComponent = styled(props => <TextField {...props} />)`
   //align-items: center;
 
   justify-content: center;
-  height: 48px;
+  height: 47px;
   background-color: #f0f3f7;
   border-radius: 2px;
 
@@ -61,6 +61,7 @@ export default function DateField(props) {
         label={props.label}
         type="date"
         value={props.value}
+        placeholder="01-06-2017"
         onChange={e => props.onChange(e.target.value)}
         defaultValue={props.defaultValue}
         disabled={props.disabled}

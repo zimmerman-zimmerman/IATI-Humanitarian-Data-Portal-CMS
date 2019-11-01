@@ -8,7 +8,7 @@ type Props = {
 
 const BaseInputLabel = styled(props => <InputLabel {...props} />)`
   && {
-    font-size: 12px;
+    font-size: 10px;
     color: black;
     margin-bottom: 8px;
     font-weight: normal;

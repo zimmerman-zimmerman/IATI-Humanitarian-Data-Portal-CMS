@@ -7,9 +7,14 @@ import { signatoryProgressStore } from './store';
 import isEqual from 'lodash/isEqual';
 
 function SignatoryProgressPage() {
+  const today = new Date();
   const [state, actions] = signatoryProgressStore();
   const [localSignatoryProgress, setLocalSignatoryProgress] = React.useState({
     _id: '',
+    firstDate: '',
+    secondDate: '',
+    thirdDate: '',
+
     totalSigJune2017: '',
     totalSigMay2018: '',
     totalSigMay2019: '',
@@ -38,6 +43,10 @@ function SignatoryProgressPage() {
   React.useEffect(() => {
     setLocalSignatoryProgress({
       _id: state.SignatoryProgress._id as string,
+      firstDate: state.SignatoryProgress.firstDate,
+      secondDate: state.SignatoryProgress.secondDate,
+      thirdDate: state.SignatoryProgress.thirdDate,
+
       totalSigJune2017: state.SignatoryProgress.totalSigJune2017,
       totalSigMay2018: state.SignatoryProgress.totalSigMay2018,
       totalSigMay2019: state.SignatoryProgress.totalSigMay2019,
@@ -71,6 +80,27 @@ function SignatoryProgressPage() {
 
   return (
     <SignatoryProgressLayout
+      firstDate={localSignatoryProgress.firstDate}
+      setFirstDate={value =>
+        setLocalSignatoryProgress({
+          ...localSignatoryProgress,
+          firstDate: value,
+        })
+      }
+      secondDate={localSignatoryProgress.secondDate}
+      setSecondDate={value =>
+        setLocalSignatoryProgress({
+          ...localSignatoryProgress,
+          secondDate: value,
+        })
+      }
+      thirdDate={localSignatoryProgress.thirdDate}
+      setThirdDate={value =>
+        setLocalSignatoryProgress({
+          ...localSignatoryProgress,
+          thirdDate: value,
+        })
+      }
       totalSigJune2017={localSignatoryProgress.totalSigJune2017}
       setTotalSigJune2017={value =>
         setLocalSignatoryProgress({
@@ -198,6 +228,9 @@ function SignatoryProgressPage() {
       discardChanges={() =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
+          firstDate: state.SignatoryProgress.firstDate as string,
+          secondDate: state.SignatoryProgress.secondDate as string,
+          thirdDate: state.SignatoryProgress.thirdDate as string,
           totalSigJune2017: state.SignatoryProgress.totalSigJune2017 as string,
           totalSigMay2018: state.SignatoryProgress.totalSigMay2018 as string,
           totalSigMay2019: state.SignatoryProgress.totalSigMay2019 as string,
@@ -231,7 +264,17 @@ function SignatoryProgressPage() {
             .providingGranular202DataMay2019 as string,
         })
       }
-      saveChanges={() => actions.editSignatoryProgress(localSignatoryProgress)}
+      saveChanges={() => {
+        if (
+          new Date(localSignatoryProgress.firstDate) < today &&
+          new Date(localSignatoryProgress.secondDate) < today &&
+          new Date(localSignatoryProgress.thirdDate) < today
+        ) {
+          actions.editSignatoryProgress(localSignatoryProgress);
+        } else {
+          window.alert('selected dates must be earlier than today.');
+        }
+      }}
     />
   );
 }

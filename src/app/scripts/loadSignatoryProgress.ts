@@ -5,6 +5,9 @@ const signatoryProgressInit = require('./data/signatoryProgress.json');
 export function loadSignatoryProgress() {
   const signatoryProgressDoc = {
     _id: generateId(),
+    firstDate: signatoryProgressInit.firstDate,
+    secondDate: signatoryProgressInit.secondDate,
+    thirdDate: signatoryProgressInit.thirdDate,
 
     totalSigJune2017: signatoryProgressInit.totalSigJune2017,
     totalSigMay2018: signatoryProgressInit.totalSigMay2018,

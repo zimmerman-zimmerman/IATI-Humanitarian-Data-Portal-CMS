@@ -11,18 +11,26 @@ import { ErrorResponse } from 'app/state/api/interfaces';
 const signatoryProgress: SignatoryProgressModel = {
   SignatoryProgress: {
     _id: '',
+    firstDate: '',
+    secondDate: '',
+    thirdDate: '',
+
     totalSigJune2017: '',
     totalSigMay2018: '',
     totalSigMay2019: '',
+
     publishingOpenDataIATIJune2017: '',
     publishingOpenDataIATIMay2018: '',
     publishingOpenDataIATIMay2019: '',
+
     publishingHumanitarianActivitiesJune2017: '',
     publishingHumanitarianActivitiesMay2018: '',
     publishingHumanitarianActivitiesMay2019: '',
+
     using202OrLaterJune2017: '',
     using202OrLaterMay2018: '',
     using202OrLaterMay2019: '',
+
     providingGranular202DataJune2017: '',
     providingGranular202DataMay2018: '',
     providingGranular202DataMay2019: '',
@@ -48,6 +56,10 @@ const signatoryProgress: SignatoryProgressModel = {
     db.updateOne('signatoryProgress')
       .where(cond('_id', '==', payload._id))
       .set({
+        firstDate: payload.firstDate,
+        secondDate: payload.secondDate,
+        thirdDate: payload.thirdDate,
+
         totalSigJune2017: payload.totalSigJune2017,
         totalSigMay2018: payload.totalSigMay2018,
         totalSigMay2019: payload.totalSigMay2019,

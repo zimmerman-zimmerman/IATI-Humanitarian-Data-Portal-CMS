@@ -5,6 +5,9 @@ import { ErrorResponse } from 'app/state/api/interfaces';
 
 export interface SignatoryProgress {
   _id: string;
+  firstDate: string;
+  secondDate: string;
+  thirdDate: string;
 
   totalSigJune2017: string;
   totalSigMay2018: string;

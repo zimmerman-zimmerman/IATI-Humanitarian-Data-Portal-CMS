@@ -8,16 +8,17 @@ import {
   StyledGridItem,
 } from 'app/components/actionPage';
 import { CardGrid } from 'app/components/InputsCard';
+import DateField from '../../components/inputs/DateInputField';
 import { SignatoryProgressModel } from './model';
 
 import { Divider } from 'app/components/general/divider/divider';
 
 import { SingleMultiLineTextField } from '../../components/inputs/textfields/SingleMultiLineTextField';
 import { ContainedButton } from '../../components/inputs/buttons/ContainedButton';
-// import {
-//   loadSignatoryProgress,
-//   deleteSignatoryProgress,
-// } from 'app/scripts/loadSignatoryProgress';
+import {
+  loadSignatoryProgress,
+  deleteSignatoryProgress,
+} from 'app/scripts/loadSignatoryProgress';
 
 import { Typography } from '@material-ui/core';
 
@@ -25,13 +26,13 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
   return (
     <Page title="Signatory Progress">
       {/*process.env.NODE_ENV === 'development' && (
-          <>
-            <button onClick={loadSignatoryProgress}>load default</button>
-            <button onClick={deleteSignatoryProgress}>
-              delete signatoryProgress
-            </button>
-          </>
-        )*/}
+        <>
+          <button onClick={loadSignatoryProgress}>load default</button>
+          <button onClick={deleteSignatoryProgress}>
+            delete signatoryProgress
+          </button>
+        </>
+      )*/}
       <StyledBox>
         <StyledGrid
           container
@@ -40,6 +41,42 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
           alignItems="flex-start"
           alignContent="flex-start"
         >
+          <StyledGridItem item md={4}>
+            <CardGrid>
+              <Typography variant="subtitle1" color="primary">
+                Dates
+              </Typography>
+              <br />
+              <DateField
+                // defaultValue="2001-01-01"
+                value={props.firstDate}
+                label="First Date"
+                onChange={props.setFirstDate}
+                disabled={false}
+                fullWidth={false}
+              />
+
+              <br />
+              <DateField
+                // defaultValue="2001-01-01"
+                value={props.secondDate}
+                label="Second Date"
+                onChange={props.setSecondDate}
+                disabled={false}
+                fullWidth={false}
+              />
+
+              <br />
+              <DateField
+                // defaultValue="2001-01-01"
+                value={props.thirdDate}
+                label="Third Date"
+                onChange={props.setThirdDate}
+                disabled={false}
+                fullWidth={false}
+              />
+            </CardGrid>
+          </StyledGridItem>
           <StyledGridItem item md={4}>
             <CardGrid>
               <Typography variant="subtitle1" color="primary">

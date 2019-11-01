@@ -1,4 +1,11 @@
 export type SignatoryProgressModel = {
+  firstDate: string;
+  setFirstDate: Function;
+  secondDate: string;
+  setSecondDate: Function;
+  thirdDate: string;
+  setThirdDate: Function;
+
   totalSigJune2017: string;
   setTotalSigJune2017: Function;
   totalSigMay2018: string;
