@@ -6,40 +6,40 @@ export type SignatoryProgressModel = {
   thirdDate: string;
   setThirdDate: Function;
 
-  totalSigJune2017: string;
-  setTotalSigJune2017: Function;
-  totalSigMay2018: string;
-  setTotalSigMay2018: Function;
-  totalSigMay2019: string;
-  setTotalSigMay2019: Function;
+  totalSigFirstDate: string;
+  setTotalSigFirstDate: Function;
+  totalSigSecondDate: string;
+  setTotalSigSecondDate: Function;
+  totalSigThirdDate: string;
+  setTotalSigThirdDate: Function;
 
-  publishingOpenDataIATIJune2017: string;
-  setPublishingOpenDataIATIJune2017: Function;
-  publishingOpenDataIATIMay2018: string;
-  setPublishingOpenDataIATIMay2018: Function;
-  publishingOpenDataIATIMay2019: string;
-  setPublishingOpenDataIATIMay2019: Function;
+  publishingOpenDataIATIFirstDate: string;
+  setPublishingOpenDataIATIFirstDate: Function;
+  publishingOpenDataIATISecondDate: string;
+  setPublishingOpenDataIATISecondDate: Function;
+  publishingOpenDataIATIThirdDate: string;
+  setPublishingOpenDataIATIThirdDate: Function;
 
-  publishingHumanitarianActivitiesJune2017: string;
-  setPublishingHumanitarianActivitiesJune2017: Function;
-  publishingHumanitarianActivitiesMay2018: string;
-  setPublishingHumanitarianActivitiesMay2018: Function;
-  publishingHumanitarianActivitiesMay2019: string;
-  setPublishingHumanitarianActivitiesMay2019: Function;
+  publishingHumanitarianActivitiesFirstDate: string;
+  setPublishingHumanitarianActivitiesFirstDate: Function;
+  publishingHumanitarianActivitiesSecondDate: string;
+  setPublishingHumanitarianActivitiesSecondDate: Function;
+  publishingHumanitarianActivitiesThirdDate: string;
+  setPublishingHumanitarianActivitiesThirdDate: Function;
 
-  using202OrLaterJune2017: string;
-  setUsing202OrLaterJune2017: Function;
-  using202OrLaterMay2018: string;
-  setUsing202OrLaterMay2018: Function;
-  using202OrLaterMay2019: string;
-  setUsing202OrLaterMay2019: Function;
+  using202OrLaterFirstDate: string;
+  setUsing202OrLaterFirstDate: Function;
+  using202OrLaterSecondDate: string;
+  setUsing202OrLaterSecondDate: Function;
+  using202OrLaterThirdDate: string;
+  setUsing202OrLaterThirdDate: Function;
 
-  providingGranular202DataJune2017: string;
-  setProvidingGranular202DataJune2017: Function;
-  providingGranular202DataMay2018: string;
-  setProvidingGranular202DataMay2018: Function;
-  providingGranular202DataMay2019: string;
-  setProvidingGranular202DataMay2019: Function;
+  providingGranular202DataFirstDate: string;
+  setProvidingGranular202DataFirstDate: Function;
+  providingGranular202DataSecondDate: string;
+  setProvidingGranular202DataSecondDate: Function;
+  providingGranular202DataThirdDate: string;
+  setProvidingGranular202DataThirdDate: Function;
 
   areChanges: boolean;
   discardChanges(): void;

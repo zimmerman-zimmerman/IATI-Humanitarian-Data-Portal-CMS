@@ -9,25 +9,25 @@ export interface SignatoryProgress {
   secondDate: string;
   thirdDate: string;
 
-  totalSigJune2017: string;
-  totalSigMay2018: string;
-  totalSigMay2019: string;
+  totalSigFirstDate: string;
+  totalSigSecondDate: string;
+  totalSigThirdDate: string;
 
-  publishingOpenDataIATIJune2017: string;
-  publishingOpenDataIATIMay2018: string;
-  publishingOpenDataIATIMay2019: string;
+  publishingOpenDataIATIFirstDate: string;
+  publishingOpenDataIATISecondDate: string;
+  publishingOpenDataIATIThirdDate: string;
 
-  publishingHumanitarianActivitiesJune2017: string;
-  publishingHumanitarianActivitiesMay2018: string;
-  publishingHumanitarianActivitiesMay2019: string;
+  publishingHumanitarianActivitiesFirstDate: string;
+  publishingHumanitarianActivitiesSecondDate: string;
+  publishingHumanitarianActivitiesThirdDate: string;
 
-  using202OrLaterJune2017: string;
-  using202OrLaterMay2018: string;
-  using202OrLaterMay2019: string;
+  using202OrLaterFirstDate: string;
+  using202OrLaterSecondDate: string;
+  using202OrLaterThirdDate: string;
 
-  providingGranular202DataJune2017: string;
-  providingGranular202DataMay2018: string;
-  providingGranular202DataMay2019: string;
+  providingGranular202DataFirstDate: string;
+  providingGranular202DataSecondDate: string;
+  providingGranular202DataThirdDate: string;
 }
 
 export interface SignatoryProgressModel {

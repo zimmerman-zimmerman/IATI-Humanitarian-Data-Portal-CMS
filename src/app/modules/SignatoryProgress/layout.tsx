@@ -86,27 +86,27 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="June 2017"
-                value={props.totalSigJune2017}
+                value={props.totalSigFirstDate}
                 id="text-org-june-input"
-                setValue={props.setTotalSigJune2017}
+                setValue={props.setTotalSigFirstDate}
               />
               <br />
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="1st May, 2018"
-                value={props.totalSigMay2018}
+                value={props.totalSigSecondDate}
                 id="text-org-may-2018-input"
-                setValue={props.setTotalSigMay2018}
+                setValue={props.setTotalSigSecondDate}
               />
               <br />
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="May, 2019"
-                value={props.totalSigMay2019}
+                value={props.totalSigThirdDate}
                 id="text-org-may-2019-input"
-                setValue={props.setTotalSigMay2019}
+                setValue={props.setTotalSigThirdDate}
               />
             </CardGrid>
           </StyledGridItem>
@@ -120,27 +120,27 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="June 2017"
-                value={props.publishingOpenDataIATIJune2017}
+                value={props.publishingOpenDataIATIFirstDate}
                 id="text-org-june-input"
-                setValue={props.setPublishingOpenDataIATIJune2017}
+                setValue={props.setPublishingOpenDataIATIFirstDate}
               />
               <br />
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="1st May, 2018"
-                value={props.publishingOpenDataIATIMay2018}
+                value={props.publishingOpenDataIATISecondDate}
                 id="text-org-may-2018-input"
-                setValue={props.setPublishingOpenDataIATIMay2018}
+                setValue={props.setPublishingOpenDataIATISecondDate}
               />
               <br />
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="May, 2019"
-                value={props.publishingOpenDataIATIMay2019}
+                value={props.publishingOpenDataIATIThirdDate}
                 id="text-org-may-2019-input"
-                setValue={props.setPublishingOpenDataIATIMay2019}
+                setValue={props.setPublishingOpenDataIATIThirdDate}
               />
             </CardGrid>
           </StyledGridItem>
@@ -154,27 +154,27 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="June 2017"
-                value={props.publishingHumanitarianActivitiesJune2017}
+                value={props.publishingHumanitarianActivitiesFirstDate}
                 id="text-org-june-input"
-                setValue={props.setPublishingHumanitarianActivitiesJune2017}
+                setValue={props.setPublishingHumanitarianActivitiesFirstDate}
               />
               <br />
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="1st May, 2018"
-                value={props.publishingHumanitarianActivitiesMay2018}
+                value={props.publishingHumanitarianActivitiesSecondDate}
                 id="text-org-may-2018-input"
-                setValue={props.setPublishingHumanitarianActivitiesMay2018}
+                setValue={props.setPublishingHumanitarianActivitiesSecondDate}
               />
               <br />
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="May, 2019"
-                value={props.publishingHumanitarianActivitiesMay2019}
+                value={props.publishingHumanitarianActivitiesThirdDate}
                 id="text-org-may-2019-input"
-                setValue={props.setPublishingHumanitarianActivitiesMay2019}
+                setValue={props.setPublishingHumanitarianActivitiesThirdDate}
               />
             </CardGrid>
           </StyledGridItem>
@@ -188,27 +188,27 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="June 2017"
-                value={props.using202OrLaterJune2017}
+                value={props.using202OrLaterFirstDate}
                 id="text-org-june-input"
-                setValue={props.setUsing202OrLaterJune2017}
+                setValue={props.setUsing202OrLaterFirstDate}
               />
               <br />
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="1st May, 2018"
-                value={props.using202OrLaterMay2018}
+                value={props.using202OrLaterSecondDate}
                 id="text-org-may-2018-input"
-                setValue={props.setUsing202OrLaterMay2018}
+                setValue={props.setUsing202OrLaterSecondDate}
               />
               <br />
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="May, 2019"
-                value={props.using202OrLaterMay2019}
+                value={props.using202OrLaterThirdDate}
                 id="text-org-may-2019-input"
-                setValue={props.setUsing202OrLaterMay2019}
+                setValue={props.setUsing202OrLaterThirdDate}
               />
             </CardGrid>
           </StyledGridItem>
@@ -223,27 +223,27 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="June 2017"
-                value={props.providingGranular202DataJune2017}
+                value={props.providingGranular202DataFirstDate}
                 id="text-org-june-input"
-                setValue={props.setProvidingGranular202DataJune2017}
+                setValue={props.setProvidingGranular202DataFirstDate}
               />
               <br />
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="1st May, 2018"
-                value={props.providingGranular202DataMay2018}
+                value={props.providingGranular202DataSecondDate}
                 id="text-org-may-2018-input"
-                setValue={props.setProvidingGranular202DataMay2018}
+                setValue={props.setProvidingGranular202DataSecondDate}
               />
               <br />
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
                 label="May, 2019"
-                value={props.providingGranular202DataMay2019}
+                value={props.providingGranular202DataThirdDate}
                 id="text-org-may-2019-input"
-                setValue={props.setProvidingGranular202DataMay2019}
+                setValue={props.setProvidingGranular202DataThirdDate}
               />
             </CardGrid>
           </StyledGridItem>

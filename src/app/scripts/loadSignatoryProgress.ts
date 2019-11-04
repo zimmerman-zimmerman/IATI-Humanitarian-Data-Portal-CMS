@@ -9,34 +9,34 @@ export function loadSignatoryProgress() {
     secondDate: signatoryProgressInit.secondDate,
     thirdDate: signatoryProgressInit.thirdDate,
 
-    totalSigJune2017: signatoryProgressInit.totalSigJune2017,
-    totalSigMay2018: signatoryProgressInit.totalSigMay2018,
-    totalSigMay2019: signatoryProgressInit.totalSigMay2019,
+    totalSigFirstDate: signatoryProgressInit.totalSigFirstDate,
+    totalSigSecondDate: signatoryProgressInit.totalSigSecondDate,
+    totalSigThirdDate: signatoryProgressInit.totalSigThirdDate,
 
-    publishingOpenDataIATIJune2017:
-      signatoryProgressInit.publishingOpenDataIATIJune2017,
-    publishingOpenDataIATIMay2018:
-      signatoryProgressInit.publishingOpenDataIATIMay2018,
-    publishingOpenDataIATIMay2019:
-      signatoryProgressInit.publishingOpenDataIATIMay2019,
+    publishingOpenDataIATIFirstDate:
+      signatoryProgressInit.publishingOpenDataIATIFirstDate,
+    publishingOpenDataIATISecondDate:
+      signatoryProgressInit.publishingOpenDataIATISecondDate,
+    publishingOpenDataIATIThirdDate:
+      signatoryProgressInit.publishingOpenDataIATIThirdDate,
 
-    publishingHumanitarianActivitiesJune2017:
-      signatoryProgressInit.publishingHumanitarianActivitiesJune2017,
-    publishingHumanitarianActivitiesMay2018:
-      signatoryProgressInit.publishingHumanitarianActivitiesMay2018,
-    publishingHumanitarianActivitiesMay2019:
-      signatoryProgressInit.publishingHumanitarianActivitiesMay2019,
+    publishingHumanitarianActivitiesFirstDate:
+      signatoryProgressInit.publishingHumanitarianActivitiesFirstDate,
+    publishingHumanitarianActivitiesSecondDate:
+      signatoryProgressInit.publishingHumanitarianActivitiesSecondDate,
+    publishingHumanitarianActivitiesThirdDate:
+      signatoryProgressInit.publishingHumanitarianActivitiesThirdDate,
 
-    using202OrLaterJune2017: signatoryProgressInit.using202OrLaterJune2017,
-    using202OrLaterMay2018: signatoryProgressInit.using202OrLaterMay2018,
-    using202OrLaterMay2019: signatoryProgressInit.using202OrLaterMay2019,
+    using202OrLaterFirstDate: signatoryProgressInit.using202OrLaterFirstDate,
+    using202OrLaterSecondDate: signatoryProgressInit.using202OrLaterSecondDate,
+    using202OrLaterThirdDate: signatoryProgressInit.using202OrLaterThirdDate,
 
-    providingGranular202DataJune2017:
-      signatoryProgressInit.providingGranular202DataJune2017,
-    providingGranular202DataMay2018:
-      signatoryProgressInit.providingGranular202DataMay2018,
-    providingGranular202DataMay2019:
-      signatoryProgressInit.providingGranular202DataMay2019,
+    providingGranular202DataFirstDate:
+      signatoryProgressInit.providingGranular202DataFirstDate,
+    providingGranular202DataSecondDate:
+      signatoryProgressInit.providingGranular202DataSecondDate,
+    providingGranular202DataThirdDate:
+      signatoryProgressInit.providingGranular202DataThirdDate,
   };
 
   db.insert('signatoryProgress')

@@ -15,25 +15,25 @@ function SignatoryProgressPage() {
     secondDate: '',
     thirdDate: '',
 
-    totalSigJune2017: '',
-    totalSigMay2018: '',
-    totalSigMay2019: '',
+    totalSigFirstDate: '',
+    totalSigSecondDate: '',
+    totalSigThirdDate: '',
 
-    publishingOpenDataIATIJune2017: '',
-    publishingOpenDataIATIMay2018: '',
-    publishingOpenDataIATIMay2019: '',
+    publishingOpenDataIATIFirstDate: '',
+    publishingOpenDataIATISecondDate: '',
+    publishingOpenDataIATIThirdDate: '',
 
-    publishingHumanitarianActivitiesJune2017: '',
-    publishingHumanitarianActivitiesMay2018: '',
-    publishingHumanitarianActivitiesMay2019: '',
+    publishingHumanitarianActivitiesFirstDate: '',
+    publishingHumanitarianActivitiesSecondDate: '',
+    publishingHumanitarianActivitiesThirdDate: '',
 
-    using202OrLaterJune2017: '',
-    using202OrLaterMay2018: '',
-    using202OrLaterMay2019: '',
+    using202OrLaterFirstDate: '',
+    using202OrLaterSecondDate: '',
+    using202OrLaterThirdDate: '',
 
-    providingGranular202DataJune2017: '',
-    providingGranular202DataMay2018: '',
-    providingGranular202DataMay2019: '',
+    providingGranular202DataFirstDate: '',
+    providingGranular202DataSecondDate: '',
+    providingGranular202DataThirdDate: '',
   });
 
   React.useEffect(() => {
@@ -47,34 +47,37 @@ function SignatoryProgressPage() {
       secondDate: state.SignatoryProgress.secondDate,
       thirdDate: state.SignatoryProgress.thirdDate,
 
-      totalSigJune2017: state.SignatoryProgress.totalSigJune2017,
-      totalSigMay2018: state.SignatoryProgress.totalSigMay2018,
-      totalSigMay2019: state.SignatoryProgress.totalSigMay2019,
+      totalSigFirstDate: state.SignatoryProgress.totalSigFirstDate,
+      totalSigSecondDate: state.SignatoryProgress.totalSigSecondDate,
+      totalSigThirdDate: state.SignatoryProgress.totalSigThirdDate,
 
-      publishingOpenDataIATIJune2017:
-        state.SignatoryProgress.publishingOpenDataIATIJune2017,
-      publishingOpenDataIATIMay2018:
-        state.SignatoryProgress.publishingOpenDataIATIMay2018,
-      publishingOpenDataIATIMay2019:
-        state.SignatoryProgress.publishingOpenDataIATIMay2019,
+      publishingOpenDataIATIFirstDate:
+        state.SignatoryProgress.publishingOpenDataIATIFirstDate,
+      publishingOpenDataIATISecondDate:
+        state.SignatoryProgress.publishingOpenDataIATISecondDate,
+      publishingOpenDataIATIThirdDate:
+        state.SignatoryProgress.publishingOpenDataIATIThirdDate,
 
-      publishingHumanitarianActivitiesJune2017:
-        state.SignatoryProgress.publishingHumanitarianActivitiesJune2017,
-      publishingHumanitarianActivitiesMay2018:
-        state.SignatoryProgress.publishingHumanitarianActivitiesMay2018,
-      publishingHumanitarianActivitiesMay2019:
-        state.SignatoryProgress.publishingHumanitarianActivitiesMay2019,
+      publishingHumanitarianActivitiesFirstDate:
+        state.SignatoryProgress.publishingHumanitarianActivitiesFirstDate,
+      publishingHumanitarianActivitiesSecondDate:
+        state.SignatoryProgress.publishingHumanitarianActivitiesSecondDate,
+      publishingHumanitarianActivitiesThirdDate:
+        state.SignatoryProgress.publishingHumanitarianActivitiesThirdDate,
 
-      using202OrLaterJune2017: state.SignatoryProgress.using202OrLaterJune2017,
-      using202OrLaterMay2018: state.SignatoryProgress.using202OrLaterMay2018,
-      using202OrLaterMay2019: state.SignatoryProgress.using202OrLaterMay2019,
+      using202OrLaterFirstDate:
+        state.SignatoryProgress.using202OrLaterFirstDate,
+      using202OrLaterSecondDate:
+        state.SignatoryProgress.using202OrLaterSecondDate,
+      using202OrLaterThirdDate:
+        state.SignatoryProgress.using202OrLaterThirdDate,
 
-      providingGranular202DataJune2017:
-        state.SignatoryProgress.providingGranular202DataJune2017,
-      providingGranular202DataMay2018:
-        state.SignatoryProgress.providingGranular202DataMay2018,
-      providingGranular202DataMay2019:
-        state.SignatoryProgress.providingGranular202DataMay2019,
+      providingGranular202DataFirstDate:
+        state.SignatoryProgress.providingGranular202DataFirstDate,
+      providingGranular202DataSecondDate:
+        state.SignatoryProgress.providingGranular202DataSecondDate,
+      providingGranular202DataThirdDate:
+        state.SignatoryProgress.providingGranular202DataThirdDate,
     });
   }, [state.SignatoryProgress]);
 
@@ -101,127 +104,129 @@ function SignatoryProgressPage() {
           thirdDate: value,
         })
       }
-      totalSigJune2017={localSignatoryProgress.totalSigJune2017}
-      setTotalSigJune2017={value =>
+      totalSigFirstDate={localSignatoryProgress.totalSigFirstDate}
+      setTotalSigFirstDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          totalSigJune2017: value,
+          totalSigFirstDate: value,
         })
       }
-      totalSigMay2018={localSignatoryProgress.totalSigMay2018}
-      setTotalSigMay2018={value =>
+      totalSigSecondDate={localSignatoryProgress.totalSigSecondDate}
+      setTotalSigSecondDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          totalSigMay2018: value,
+          totalSigSecondDate: value,
         })
       }
-      totalSigMay2019={localSignatoryProgress.totalSigMay2018}
-      setTotalSigMay2019={value =>
+      totalSigThirdDate={localSignatoryProgress.totalSigThirdDate}
+      setTotalSigThirdDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          totalSigMay2019: value,
+          totalSigThirdDate: value,
         })
       }
-      publishingOpenDataIATIJune2017={
-        localSignatoryProgress.publishingOpenDataIATIJune2017
+      publishingOpenDataIATIFirstDate={
+        localSignatoryProgress.publishingOpenDataIATIFirstDate
       }
-      setPublishingOpenDataIATIJune2017={value =>
+      setPublishingOpenDataIATIFirstDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          publishingOpenDataIATIJune2017: value,
+          publishingOpenDataIATIFirstDate: value,
         })
       }
-      publishingOpenDataIATIMay2018={
-        localSignatoryProgress.publishingOpenDataIATIMay2018
+      publishingOpenDataIATISecondDate={
+        localSignatoryProgress.publishingOpenDataIATISecondDate
       }
-      setPublishingOpenDataIATIMay2018={value =>
+      setPublishingOpenDataIATISecondDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          publishingOpenDataIATIMay2018: value,
+          publishingOpenDataIATISecondDate: value,
         })
       }
-      publishingOpenDataIATIMay2019={
-        localSignatoryProgress.publishingOpenDataIATIMay2019
+      publishingOpenDataIATIThirdDate={
+        localSignatoryProgress.publishingOpenDataIATIThirdDate
       }
-      setPublishingOpenDataIATIMay2019={value =>
+      setPublishingOpenDataIATIThirdDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          publishingOpenDataIATIMay2019: value,
+          publishingOpenDataIATIThirdDate: value,
         })
       }
-      publishingHumanitarianActivitiesJune2017={
-        localSignatoryProgress.publishingHumanitarianActivitiesJune2017
+      publishingHumanitarianActivitiesFirstDate={
+        localSignatoryProgress.publishingHumanitarianActivitiesFirstDate
       }
-      setPublishingHumanitarianActivitiesJune2017={value =>
+      setPublishingHumanitarianActivitiesFirstDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          publishingHumanitarianActivitiesJune2017: value,
+          publishingHumanitarianActivitiesFirstDate: value,
         })
       }
-      publishingHumanitarianActivitiesMay2018={
-        localSignatoryProgress.publishingHumanitarianActivitiesMay2018
+      publishingHumanitarianActivitiesSecondDate={
+        localSignatoryProgress.publishingHumanitarianActivitiesSecondDate
       }
-      setPublishingHumanitarianActivitiesMay2018={value =>
+      setPublishingHumanitarianActivitiesSecondDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          publishingHumanitarianActivitiesMay2018: value,
+          publishingHumanitarianActivitiesSecondDate: value,
         })
       }
-      publishingHumanitarianActivitiesMay2019={
-        localSignatoryProgress.publishingHumanitarianActivitiesMay2019
+      publishingHumanitarianActivitiesThirdDate={
+        localSignatoryProgress.publishingHumanitarianActivitiesThirdDate
       }
-      setPublishingHumanitarianActivitiesMay2019={value =>
+      setPublishingHumanitarianActivitiesThirdDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          publishingHumanitarianActivitiesMay2019: value,
+          publishingHumanitarianActivitiesThirdDate: value,
         })
       }
-      using202OrLaterJune2017={localSignatoryProgress.using202OrLaterJune2017}
-      setUsing202OrLaterJune2017={value =>
+      using202OrLaterFirstDate={localSignatoryProgress.using202OrLaterFirstDate}
+      setUsing202OrLaterFirstDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          using202OrLaterJune2017: value,
+          using202OrLaterFirstDate: value,
         })
       }
-      using202OrLaterMay2018={localSignatoryProgress.using202OrLaterMay2018}
-      setUsing202OrLaterMay2018={value =>
+      using202OrLaterSecondDate={
+        localSignatoryProgress.using202OrLaterSecondDate
+      }
+      setUsing202OrLaterSecondDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          using202OrLaterMay2018: value,
+          using202OrLaterSecondDate: value,
         })
       }
-      using202OrLaterMay2019={localSignatoryProgress.using202OrLaterMay2019}
-      setUsing202OrLaterMay2019={value =>
+      using202OrLaterThirdDate={localSignatoryProgress.using202OrLaterThirdDate}
+      setUsing202OrLaterThirdDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          using202OrLaterMay2019: value,
+          using202OrLaterThirdDate: value,
         })
       }
-      providingGranular202DataJune2017={
-        localSignatoryProgress.providingGranular202DataJune2017
+      providingGranular202DataFirstDate={
+        localSignatoryProgress.providingGranular202DataFirstDate
       }
-      setProvidingGranular202DataJune2017={value =>
+      setProvidingGranular202DataFirstDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          providingGranular202DataJune2017: value,
+          providingGranular202DataFirstDate: value,
         })
       }
-      providingGranular202DataMay2018={
-        localSignatoryProgress.providingGranular202DataMay2018
+      providingGranular202DataSecondDate={
+        localSignatoryProgress.providingGranular202DataSecondDate
       }
-      setProvidingGranular202DataMay2018={value =>
+      setProvidingGranular202DataSecondDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          providingGranular202DataMay2018: value,
+          providingGranular202DataSecondDate: value,
         })
       }
-      providingGranular202DataMay2019={
-        localSignatoryProgress.providingGranular202DataMay2019
+      providingGranular202DataThirdDate={
+        localSignatoryProgress.providingGranular202DataThirdDate
       }
-      setProvidingGranular202DataMay2019={value =>
+      setProvidingGranular202DataThirdDate={value =>
         setLocalSignatoryProgress({
           ...localSignatoryProgress,
-          providingGranular202DataMay2019: value,
+          providingGranular202DataThirdDate: value,
         })
       }
       areChanges={!isEqual(localSignatoryProgress, state.SignatoryProgress)}
@@ -231,37 +236,40 @@ function SignatoryProgressPage() {
           firstDate: state.SignatoryProgress.firstDate as string,
           secondDate: state.SignatoryProgress.secondDate as string,
           thirdDate: state.SignatoryProgress.thirdDate as string,
-          totalSigJune2017: state.SignatoryProgress.totalSigJune2017 as string,
-          totalSigMay2018: state.SignatoryProgress.totalSigMay2018 as string,
-          totalSigMay2019: state.SignatoryProgress.totalSigMay2019 as string,
+          totalSigFirstDate: state.SignatoryProgress
+            .totalSigFirstDate as string,
+          totalSigSecondDate: state.SignatoryProgress
+            .totalSigSecondDate as string,
+          totalSigThirdDate: state.SignatoryProgress
+            .totalSigThirdDate as string,
 
-          publishingOpenDataIATIJune2017: state.SignatoryProgress
-            .publishingOpenDataIATIJune2017 as string,
-          publishingOpenDataIATIMay2018: state.SignatoryProgress
-            .publishingOpenDataIATIMay2018 as string,
-          publishingOpenDataIATIMay2019: state.SignatoryProgress
-            .publishingOpenDataIATIMay2019 as string,
+          publishingOpenDataIATIFirstDate: state.SignatoryProgress
+            .publishingOpenDataIATIFirstDate as string,
+          publishingOpenDataIATISecondDate: state.SignatoryProgress
+            .publishingOpenDataIATISecondDate as string,
+          publishingOpenDataIATIThirdDate: state.SignatoryProgress
+            .publishingOpenDataIATIThirdDate as string,
 
-          publishingHumanitarianActivitiesJune2017: state.SignatoryProgress
-            .publishingHumanitarianActivitiesJune2017 as string,
-          publishingHumanitarianActivitiesMay2018: state.SignatoryProgress
-            .publishingHumanitarianActivitiesMay2018 as string,
-          publishingHumanitarianActivitiesMay2019: state.SignatoryProgress
-            .publishingHumanitarianActivitiesMay2019 as string,
+          publishingHumanitarianActivitiesFirstDate: state.SignatoryProgress
+            .publishingHumanitarianActivitiesFirstDate as string,
+          publishingHumanitarianActivitiesSecondDate: state.SignatoryProgress
+            .publishingHumanitarianActivitiesSecondDate as string,
+          publishingHumanitarianActivitiesThirdDate: state.SignatoryProgress
+            .publishingHumanitarianActivitiesThirdDate as string,
 
-          using202OrLaterJune2017: state.SignatoryProgress
-            .using202OrLaterJune2017 as string,
-          using202OrLaterMay2018: state.SignatoryProgress
-            .using202OrLaterMay2018 as string,
-          using202OrLaterMay2019: state.SignatoryProgress
-            .using202OrLaterMay2019 as string,
+          using202OrLaterFirstDate: state.SignatoryProgress
+            .using202OrLaterFirstDate as string,
+          using202OrLaterSecondDate: state.SignatoryProgress
+            .using202OrLaterSecondDate as string,
+          using202OrLaterThirdDate: state.SignatoryProgress
+            .using202OrLaterThirdDate as string,
 
-          providingGranular202DataJune2017: state.SignatoryProgress
-            .providingGranular202DataJune2017 as string,
-          providingGranular202DataMay2018: state.SignatoryProgress
-            .providingGranular202DataMay2018 as string,
-          providingGranular202DataMay2019: state.SignatoryProgress
-            .providingGranular202DataMay2019 as string,
+          providingGranular202DataFirstDate: state.SignatoryProgress
+            .providingGranular202DataFirstDate as string,
+          providingGranular202DataSecondDate: state.SignatoryProgress
+            .providingGranular202DataSecondDate as string,
+          providingGranular202DataThirdDate: state.SignatoryProgress
+            .providingGranular202DataThirdDate as string,
         })
       }
       saveChanges={() => {

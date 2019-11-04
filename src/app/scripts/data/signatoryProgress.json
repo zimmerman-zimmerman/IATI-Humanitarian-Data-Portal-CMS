@@ -3,23 +3,23 @@
   "secondDate":"2018-05-01",
   "thirdDate":"2019-05-01",
 
-  "totalSigJune2017": "51",
-  "totalSigMay2018": "59",
-  "totalSigMay2019": "59",
+  "totalSigFirstDate": "51",
+  "totalSigSecondDate": "59",
+  "totalSigThirdDate": "59",
 
-  "publishingOpenDataIATIJune2017" : "37",
-  "publishingOpenDataIATIMay2018": "44",
-  "publishingOpenDataIATIMay2019": "48",
+  "publishingOpenDataIATIFirstDate" : "37",
+  "publishingOpenDataIATISecondDate": "44",
+  "publishingOpenDataIATIThirdDate": "48",
 
-  "publishingHumanitarianActivitiesJune2017": "31",
-  "publishingHumanitarianActivitiesMay2018": "36",
-  "publishingHumanitarianActivitiesMay2019": "43",
+  "publishingHumanitarianActivitiesFirstDate": "31",
+  "publishingHumanitarianActivitiesSecondDate": "36",
+  "publishingHumanitarianActivitiesThirdDate": "43",
 
-  "using202OrLaterJune2017": "16",
-  "using202OrLaterMay2018": "31",
-  "using202OrLaterMay2019": "41",
+  "using202OrLaterFirstDate": "16",
+  "using202OrLaterSecondDate": "31",
+  "using202OrLaterThirdDate": "41",
 
-  "providingGranular202DataJune2017": "0",
-  "providingGranular202DataMay2018": "8",
-  "providingGranular202DataMay2019": "14"
+  "providingGranular202DataFirstDate": "0",
+  "providingGranular202DataSecondDate": "8",
+  "providingGranular202DataThirdDate": "14"
 }

@@ -15,25 +15,25 @@ const signatoryProgress: SignatoryProgressModel = {
     secondDate: '',
     thirdDate: '',
 
-    totalSigJune2017: '',
-    totalSigMay2018: '',
-    totalSigMay2019: '',
+    totalSigFirstDate: '',
+    totalSigSecondDate: '',
+    totalSigThirdDate: '',
 
-    publishingOpenDataIATIJune2017: '',
-    publishingOpenDataIATIMay2018: '',
-    publishingOpenDataIATIMay2019: '',
+    publishingOpenDataIATIFirstDate: '',
+    publishingOpenDataIATISecondDate: '',
+    publishingOpenDataIATIThirdDate: '',
 
-    publishingHumanitarianActivitiesJune2017: '',
-    publishingHumanitarianActivitiesMay2018: '',
-    publishingHumanitarianActivitiesMay2019: '',
+    publishingHumanitarianActivitiesFirstDate: '',
+    publishingHumanitarianActivitiesSecondDate: '',
+    publishingHumanitarianActivitiesThirdDate: '',
 
-    using202OrLaterJune2017: '',
-    using202OrLaterMay2018: '',
-    using202OrLaterMay2019: '',
+    using202OrLaterFirstDate: '',
+    using202OrLaterSecondDate: '',
+    using202OrLaterThirdDate: '',
 
-    providingGranular202DataJune2017: '',
-    providingGranular202DataMay2018: '',
-    providingGranular202DataMay2019: '',
+    providingGranular202DataFirstDate: '',
+    providingGranular202DataSecondDate: '',
+    providingGranular202DataThirdDate: '',
   },
   error: null,
   setError: action((state, payload: ErrorResponse) => {
@@ -60,31 +60,31 @@ const signatoryProgress: SignatoryProgressModel = {
         secondDate: payload.secondDate,
         thirdDate: payload.thirdDate,
 
-        totalSigJune2017: payload.totalSigJune2017,
-        totalSigMay2018: payload.totalSigMay2018,
-        totalSigMay2019: payload.totalSigMay2019,
+        totalSigJune2017: payload.totalSigFirstDate,
+        totalSigMay2018: payload.totalSigSecondDate,
+        totalSigMay2019: payload.totalSigThirdDate,
 
-        publishingOpenDataIATIJune2017: payload.publishingOpenDataIATIJune2017,
-        publishingOpenDataIATIMay2018: payload.publishingOpenDataIATIMay2018,
-        publishingOpenDataIATIMay2019: payload.publishingOpenDataIATIMay2019,
+        publishingOpenDataIATIJune2017: payload.publishingOpenDataIATIFirstDate,
+        publishingOpenDataIATIMay2018: payload.publishingOpenDataIATISecondDate,
+        publishingOpenDataIATIMay2019: payload.publishingOpenDataIATIThirdDate,
 
         publishingHumanitarianActivitiesJune2017:
-          payload.publishingHumanitarianActivitiesJune2017,
+          payload.publishingHumanitarianActivitiesFirstDate,
         publishingHumanitarianActivitiesMay2018:
-          payload.publishingHumanitarianActivitiesMay2018,
+          payload.publishingHumanitarianActivitiesSecondDate,
         publishingHumanitarianActivitiesMay2019:
-          payload.publishingHumanitarianActivitiesMay2019,
+          payload.publishingHumanitarianActivitiesThirdDate,
 
-        using202OrLaterJune2017: payload.using202OrLaterJune2017,
-        using202OrLaterMay2018: payload.using202OrLaterMay2018,
-        using202OrLaterMay2019: payload.using202OrLaterMay2019,
+        using202OrLaterJune2017: payload.using202OrLaterFirstDate,
+        using202OrLaterMay2018: payload.using202OrLaterSecondDate,
+        using202OrLaterMay2019: payload.using202OrLaterThirdDate,
 
         providingGranular202DataJune2017:
-          payload.providingGranular202DataJune2017,
+          payload.providingGranular202DataFirstDate,
         providingGranular202DataMay2018:
-          payload.providingGranular202DataMay2018,
+          payload.providingGranular202DataSecondDate,
         providingGranular202DataMay2019:
-          payload.providingGranular202DataMay2019,
+          payload.providingGranular202DataThirdDate,
       })
       .apply();
     actions.setSignatoryProgress(payload);

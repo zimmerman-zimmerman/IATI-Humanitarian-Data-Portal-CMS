@@ -35,6 +35,12 @@ const BaseComponent = styled(props => <TextField {...props} />)`
   & [class*='MuiInputBase-input'] {
     padding: 0;
   }
+
+  & [class*='MuiInput-input'] {
+    padding: 0;
+    color: black;
+  }
+
   & [class*='MuiInputBase-root'] {
     margin: 0;
     border: initial;
