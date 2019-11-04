@@ -60,30 +60,33 @@ const signatoryProgress: SignatoryProgressModel = {
         secondDate: payload.secondDate,
         thirdDate: payload.thirdDate,
 
-        totalSigJune2017: payload.totalSigFirstDate,
-        totalSigMay2018: payload.totalSigSecondDate,
-        totalSigMay2019: payload.totalSigThirdDate,
+        totalSigFirstDate: payload.totalSigFirstDate,
+        totalSigSecondDate: payload.totalSigSecondDate,
+        totalSigThirdDate: payload.totalSigThirdDate,
 
-        publishingOpenDataIATIJune2017: payload.publishingOpenDataIATIFirstDate,
-        publishingOpenDataIATIMay2018: payload.publishingOpenDataIATISecondDate,
-        publishingOpenDataIATIMay2019: payload.publishingOpenDataIATIThirdDate,
+        publishingOpenDataIATIFirstDate:
+          payload.publishingOpenDataIATIFirstDate,
+        publishingOpenDataIATISecondDate:
+          payload.publishingOpenDataIATISecondDate,
+        publishingOpenDataIATIThirdDate:
+          payload.publishingOpenDataIATIThirdDate,
 
-        publishingHumanitarianActivitiesJune2017:
+        publishingHumanitarianActivitiesFirstDate:
           payload.publishingHumanitarianActivitiesFirstDate,
-        publishingHumanitarianActivitiesMay2018:
+        publishingHumanitarianActivitiesSecondDate:
           payload.publishingHumanitarianActivitiesSecondDate,
-        publishingHumanitarianActivitiesMay2019:
+        publishingHumanitarianActivitiesThirdDate:
           payload.publishingHumanitarianActivitiesThirdDate,
 
-        using202OrLaterJune2017: payload.using202OrLaterFirstDate,
-        using202OrLaterMay2018: payload.using202OrLaterSecondDate,
-        using202OrLaterMay2019: payload.using202OrLaterThirdDate,
+        using202OrLaterFirstDate: payload.using202OrLaterFirstDate,
+        using202OrLaterSecondDate: payload.using202OrLaterSecondDate,
+        using202OrLaterThirdDate: payload.using202OrLaterThirdDate,
 
-        providingGranular202DataJune2017:
+        providingGranular202DataFirstDate:
           payload.providingGranular202DataFirstDate,
-        providingGranular202DataMay2018:
+        providingGranular202DataSecondDate:
           payload.providingGranular202DataSecondDate,
-        providingGranular202DataMay2019:
+        providingGranular202DataThirdDate:
           payload.providingGranular202DataThirdDate,
       })
       .apply();

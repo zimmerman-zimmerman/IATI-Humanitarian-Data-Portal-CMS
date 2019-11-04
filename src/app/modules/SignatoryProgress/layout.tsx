@@ -22,6 +22,27 @@ import {
 
 import { Typography } from '@material-ui/core';
 
+const shortMonthNames = [
+  'Jan',
+  'Feb',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
+];
+
+const date = (value: Date) => {
+  return `${value.getDate()}.${
+    shortMonthNames[value.getMonth()]
+  }.${value.getFullYear()}`;
+};
+
 export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
   return (
     <Page title="Signatory Progress">
@@ -85,7 +106,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="June 2017"
+                label={date(new Date(props.firstDate))}
                 value={props.totalSigFirstDate}
                 id="text-org-june-input"
                 setValue={props.setTotalSigFirstDate}
@@ -94,7 +115,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="1st May, 2018"
+                label={date(new Date(props.secondDate))}
                 value={props.totalSigSecondDate}
                 id="text-org-may-2018-input"
                 setValue={props.setTotalSigSecondDate}
@@ -103,7 +124,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="May, 2019"
+                label={date(new Date(props.thirdDate))}
                 value={props.totalSigThirdDate}
                 id="text-org-may-2019-input"
                 setValue={props.setTotalSigThirdDate}
@@ -119,7 +140,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="June 2017"
+                label={date(new Date(props.firstDate))}
                 value={props.publishingOpenDataIATIFirstDate}
                 id="text-org-june-input"
                 setValue={props.setPublishingOpenDataIATIFirstDate}
@@ -128,7 +149,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="1st May, 2018"
+                label={date(new Date(props.secondDate))}
                 value={props.publishingOpenDataIATISecondDate}
                 id="text-org-may-2018-input"
                 setValue={props.setPublishingOpenDataIATISecondDate}
@@ -137,7 +158,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="May, 2019"
+                label={date(new Date(props.thirdDate))}
                 value={props.publishingOpenDataIATIThirdDate}
                 id="text-org-may-2019-input"
                 setValue={props.setPublishingOpenDataIATIThirdDate}
@@ -153,7 +174,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="June 2017"
+                label={date(new Date(props.firstDate))}
                 value={props.publishingHumanitarianActivitiesFirstDate}
                 id="text-org-june-input"
                 setValue={props.setPublishingHumanitarianActivitiesFirstDate}
@@ -162,7 +183,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="1st May, 2018"
+                label={date(new Date(props.secondDate))}
                 value={props.publishingHumanitarianActivitiesSecondDate}
                 id="text-org-may-2018-input"
                 setValue={props.setPublishingHumanitarianActivitiesSecondDate}
@@ -171,7 +192,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="May, 2019"
+                label={date(new Date(props.thirdDate))}
                 value={props.publishingHumanitarianActivitiesThirdDate}
                 id="text-org-may-2019-input"
                 setValue={props.setPublishingHumanitarianActivitiesThirdDate}
@@ -187,7 +208,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="June 2017"
+                label={date(new Date(props.firstDate))}
                 value={props.using202OrLaterFirstDate}
                 id="text-org-june-input"
                 setValue={props.setUsing202OrLaterFirstDate}
@@ -196,7 +217,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="1st May, 2018"
+                label={date(new Date(props.secondDate))}
                 value={props.using202OrLaterSecondDate}
                 id="text-org-may-2018-input"
                 setValue={props.setUsing202OrLaterSecondDate}
@@ -205,7 +226,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="May, 2019"
+                label={date(new Date(props.thirdDate))}
                 value={props.using202OrLaterThirdDate}
                 id="text-org-may-2019-input"
                 setValue={props.setUsing202OrLaterThirdDate}
@@ -222,7 +243,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
 
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="June 2017"
+                label={date(new Date(props.firstDate))}
                 value={props.providingGranular202DataFirstDate}
                 id="text-org-june-input"
                 setValue={props.setProvidingGranular202DataFirstDate}
@@ -231,7 +252,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="1st May, 2018"
+                label={date(new Date(props.secondDate))}
                 value={props.providingGranular202DataSecondDate}
                 id="text-org-may-2018-input"
                 setValue={props.setProvidingGranular202DataSecondDate}
@@ -240,7 +261,7 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               <br />
               <SingleMultiLineTextField
                 fullWidth={false}
-                label="May, 2019"
+                label={date(new Date(props.thirdDate))}
                 value={props.providingGranular202DataThirdDate}
                 id="text-org-may-2019-input"
                 setValue={props.setProvidingGranular202DataThirdDate}
