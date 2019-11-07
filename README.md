@@ -51,6 +51,18 @@ Note: Replace localhost with the address of your Space Cloud if you are not runn
 
 - Tooltips Text
     - Edit IATI Humanitarian Data Portal Tooltips help text
+    
+- User Management(Only accessible by an 'admin user')
+    - Add/edit/delete cms users
+    
+- Signatories Progress
+    - Manage fixed date values used for mlt-frontends signatory progress page.
+    
+## Deployment Extra Info
+  So besides the generic way of deploying the frontend of the cms. This is some extra info describing how to deploy the backend and associated things.
+  * Currently mlt deploys the cms backend(space-cloud) by running it localy on the server, as described in space-cloud deployment docs, and proxying it via the location '/' of a domain/sub-domain. One IMPORTNAT thing to note, is that as far as we've noticed you cannot proxy space-cloud as any other location than the root('/') location of your domain/sub-domain, as most pages just don't seem to work when trying to proxy like that. This is ofcourse using nginx(as its the service used for mlt), maybe it would work with other serving technologies. 
+  * Make sure to set up socket proxy for space-cloud - https://www.nginx.com/blog/websocket-nginx/ 
+  * One more thing to note is that mlt-cms is using periodic functions that happen every 24hours to update data in the cms, so these services need to be initiated for all of the cms data to be there and to be up to date. Currently its set up to run with supervisor running the scripts with the 'node' command in the frontend folder 'mlt-cms/scripts/period_scripts.js'
 
 
 ## Contributing
