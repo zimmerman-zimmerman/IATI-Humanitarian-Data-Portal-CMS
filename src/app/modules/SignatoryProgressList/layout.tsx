@@ -26,12 +26,12 @@ const TableWrapper = styled.div`
 export const SignatoryProgressListLayout = (props: SignatoriesLayoutModel) => {
   return (
     <Page title="Signatories">
-      {process.env.NODE_ENV === 'development' && (
+      {/*process.env.NODE_ENV === 'development' && (
         <>
           <button onClick={loadSignatoryProgress}>load default</button>
           <button onClick={deleteSignatoryProgress}>delete cctri</button>
         </>
-      )}
+      )*/}
       <ContainedButton
         icon={<AddIcon />}
         margin="0 0 1rem 0"

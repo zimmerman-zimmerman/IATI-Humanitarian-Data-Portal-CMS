@@ -8,6 +8,6 @@ export type SignatoryProgressModel = {
   updateSignatoryProgress: Function;
   discardChanges: Function;
   deleteSignatoryProgress: Function;
-  signitem: SignatoryProgress;
-  orgSignitem: SignatoryProgress | null;
+  signatoryProgressItem: SignatoryProgress;
+  existingSignatoryProgressItem: SignatoryProgress | null;
 };

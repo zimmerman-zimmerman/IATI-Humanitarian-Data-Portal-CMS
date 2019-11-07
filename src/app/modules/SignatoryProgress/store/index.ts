@@ -27,15 +27,15 @@ const signatoryProgressInit: SignatoryProgress = {
 };
 
 const signatoryProgress: SignatoryProgressModel = {
-  orgSignitem: null,
-  signitem: signatoryProgressInit,
+  existingSignatoryProgressItem: null,
+  signatoryProgressItem: signatoryProgressInit,
   error: null,
   setError: action((state, payload: ErrorResponse) => {
     state.error = payload.data.error;
   }),
   setSignatoryProgress: action((state, payload: SignatoryProgress) => {
-    state.signitem = payload;
-    state.orgSignitem = payload;
+    state.signatoryProgressItem = payload;
+    state.existingSignatoryProgressItem = payload;
   }),
   getSignatoryProgress: thunk(async (actions, id: string) => {
     const res = await db
@@ -50,19 +50,19 @@ const signatoryProgress: SignatoryProgressModel = {
     }
   }),
   editSignatoryProgress: action((state, payload: SignatoryProgressEdit) => {
-    state.signitem = {
-      ...state.signitem,
+    state.signatoryProgressItem = {
+      ...state.signatoryProgressItem,
       [payload.key]: payload.value,
     };
   }),
   addSignatoryProgress: thunk(
     async (actions, history: History, { getState }) => {
-      const signitem = getState().signitem;
+      const signatoryProgressItem = getState().signatoryProgressItem;
 
-      signitem._id = generateId();
+      signatoryProgressItem._id = generateId();
       await db
         .insert('signatoriesProgress')
-        .doc(signitem)
+        .doc(signatoryProgressItem)
         .apply();
 
       history.push('/signatory-progress-list');
@@ -70,20 +70,20 @@ const signatoryProgress: SignatoryProgressModel = {
   ),
   updateSignatoryProgress: thunk(
     async (actions, payload: UpdateSigProgressPayload, { getState }) => {
-      const signitem = getState().signitem;
+      const signatoryProgressItem = getState().signatoryProgressItem;
 
       await db
         .updateOne('signatoriesProgress')
         .where(cond('_id', '==', payload._id))
-        .set(signitem)
+        .set(signatoryProgressItem)
         .apply();
 
       payload.history.push('/signatory-progress-list');
     }
   ),
   discardChanges: action(state => {
-    if (state.orgSignitem) {
-      state.signitem = state.orgSignitem;
+    if (state.existingSignatoryProgressItem) {
+      state.signatoryProgressItem = state.existingSignatoryProgressItem;
     }
   }),
   deleteSignatoryProgress: thunk(async (actions, payload) => {

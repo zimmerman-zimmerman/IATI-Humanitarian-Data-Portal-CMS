@@ -31,8 +31,8 @@ export interface SignatoryProgress {
 }
 
 export interface SignatoryProgressModel {
-  orgSignitem: SignatoryProgress | null;
-  signitem: SignatoryProgress;
+  existingSignatoryProgressItem: SignatoryProgress | null;
+  signatoryProgressItem: SignatoryProgress;
   error: string | null;
   setError: Action<SignatoryProgressModel, ErrorResponse>;
   setSignatoryProgress: Action<SignatoryProgressModel, SignatoryProgress>;

@@ -10,6 +10,7 @@ import styled from 'styled-components';
 
 /* styles */
 import { Typography } from 'app/theme';
+import DateField from '../inputs/DateInputField';
 
 export const CardGrid = styled(Grid)`
   padding: 32px;96px; 56px; 32px;
@@ -35,14 +36,24 @@ export const InputsCard = (props: InputsCardModel) => {
     >
       <Grid item xs={12}>
         {props.titleInput ? (
-          <SingleMultiLineTextField
-            fullWidth
-            label={props.titleInput.label}
-            id={`text-${props.title}-title-input`}
-            placeholder={props.titleInput.placeholder || ''}
-            value={props.titleInput.value}
-            setValue={props.titleInput.setValue}
-          />
+          props.titleInput.type === 'date' ? (
+            <DateField
+              value={props.titleInput.value}
+              label={props.titleInput.label}
+              onChange={props.titleInput.setValue}
+              disabled={false}
+              fullWidth={false}
+            />
+          ) : (
+            <SingleMultiLineTextField
+              fullWidth
+              label={props.titleInput.label}
+              id={`text-${props.title}-title-input`}
+              placeholder={props.titleInput.placeholder || ''}
+              value={props.titleInput.value}
+              setValue={props.titleInput.setValue}
+            />
+          )
         ) : (
           <CardTitle>{props.title}</CardTitle>
         )}

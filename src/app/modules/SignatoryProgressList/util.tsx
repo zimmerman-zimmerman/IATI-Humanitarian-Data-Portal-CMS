@@ -1,7 +1,7 @@
 import React from 'react';
 
 /* components */
-import { TableCell } from '@material-ui/core';
+
 import { Display, FilterType } from 'mui-datatables';
 
 /* interfaces */
@@ -26,9 +26,7 @@ export const tableBase = {
     {
       name: 'Date',
       options: {
-        filter: false,
-        viewColumns: true,
-        display: 'true' as Display,
+        filterType: 'dropdown' as FilterType,
       },
     },
 

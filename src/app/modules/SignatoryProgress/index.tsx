@@ -22,9 +22,9 @@ export function SignatoryProgressComp(props) {
     signatoryProgressDetail: {
       title: 'Signatory Progress',
       titleInput: {
-        value: state.signitem.Date,
-        label: 'Enter Date',
-        type: 'Date',
+        value: state.signatoryProgressItem.Date,
+        label: 'Enter Date (*Date must be today or later than today)',
+        type: 'date',
         setValue: value =>
           actions.editSignatoryProgress({ key: 'Date', value }),
         placeholder: '0000/00/00',
@@ -32,7 +32,7 @@ export function SignatoryProgressComp(props) {
       data: [
         {
           label: 'Total Signatories',
-          value: state.signitem.totalSig,
+          value: state.signatoryProgressItem.totalSig,
           type: 'text',
           setValue: value =>
             actions.editSignatoryProgress({ key: 'totalSig', value }),
@@ -40,7 +40,7 @@ export function SignatoryProgressComp(props) {
         },
         {
           label: 'Publishing Open Data using IATI',
-          value: state.signitem.publishingOpenDataIATI,
+          value: state.signatoryProgressItem.publishingOpenDataIATI,
           type: 'text',
           setValue: value =>
             actions.editSignatoryProgress({
@@ -48,11 +48,11 @@ export function SignatoryProgressComp(props) {
               value,
             }),
           //options: orgTypeOptions,
-          placeholder: '0',
+          placeholder: '00',
         },
         {
           label: 'Publishing data on their humanitarian activities',
-          value: state.signitem.publishingHumanitarianActivities,
+          value: state.signatoryProgressItem.publishingHumanitarianActivities,
           type: 'text',
           setValue: value =>
             actions.editSignatoryProgress({
@@ -64,21 +64,21 @@ export function SignatoryProgressComp(props) {
         {
           label: 'Using v2.02 of the IATI standard or Later ',
           type: 'text',
-          value: state.signitem.using202OrLater,
+          value: state.signatoryProgressItem.using202OrLater,
           setValue: value =>
             actions.editSignatoryProgress({ key: 'using202OrLater', value }),
-          placeholder: '0',
+          placeholder: '00',
         },
         {
           label: 'Providing more granular v2.02 data ',
           type: 'text',
-          value: state.signitem.providingGranular202Data,
+          value: state.signatoryProgressItem.providingGranular202Data,
           setValue: value =>
             actions.editSignatoryProgress({
               key: 'providingGranular202Data',
               value,
             }),
-          placeholder: '0',
+          placeholder: '00',
         },
       ],
     },
@@ -86,8 +86,8 @@ export function SignatoryProgressComp(props) {
 
   return (
     <SignatoryProgressLayout
-      signitem={state.signitem}
-      orgSignitem={state.orgSignitem}
+      signatoryProgressItem={state.signatoryProgressItem}
+      existingSignatoryProgressItem={state.existingSignatoryProgressItem}
       edit={props.history.location.pathname.indexOf('edit-signatory') !== -1}
       signatoryProgressDetail={inputCardData.signatoryProgressDetail}
       addSignatoryProgress={() => actions.addSignatoryProgress(props.history)}

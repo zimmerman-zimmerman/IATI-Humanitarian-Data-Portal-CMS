@@ -45,11 +45,17 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               specWidth="241px"
               margin="0 32px 0 0"
               text="Save Change"
-              disabled={isEqual(props.signitem, props.orgSignitem)}
+              disabled={isEqual(
+                props.signatoryProgressItem,
+                props.existingSignatoryProgressItem
+              )}
               onClick={() => props.updateSignatoryProgress()}
             />
             <ContainedButton
-              disabled={isEqual(props.signitem, props.orgSignitem)}
+              disabled={isEqual(
+                props.signatoryProgressItem,
+                props.existingSignatoryProgressItem
+              )}
               text="Discard Change"
               onClick={() => props.discardChanges()}
             />
@@ -64,7 +70,45 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
           <ContainedButton
             specWidth="241px"
             text="Add"
-            onClick={() => props.addSignatoryProgress()}
+            disabled={
+              props.signatoryProgressItem.Date === '' ||
+              new Date(props.signatoryProgressItem.Date) > new Date() ||
+              props.signatoryProgressItem.totalSig === '' ||
+              props.signatoryProgressItem.publishingHumanitarianActivities ===
+                '' ||
+              props.signatoryProgressItem.providingGranular202Data === '' ||
+              props.signatoryProgressItem.publishingOpenDataIATI === '' ||
+              props.signatoryProgressItem.using202OrLater === ''
+            }
+            onClick={() => {
+              if (
+                isNaN(parseInt(props.signatoryProgressItem.totalSig, 10)) ||
+                isNaN(
+                  parseInt(
+                    props.signatoryProgressItem.publishingOpenDataIATI,
+                    10
+                  )
+                ) ||
+                isNaN(
+                  parseInt(
+                    props.signatoryProgressItem
+                      .publishingHumanitarianActivities,
+                    10
+                  )
+                ) ||
+                isNaN(
+                  parseInt(
+                    props.signatoryProgressItem.providingGranular202Data,
+                    10
+                  )
+                ) ||
+                isNaN(parseInt(props.signatoryProgressItem.using202OrLater, 10))
+              ) {
+                window.alert('Values should be numbers');
+              } else {
+                props.addSignatoryProgress();
+              }
+            }}
           />
         )}
       </SectionItem>
