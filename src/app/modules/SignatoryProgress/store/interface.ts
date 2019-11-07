@@ -1,37 +1,51 @@
 import { Action, Thunk } from 'easy-peasy';
+import { History } from 'history';
 
 /* interfaces */
 import { ErrorResponse } from 'app/state/api/interfaces';
 
-export interface SignatoryProgress {
+export interface UpdateSigProgressPayload {
+  history: History;
   _id: string;
+}
 
-  totalSigJune2017: string;
-  totalSigMay2018: string;
-  totalSigMay2019: string;
+export interface SignatoryProgressEdit {
+  key:
+    | 'Date'
+    | 'totalSig'
+    | 'publishingOpenDataIATI'
+    | 'publishingHumanitarianActivities'
+    | 'using202OrLater'
+    | 'providingGranular202Data';
+  value: string;
+}
 
-  publishingOpenDataIATIJune2017: string;
-  publishingOpenDataIATIMay2018: string;
-  publishingOpenDataIATIMay2019: string;
-
-  publishingHumanitarianActivitiesJune2017: string;
-  publishingHumanitarianActivitiesMay2018: string;
-  publishingHumanitarianActivitiesMay2019: string;
-
-  using202OrLaterJune2017: string;
-  using202OrLaterMay2018: string;
-  using202OrLaterMay2019: string;
-
-  providingGranular202DataJune2017: string;
-  providingGranular202DataMay2018: string;
-  providingGranular202DataMay2019: string;
+export interface SignatoryProgress {
+  _id?: string;
+  Date: string;
+  totalSig: string;
+  publishingOpenDataIATI: string;
+  publishingHumanitarianActivities: string;
+  using202OrLater: string;
+  providingGranular202Data: string;
 }
 
 export interface SignatoryProgressModel {
-  SignatoryProgress: SignatoryProgress;
+  orgSignitem: SignatoryProgress | null;
+  signitem: SignatoryProgress;
   error: string | null;
   setError: Action<SignatoryProgressModel, ErrorResponse>;
   setSignatoryProgress: Action<SignatoryProgressModel, SignatoryProgress>;
-  getSignatoryProgress: Thunk<SignatoryProgressModel>;
-  editSignatoryProgress: Thunk<SignatoryProgressModel, SignatoryProgress>;
+  getSignatoryProgress: Thunk<SignatoryProgressModel, string>;
+  editSignatoryProgress: Action<SignatoryProgressModel, SignatoryProgressEdit>;
+  addSignatoryProgress: Thunk<SignatoryProgressModel, History>;
+  updateSignatoryProgress: Thunk<
+    SignatoryProgressModel,
+    UpdateSigProgressPayload
+  >;
+  discardChanges: Action<SignatoryProgressModel>;
+  deleteSignatoryProgress: Thunk<
+    SignatoryProgressModel,
+    UpdateSigProgressPayload
+  >;
 }

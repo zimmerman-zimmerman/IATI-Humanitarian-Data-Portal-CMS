@@ -22,6 +22,7 @@ import { Signatory } from 'app/modules/Signatory';
 import { Tooltips } from 'app/modules/Tooltips';
 import { CCTRI } from 'app/modules/CCTRI';
 import { About } from 'app/modules/About';
+import { SignatoryProgressList } from 'app/modules/SignatoryProgressList';
 import { SignatoryProgress } from 'app/modules/SignatoryProgress';
 
 // util function that redirects a user to the login page
@@ -83,7 +84,18 @@ function Routes() {
 
         <Route
           exact
-          path="/signatory-progress"
+          path="/signatory-progress-list"
+          render={() => redirectUnAuth(<SignatoryProgressList />, user)}
+        />
+        <Route
+          exact
+          path="/add-signatoryProgress"
+          render={() => redirectUnAuth(<SignatoryProgress />, user)}
+        />
+
+        <Route
+          exact
+          path="/edit-signatoryProgress/:id"
           render={() => redirectUnAuth(<SignatoryProgress />, user)}
         />
 

@@ -1,0 +1,26 @@
+[
+  {
+    "Date": "2017-06-01",
+    "totalSig": "51",
+    "publishingOpenDataIATI":"37",
+    "publishingHumanitarianActivities": "31",
+    "using202OrLater": "16",
+    "providingGranular202Data": "0"
+  },
+  {
+    "Date": "2018-05-01",
+    "totalSig": "59",
+    "publishingOpenDataIATI": "44",
+    "publishingHumanitarianActivities": "36",
+    "using202OrLater": "31",
+    "providingGranular202Data": "8"
+  },
+  {
+    "Date": "2019-05-01",
+    "totalSig": "59",
+    "publishingOpenDataIATI": "48",
+    "publishingHumanitarianActivities": "43",
+    "using202OrLater": "41",
+    "providingGranular202Data": "14"
+  }
+]
