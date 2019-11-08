@@ -253,6 +253,7 @@ setTimeout(() => api.call('db-update', 'updateSignatories', { }, 5000)
       console.log(`[${(new Date()).toString()}] - updateSignatories service API CALL had some ERRORS`);
     }
   }).catch(ex => {
+    console.log(`[${(new Date()).toString()}] - updateSignatories service API CALL CAUGHT ERRORS - ${ex}`);
     // Exception occured while processing request
   }), 10000);
 
@@ -266,5 +267,6 @@ setTimeout(() => api.call('db-update', 'updateFrequency', { }, 5000)
       console.log(`[${(new Date()).toString()}] - updateFrequency service API CALL had some ERRORS`);
     }
   }).catch(ex => {
+    console.log(`[${(new Date()).toString()}] - updateFrequency service API CALL CAUGHT ERRORS - ${ex}`);
     // Exception occured while processing request
   }), 10000);
