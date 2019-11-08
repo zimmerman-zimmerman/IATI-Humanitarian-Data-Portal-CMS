@@ -37,6 +37,12 @@ export const tableBase = {
       },
     },
     {
+      name: 'Publishing open data using IATI',
+      options: {
+        filterType: 'dropdown' as FilterType,
+      },
+    },
+    {
       name: 'Publishing data on their humanitarian activities',
       options: {
         filterType: 'dropdown' as FilterType,
@@ -80,6 +86,7 @@ export function formatTable(
     tableData.push([
       signatory.Date,
       signatory.totalSig,
+      signatory.publishingOpenDataIATI,
       signatory.publishingHumanitarianActivities,
       signatory.using202OrLater,
       signatory.providingGranular202Data,
