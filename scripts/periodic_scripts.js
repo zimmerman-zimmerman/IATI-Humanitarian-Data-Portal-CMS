@@ -228,7 +228,7 @@ const service = api.Service('db-update');
 // Register function to a service
 service.registerFunc('updateSignatories', (params, auth, cb) => {
   // Response to be returned to client
-  const res = { ack: true, message: 'Signatories update started' };
+  const res = { ack: true, message: `[${(new Date()).toString()}] - updateSignatories service start successfull` };
   // and we start the worker to update signatories every 24hours
   setInterval(() => updateSignatories(db), 86400000);
   cb('response', res);
@@ -237,7 +237,7 @@ service.registerFunc('updateSignatories', (params, auth, cb) => {
 service.registerFunc('updateFrequency', (params, auth, cb) => {
   // and we start the worker to update frequencies every 24hours
   setInterval(() => updateFrequency(db), 86400000);
-  cb('response', 'Frequency updates started');
+  cb('response', `[${(new Date()).toString()}] - updateFrequency service start successfull`);
 });
 
 // Start the service
@@ -247,7 +247,10 @@ service.start();
 setTimeout(() => api.call('db-update', 'updateSignatories', { }, 5000)
   .then(res => {
     if (res.status === 200) {
+      console.log(`[${(new Date()).toString()}] - updateSignatories service API CALL successfull`);
       console.log(res.data && res.data.result && res.data.result.message);
+    } else {
+      console.log(`[${(new Date()).toString()}] - updateSignatories service API CALL had some ERRORS`);
     }
   }).catch(ex => {
     // Exception occured while processing request
@@ -257,7 +260,10 @@ setTimeout(() => api.call('db-update', 'updateSignatories', { }, 5000)
 setTimeout(() => api.call('db-update', 'updateFrequency', { }, 5000)
   .then(res => {
     if (res.status === 200) {
+      console.log(`[${(new Date()).toString()}] - updateFrequency service API CALL successfull`);
       console.log(res.data && res.data.result);
+    } else {
+      console.log(`[${(new Date()).toString()}] - updateFrequency service API CALL had some ERRORS`);
     }
   }).catch(ex => {
     // Exception occured while processing request
