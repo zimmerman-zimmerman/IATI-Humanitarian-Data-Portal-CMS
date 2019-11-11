@@ -72,43 +72,15 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
             text="Add"
             disabled={
               props.signatoryProgressItem.Date === '' ||
-              new Date(props.signatoryProgressItem.Date) > new Date()
-            } /* ||
+              new Date(props.signatoryProgressItem.Date) > new Date() ||
               props.signatoryProgressItem.totalSig === '' ||
-              props.signatoryProgressItem.publishingHumanitarianActivities ===
-                '' ||
-              props.signatoryProgressItem.providingGranular202Data === '' ||
               props.signatoryProgressItem.publishingOpenDataIATI === '' ||
-              props.signatoryProgressItem.using202OrLater === ''
-            }*/
+              isNaN(parseInt(props.signatoryProgressItem.totalSig, 10)) ||
+              isNaN(
+                parseInt(props.signatoryProgressItem.publishingOpenDataIATI, 10)
+              )
+            }
             onClick={() => {
-              /*if (
-                isNaN(parseInt(props.signatoryProgressItem.totalSig, 10)) ||
-                isNaN(
-                  parseInt(
-                    props.signatoryProgressItem.publishingOpenDataIATI,
-                    10
-                  )
-                ) ||
-                isNaN(
-                  parseInt(
-                    props.signatoryProgressItem
-                      .publishingHumanitarianActivities,
-                    10
-                  )
-                ) ||
-                isNaN(
-                  parseInt(
-                    props.signatoryProgressItem.providingGranular202Data,
-                    10
-                  )
-                ) ||
-                isNaN(parseInt(props.signatoryProgressItem.using202OrLater, 10))
-              ) {
-                window.alert('Values should be numbers');
-              } else {
-                props.addSignatoryProgress();
-              }*/
               props.addSignatoryProgress();
             }}
           />
