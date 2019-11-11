@@ -36,7 +36,7 @@ export function SignatoryProgressComp(props) {
           type: 'text',
           setValue: value =>
             actions.editSignatoryProgress({ key: 'totalSig', value }),
-          placeholder: '00',
+          placeholder: 'NOT MEASURED',
         },
         {
           label: 'Publishing Open Data using IATI',
@@ -48,7 +48,7 @@ export function SignatoryProgressComp(props) {
               value,
             }),
           //options: orgTypeOptions,
-          placeholder: '00',
+          placeholder: 'NOT MEASURED',
         },
         {
           label: 'Publishing data on their humanitarian activities',
@@ -59,7 +59,7 @@ export function SignatoryProgressComp(props) {
               key: 'publishingHumanitarianActivities',
               value,
             }),
-          placeholder: '00',
+          placeholder: 'NOT MEASURED',
         },
         {
           label: 'Using v2.02 of the IATI standard or Later ',
@@ -67,7 +67,7 @@ export function SignatoryProgressComp(props) {
           value: state.signatoryProgressItem.using202OrLater,
           setValue: value =>
             actions.editSignatoryProgress({ key: 'using202OrLater', value }),
-          placeholder: '00',
+          placeholder: 'NOT MEASURED',
         },
         {
           label: 'Providing more granular v2.02 data ',
@@ -78,7 +78,7 @@ export function SignatoryProgressComp(props) {
               key: 'providingGranular202Data',
               value,
             }),
-          placeholder: '00',
+          placeholder: 'NOT MEASURED',
         },
       ],
     },

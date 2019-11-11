@@ -58,7 +58,21 @@ const signatoryProgress: SignatoryProgressModel = {
   addSignatoryProgress: thunk(
     async (actions, history: History, { getState }) => {
       const signatoryProgressItem = getState().signatoryProgressItem;
-
+      signatoryProgressItem.totalSig = signatoryProgressItem.totalSig
+        ? signatoryProgressItem.totalSig
+        : 'NOT MEASURED';
+      signatoryProgressItem.publishingOpenDataIATI = signatoryProgressItem.publishingOpenDataIATI
+        ? signatoryProgressItem.publishingOpenDataIATI
+        : 'NOT MEASURED';
+      signatoryProgressItem.publishingHumanitarianActivities = signatoryProgressItem.publishingHumanitarianActivities
+        ? signatoryProgressItem.publishingHumanitarianActivities
+        : 'NOT MEASURED';
+      signatoryProgressItem.using202OrLater = signatoryProgressItem.using202OrLater
+        ? signatoryProgressItem.using202OrLater
+        : 'NOT MEASURED';
+      signatoryProgressItem.providingGranular202Data = signatoryProgressItem.providingGranular202Data
+        ? signatoryProgressItem.providingGranular202Data
+        : 'NOT MEASURED';
       signatoryProgressItem._id = generateId();
       await db
         .insert('signatoriesProgress')

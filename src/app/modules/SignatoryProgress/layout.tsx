@@ -72,16 +72,17 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
             text="Add"
             disabled={
               props.signatoryProgressItem.Date === '' ||
-              new Date(props.signatoryProgressItem.Date) > new Date() ||
+              new Date(props.signatoryProgressItem.Date) > new Date()
+            } /* ||
               props.signatoryProgressItem.totalSig === '' ||
               props.signatoryProgressItem.publishingHumanitarianActivities ===
                 '' ||
               props.signatoryProgressItem.providingGranular202Data === '' ||
               props.signatoryProgressItem.publishingOpenDataIATI === '' ||
               props.signatoryProgressItem.using202OrLater === ''
-            }
+            }*/
             onClick={() => {
-              if (
+              /*if (
                 isNaN(parseInt(props.signatoryProgressItem.totalSig, 10)) ||
                 isNaN(
                   parseInt(
@@ -107,7 +108,8 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
                 window.alert('Values should be numbers');
               } else {
                 props.addSignatoryProgress();
-              }
+              }*/
+              props.addSignatoryProgress();
             }}
           />
         )}
