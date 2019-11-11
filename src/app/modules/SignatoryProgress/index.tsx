@@ -23,7 +23,7 @@ export function SignatoryProgressComp(props) {
       title: 'Signatory Progress',
       titleInput: {
         value: state.signatoryProgressItem.Date,
-        label: 'Enter Date (*Date must be today or later than today)',
+        label: 'Enter Date',
         type: 'date',
         setValue: value =>
           actions.editSignatoryProgress({ key: 'Date', value }),
