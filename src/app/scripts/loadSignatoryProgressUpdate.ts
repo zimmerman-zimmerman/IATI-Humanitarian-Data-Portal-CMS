@@ -17,6 +17,8 @@ export function loadSignatoryProgress() {
         signatoryProgress.publishingHumanitarianActivities,
       using202OrLater: signatoryProgress.using202OrLater,
       providingGranular202Data: signatoryProgress.providingGranular202Data,
+      providingGranular203Data: signatoryProgress.providingGranular203Data,
+      publishingTraceabilityInfo: signatoryProgress.publishingTraceabilityInfo,
     };
 
     db.insert('signatoriesProgress')

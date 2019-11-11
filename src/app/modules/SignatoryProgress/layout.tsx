@@ -45,10 +45,23 @@ export const SignatoryProgressLayout = (props: SignatoryProgressModel) => {
               specWidth="241px"
               margin="0 32px 0 0"
               text="Save Change"
-              disabled={isEqual(
-                props.signatoryProgressItem,
-                props.existingSignatoryProgressItem
-              )}
+              disabled={
+                isEqual(
+                  props.signatoryProgressItem,
+                  props.existingSignatoryProgressItem
+                ) ||
+                props.signatoryProgressItem.Date === '' ||
+                new Date(props.signatoryProgressItem.Date) > new Date() ||
+                props.signatoryProgressItem.totalSig === '' ||
+                props.signatoryProgressItem.publishingOpenDataIATI === '' ||
+                isNaN(parseInt(props.signatoryProgressItem.totalSig, 10)) ||
+                isNaN(
+                  parseInt(
+                    props.signatoryProgressItem.publishingOpenDataIATI,
+                    10
+                  )
+                )
+              }
               onClick={() => props.updateSignatoryProgress()}
             />
             <ContainedButton

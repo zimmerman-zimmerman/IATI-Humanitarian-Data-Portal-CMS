@@ -16,7 +16,9 @@ export interface SignatoryProgressEdit {
     | 'publishingOpenDataIATI'
     | 'publishingHumanitarianActivities'
     | 'using202OrLater'
-    | 'providingGranular202Data';
+    | 'providingGranular202Data'
+    | 'providingGranular203Data'
+    | 'publishingTraceabilityInfo';
   value: string;
 }
 
@@ -28,6 +30,8 @@ export interface SignatoryProgress {
   publishingHumanitarianActivities: string;
   using202OrLater: string;
   providingGranular202Data: string;
+  providingGranular203Data: string;
+  publishingTraceabilityInfo: string;
 }
 
 export interface SignatoryProgressModel {

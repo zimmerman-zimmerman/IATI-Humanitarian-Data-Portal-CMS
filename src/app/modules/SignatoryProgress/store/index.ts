@@ -24,6 +24,8 @@ const signatoryProgressInit: SignatoryProgress = {
   publishingHumanitarianActivities: '',
   using202OrLater: '',
   providingGranular202Data: '',
+  providingGranular203Data: '',
+  publishingTraceabilityInfo: '',
 };
 
 const signatoryProgress: SignatoryProgressModel = {
@@ -68,6 +70,12 @@ const signatoryProgress: SignatoryProgressModel = {
       signatoryProgressItem.providingGranular202Data = signatoryProgressItem.providingGranular202Data
         ? signatoryProgressItem.providingGranular202Data
         : 'NOT MEASURED';
+      signatoryProgressItem.providingGranular203Data = signatoryProgressItem.providingGranular203Data
+        ? signatoryProgressItem.providingGranular203Data
+        : 'NOT MEASURED';
+      signatoryProgressItem.publishingTraceabilityInfo = signatoryProgressItem.publishingTraceabilityInfo
+        ? signatoryProgressItem.publishingTraceabilityInfo
+        : 'NOT MEASURED';
       signatoryProgressItem._id = generateId();
       await db
         .insert('signatoriesProgress')
@@ -89,6 +97,12 @@ const signatoryProgress: SignatoryProgressModel = {
         : 'NOT MEASURED';
       signatoryProgressItem.providingGranular202Data = signatoryProgressItem.providingGranular202Data
         ? signatoryProgressItem.providingGranular202Data
+        : 'NOT MEASURED';
+      signatoryProgressItem.providingGranular203Data = signatoryProgressItem.providingGranular203Data
+        ? signatoryProgressItem.providingGranular203Data
+        : 'NOT MEASURED';
+      signatoryProgressItem.publishingTraceabilityInfo = signatoryProgressItem.publishingTraceabilityInfo
+        ? signatoryProgressItem.publishingTraceabilityInfo
         : 'NOT MEASURED';
 
       await db

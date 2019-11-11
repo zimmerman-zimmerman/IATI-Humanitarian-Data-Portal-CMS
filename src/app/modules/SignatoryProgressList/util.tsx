@@ -60,6 +60,18 @@ export const tableBase = {
         filterType: 'dropdown' as FilterType,
       },
     },
+    {
+      name: 'Providing more granular v2.03',
+      options: {
+        filterType: 'dropdown' as FilterType,
+      },
+    },
+    {
+      name: 'Publishing Traceability Information',
+      options: {
+        filterType: 'dropdown' as FilterType,
+      },
+    },
   ],
   options: {
     print: false,
@@ -90,6 +102,8 @@ export function formatTable(
       signatory.publishingHumanitarianActivities,
       signatory.using202OrLater,
       signatory.providingGranular202Data,
+      signatory.providingGranular203Data,
+      signatory.publishingTraceabilityInfo,
     ]);
 
     if (signatory._id) {
