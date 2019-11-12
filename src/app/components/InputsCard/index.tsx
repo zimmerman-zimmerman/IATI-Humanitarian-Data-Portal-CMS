@@ -10,7 +10,7 @@ import styled from 'styled-components';
 
 /* styles */
 import { Typography } from 'app/theme';
-import DateField from '../inputs/DateInputField';
+import DateField from 'app/components/inputs/DateInputField';
 
 export const CardGrid = styled(Grid)`
   padding: 32px;96px; 56px; 32px;
@@ -45,18 +45,18 @@ export const InputsCard = (props: InputsCardModel) => {
               fullWidth={false}
             />
           ) : (
-            <SingleMultiLineTextField
-              fullWidth
-              label={props.titleInput.label}
-              id={`text-${props.title}-title-input`}
-              placeholder={props.titleInput.placeholder || ''}
-              value={props.titleInput.value}
-              setValue={props.titleInput.setValue}
-            />
-          )
+              <SingleMultiLineTextField
+                fullWidth
+                label={props.titleInput.label}
+                id={`text-${props.title}-title-input`}
+                placeholder={props.titleInput.placeholder || ''}
+                value={props.titleInput.value}
+                setValue={props.titleInput.setValue}
+              />
+            )
         ) : (
-          <CardTitle>{props.title}</CardTitle>
-        )}
+            <CardTitle>{props.title}</CardTitle>
+          )}
       </Grid>
       {props.data.map((input, index) => (
         <Grid item xs={6} md={6}>
@@ -71,16 +71,16 @@ export const InputsCard = (props: InputsCardModel) => {
               setValue={input.setValue}
             />
           ) : (
-            <SingleMultiLineTextField
-              fullWidth
-              label={input.label}
-              key={`text-${props.title}-${index}`}
-              id={`text-${props.title}-${index}`}
-              placeholder={input.placeholder || ''}
-              value={input.value}
-              setValue={input.setValue}
-            />
-          )}
+              <SingleMultiLineTextField
+                fullWidth
+                label={input.label}
+                key={`text-${props.title}-${index}`}
+                id={`text-${props.title}-${index}`}
+                placeholder={input.placeholder || ''}
+                value={input.value}
+                setValue={input.setValue}
+              />
+            )}
         </Grid>
       ))}
     </CardGrid>

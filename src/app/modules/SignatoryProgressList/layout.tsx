@@ -11,7 +11,7 @@ import { ContainedButton } from 'app/components/inputs/buttons/ContainedButton';
 import {
   loadSignatoryProgress,
   deleteSignatoryProgress,
-} from '../../scripts/loadSignatoryProgressUpdate';
+} from 'app/scripts/loadSignatoryProgressUpdate';
 
 const TableWrapper = styled.div`
   tr:hover {
