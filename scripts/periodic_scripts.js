@@ -150,9 +150,9 @@ const updateFrequency = async (db) => {
                     q: `reporting_org_ref:${signatory.IATIOrgRef} AND
                         transaction_date_iso_date:[${freqItem[1]}T00:00:00Z TO ${freqItem[1]}T23:59:59Z]
                         AND (humanitarian:1 OR transaction_humanitarian:1 OR 
-                        ((sector_vocabulary:1 OR -sector_vocabulary:*) AND 
+                        (-(-sector_vocabulary:1 OR sector_vocabulary:*) AND 
                         (sector_code:[70000 TO 79999] OR sector_code:[93010 TO 93018])) OR 
-                        ((transaction_sector_vocabulary:1 OR -transaction_sector_vocabulary:*) AND 
+                        (-(-transaction_sector_vocabulary:1 OR transaction_sector_vocabulary:*) AND 
                         (transaction_sector_code:[70000 TO 79999] OR
                          transaction_sector_code:[93010 TO 93018])))`,
                     rows: "0"
@@ -228,7 +228,7 @@ const service = api.Service('db-update');
 // Register function to a service
 service.registerFunc('updateSignatories', (params, auth, cb) => {
   // Response to be returned to client
-  const res = { ack: true, message: 'Signatories update started' };
+  const res = { ack: true, message: `[${(new Date()).toString()}] - updateSignatories service start successfull` };
   // and we start the worker to update signatories every 24hours
   setInterval(() => updateSignatories(db), 86400000);
   cb('response', res);
@@ -237,7 +237,7 @@ service.registerFunc('updateSignatories', (params, auth, cb) => {
 service.registerFunc('updateFrequency', (params, auth, cb) => {
   // and we start the worker to update frequencies every 24hours
   setInterval(() => updateFrequency(db), 86400000);
-  cb('response', 'Frequency updates started');
+  cb('response', `[${(new Date()).toString()}] - updateFrequency service start successfull`);
 });
 
 // Start the service
@@ -247,9 +247,13 @@ service.start();
 setTimeout(() => api.call('db-update', 'updateSignatories', { }, 5000)
   .then(res => {
     if (res.status === 200) {
+      console.log(`[${(new Date()).toString()}] - updateSignatories service API CALL successfull`);
       console.log(res.data && res.data.result && res.data.result.message);
+    } else {
+      console.log(`[${(new Date()).toString()}] - updateSignatories service API CALL had some ERRORS`);
     }
   }).catch(ex => {
+    console.log(`[${(new Date()).toString()}] - updateSignatories service API CALL CAUGHT ERRORS - ${ex}`);
     // Exception occured while processing request
   }), 10000);
 
@@ -257,8 +261,12 @@ setTimeout(() => api.call('db-update', 'updateSignatories', { }, 5000)
 setTimeout(() => api.call('db-update', 'updateFrequency', { }, 5000)
   .then(res => {
     if (res.status === 200) {
+      console.log(`[${(new Date()).toString()}] - updateFrequency service API CALL successfull`);
       console.log(res.data && res.data.result);
+    } else {
+      console.log(`[${(new Date()).toString()}] - updateFrequency service API CALL had some ERRORS`);
     }
   }).catch(ex => {
+    console.log(`[${(new Date()).toString()}] - updateFrequency service API CALL CAUGHT ERRORS - ${ex}`);
     // Exception occured while processing request
   }), 10000);
