@@ -41,8 +41,8 @@ const BaseComponent = styled(props => <TextField {...props} />)`
     padding: 0;
 
     font-size: 16px;
-    font-weight: 300;
-    color: rgba(1, 1, 10, 0.38);
+    font-weight: 500;
+    color: rgba(1, 1, 10, 1);
     margin-left: 15px;
   }
   & [class*='MuiFormLabel-root'] {
