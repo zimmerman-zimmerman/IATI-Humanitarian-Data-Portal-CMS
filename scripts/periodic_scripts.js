@@ -27,7 +27,7 @@ function updateSignatories (db){
         // so here we get the current signatories first dataset published date
         // and its current regPubId(publisher_name)
         // and we update the cms signatories
-        axios.get(`${process.env.REACT_APP_DS_API}/search/dataset/select/`, {
+        axios.get(`${process.env.REACT_APP_DS_API}/search/dataset/`, {
           params: {
             q: `publisher_iati_id:${signatory.IATIOrgRef}`,
             fl: "publisher_name,date_created",
@@ -53,7 +53,7 @@ function updateSignatories (db){
 
         // here we get the current signatory organisations organisation name
         // and again update the signatory
-        axios.get(`${process.env.REACT_APP_DS_API}/search/activity/select/`, {
+        axios.get(`${process.env.REACT_APP_DS_API}/search/activity/`, {
           params: {
             q: `reporting_org_ref:${signatory.IATIOrgRef}`,
             fl: "reporting_org_type_name",
@@ -145,7 +145,7 @@ const updateFrequency = async (db) => {
                 // to make sure that there's at least one
                 // HUMANITARIAN activity with the found transaction date
                 // for the current signatory organisation
-                const humRes = await axios.get(`${process.env.REACT_APP_DS_API}/search/activity/select/`, {
+                const humRes = await axios.get(`${process.env.REACT_APP_DS_API}/search/activity/`, {
                   params: {
                     q: `reporting_org_ref:${signatory.IATIOrgRef} AND
                         transaction_date_iso_date:[${freqItem[1]}T00:00:00Z TO ${freqItem[1]}T23:59:59Z]
