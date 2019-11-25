@@ -18,7 +18,11 @@ export function Faq() {
       saveChanges={actions.saveChanges}
       discardChanges={actions.discardChanges}
       addItem={actions.addItem}
-      removeItem={actions.removeItem}
+      removeItem={(id: number) => {
+        if (window.confirm('Are you sure you want to delete this FAQ item?')) {
+          actions.removeItem(id);
+        }
+      }}
     />
   );
 }

@@ -136,12 +136,14 @@ export function SignatoryComp(props) {
         })
       }
       discardChanges={actions.discardChanges}
-      deleteSignatory={() =>
-        actions.deleteSignatory({
-          history: props.history,
-          _id: props.match.params.id,
-        })
-      }
+      deleteSignatory={() => {
+        if (window.confirm('Are you sure you want to delete this signatory?')) {
+          actions.deleteSignatory({
+            history: props.history,
+            _id: props.match.params.id,
+          });
+        }
+      }}
     />
   );
 }
