@@ -4,11 +4,11 @@ jobs:
   checkout_repo:
     docker:
       - image: circleci/node:10.13.0
-    working_directory: ~/mlt-cms
+    working_directory: ~/IATI-Humanitarian-Data-Portal-CMS
     steps:
       - checkout
       - attach_workspace:
-          at: ~/mlt-cms
+          at: ~/IATI-Humanitarian-Data-Portal-CMS
       - restore_cache:
           keys:
             - yarn-cached-dependencies-{{ .Branch }}-{{ checksum "yarn.lock" }}
@@ -28,11 +28,11 @@ jobs:
   build_deploy:
     docker:
       - image: circleci/node:10.13.0-browsers
-    working_directory: ~/mlt-cms
+    working_directory: ~/IATI-Humanitarian-Data-Portal-CMS
     steps:
       - checkout
       - attach_workspace:
-          at: ~/mlt-cms
+          at: ~/IATI-Humanitarian-Data-Portal-CMS
       - run: sudo apt-get install python-dev
       - run:
           name: Set REACT_APP_PROJECT_URL env var
@@ -69,34 +69,34 @@ jobs:
           name: Upload build folder to target host
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              rsync -O -ave ssh ~/mlt-cms/build/ "$SSH_USER"@"$PROD_SSH_HOST":~/mlt-cms/build
+              rsync -O -ave ssh ~/IATI-Humanitarian-Data-Portal-CMS/build/ "$SSH_USER"@"$PROD_SSH_HOST":~/mlt-cms/build
             elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
-              rsync -O -ave ssh ~/mlt-cms/build/ "$SSH_USER"@"$SSH_HOST":~/mlt-cms/build
+              rsync -O -ave ssh ~/IATI-Humanitarian-Data-Portal-CMS/build/ "$SSH_USER"@"$SSH_HOST":~/mlt-cms/build
             elif [ "${CIRCLE_BRANCH}" == "feature" ]; then
-              rsync -O -ave ssh ~/mlt-cms/build/ "$SSH_USER"@"$SSH_HOST":~/mlt-cms/build
+              rsync -O -ave ssh ~/IATI-Humanitarian-Data-Portal-CMS/build/ "$SSH_USER"@"$SSH_HOST":~/mlt-cms/build
             else
-              rsync -O -ave ssh ~/mlt-cms/build/ "$SSH_USER"@"$SSH_HOST":~/mlt-cms/build
+              rsync -O -ave ssh ~/IATI-Humanitarian-Data-Portal-CMS/build/ "$SSH_USER"@"$SSH_HOST":~/mlt-cms/build
             fi
       - run:
           name: Upload storybook build folder to target host
           command: |
             if [ "${CIRCLE_BRANCH}" == "develop" ]; then
-              rsync -O -ave ssh ~/mlt-cms/.out/ "$SSH_USER"@"$SSH_HOST":~/storybook
+              rsync -O -ave ssh ~/IATI-Humanitarian-Data-Portal-CMS/.out/ "$SSH_USER"@"$SSH_HOST":~/storybook
             elif [ "${CIRCLE_BRANCH}" == "feature" ]; then
-              rsync -O -ave ssh ~/mlt-cms/.out/ "$SSH_USER"@"$SSH_HOST":~/storybook
+              rsync -O -ave ssh ~/IATI-Humanitarian-Data-Portal-CMS/.out/ "$SSH_USER"@"$SSH_HOST":~/storybook
             elif [ "${CIRCLE_BRANCH}" != "master" ]; then
-              rsync -O -ave ssh ~/mlt-cms/.out/ "$SSH_USER"@"$SSH_HOST":~/storybook
+              rsync -O -ave ssh ~/IATI-Humanitarian-Data-Portal-CMS/.out/ "$SSH_USER"@"$SSH_HOST":~/storybook
             fi
       - run:
           name: Pull and install modules
           # TODO: update update this deployment accordingly when we have more than one environment
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ssh "$SSH_USER"@"$PROD_SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$PROD_SSH_PASS"' | sudo -S service supervisor restart"
+              ssh "$SSH_USER"@"$PROD_SSH_HOST" "cd ~/IATI-Humanitarian-Data-Portal-CMS/; git pull; yarn install; echo '"$PROD_SSH_PASS"' | sudo -S service supervisor restart"
             elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
-              ssh "$SSH_USER"@"$SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$SSH_PASS"' | sudo -S service supervisor restart"
+              ssh "$SSH_USER"@"$SSH_HOST" "cd ~/IATI-Humanitarian-Data-Portal-CMS/; git pull; yarn install; echo '"$SSH_PASS"' | sudo -S service supervisor restart"
             elif [ "${CIRCLE_BRANCH}" == "production" ]; then
-              ssh "$SSH_USER"@"$SSH_HOST" "cd ~/mlt-cms/; git pull; yarn install; echo '"$SSH_PASS"' | sudo -S service supervisor restart"
+              ssh "$SSH_USER"@"$SSH_HOST" "cd ~/IATI-Humanitarian-Data-Portal-CMS/; git pull; yarn install; echo '"$SSH_PASS"' | sudo -S service supervisor restart"
             fi
 
   #  RUN CYPRESS END TO END TESTS
@@ -104,10 +104,10 @@ jobs:
     docker:
       - image: circleci/node:10.13.0-browsers
     parallelism: 2
-    working_directory: ~/mlt-cms
+    working_directory: ~/IATI-Humanitarian-Data-Portal-CMS
     steps:
       - attach_workspace:
-          at: ~/mlt-cms
+          at: ~/IATI-Humanitarian-Data-Portal-CMS
       # setting this env var to only test on dev server when deployed.
       - run:
           name: Install Cypress -> OPTIMISE, UNESCESSARY STEP!!!
