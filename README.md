@@ -5,7 +5,7 @@
 
 ## What is the IATI Humanitarian Data Portal CMS?
 
-Content Management System (CMS) for <a href="https://github.com/zimmerman-zimmerman/IATI-Humanitarian-Data-Portal target="_blank">IATI Humanitarian Data Portal</a>. The CMS is built using the <a href="https://docs.spaceuptech.com/getting-started/quick-start/" target="_blank">SpaceUpTech Space Cloud CMS </a>.
+Content Management System (CMS) for  <a href="https://github.com/zimmerman-zimmerman/IATI-Humanitarian-Data-Portal-CMS" target="_blank"> IATI Humanitarian Data Portal</a>. The CMS is built using the <a href="https://docs.spaceuptech.com/getting-started/quick-start/" target="_blank">SpaceUpTech Space Cloud CMS </a>.
 
 ## What is the IATI Humanitarian Data Portal?
 
