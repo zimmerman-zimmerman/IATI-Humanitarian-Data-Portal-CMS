@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/zimmerman-zimmerman/mlt-cms.svg?style=svg)](https://circleci.com/gh/zimmerman-zimmerman/mlt-cms)
+[![CircleCI](https://circleci.com/gh/zimmerman-zimmerman/IATI-Humanitarian-Data-Portal-CMS.svg?style=svg)](https://circleci.com/gh/zimmerman-zimmerman/IATI-Humanitarian-Data-Portal-CMS)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a9c6948a68df16754768/maintainability)](https://codeclimate.com/repos/5d528965a9b309622b004846/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/4824056e61afa2019da5/test_coverage)](https://codeclimate.com/repos/5d307081c8591501b500efd2/test_coverage)
 [![Cypress.io tests](https://img.shields.io/badge/cypress.io-tests-green.svg?style=flat-square)](https://cypress.io)
