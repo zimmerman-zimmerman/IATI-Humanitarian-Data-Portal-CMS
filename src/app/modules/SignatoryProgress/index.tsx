@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useEffect } from 'react';
 import { SignatoryProgressLayout } from './layout';
 import { withRouter } from 'react-router-dom';
@@ -120,12 +121,14 @@ export function SignatoryProgressComp(props) {
         })
       }
       discardChanges={actions.discardChanges}
-      deleteSignatoryProgress={() =>
-        actions.deleteSignatoryProgress({
-          history: props.history,
-          _id: props.match.params.id,
-        })
-      }
+      deleteSignatoryProgress={() => {
+        if (window.confirm('Are you sure you want to delete this?')) {
+          actions.deleteSignatoryProgress({
+            history: props.history,
+            _id: props.match.params.id,
+          });
+        }
+      }}
     />
   );
 }
