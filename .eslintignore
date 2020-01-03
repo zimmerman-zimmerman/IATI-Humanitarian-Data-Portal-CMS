@@ -9,4 +9,4 @@ build/
 /src/serviceWorker.ts
 .circleci/
 scripts/
-
+data-scripts/
