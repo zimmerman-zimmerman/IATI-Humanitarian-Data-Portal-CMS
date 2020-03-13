@@ -35,7 +35,7 @@ export function EditValueForm(props) {
 
   React.useEffect(() => {
     setValue(props.value);
-  }, [props.value])
+  }, [props.value]);
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popper' : undefined;
@@ -68,8 +68,8 @@ export function EditValueForm(props) {
                 margin="10px 10px 0 0"
                 backgroundColor="#30c2b0"
                 onClick={() => {
-                  props.updateValue(value);
                   props.updateValueOnDB(value);
+                  props.updateValue(value);
                   handleClick();
                 }}
               />
