@@ -1,4 +1,5 @@
 import React from 'react';
+import find from 'lodash/find';
 
 /* components */
 import { EditValueForm } from './common/EditValueForm';
@@ -30,12 +31,15 @@ export const tableBase = props => {
         options: {
           filterType: 'dropdown' as FilterType,
           customBodyRender: (value, tableMeta, updateValue) => {
-            const rowData = props.data[tableMeta.rowIndex];
             return (
               <EditValueForm
                 value={value}
                 updateValue={updateValue}
-                updateValueOnDB={newValue =>
+                updateValueOnDB={newValue => {
+                  const rowData = find(
+                    props.data,
+                    d => d[5] === tableMeta.rowData[5]
+                  );
                   props.editTooltip({
                     id: rowData[5],
                     object: {
@@ -45,8 +49,8 @@ export const tableBase = props => {
                       whyGB: rowData[3],
                       calculation: rowData[4],
                     },
-                  })
-                }
+                  });
+                }}
               />
             );
           },
@@ -57,12 +61,15 @@ export const tableBase = props => {
         options: {
           filterType: 'dropdown' as FilterType,
           customBodyRender: (value, tableMeta, updateValue) => {
-            const rowData = props.data[tableMeta.rowIndex];
             return (
               <EditValueForm
                 value={value}
                 updateValue={updateValue}
-                updateValueOnDB={newValue =>
+                updateValueOnDB={newValue => {
+                  const rowData = find(
+                    props.data,
+                    d => d[5] === tableMeta.rowData[5]
+                  );
                   props.editTooltip({
                     id: rowData[5],
                     object: {
@@ -72,8 +79,8 @@ export const tableBase = props => {
                       whyGB: newValue,
                       calculation: rowData[4],
                     },
-                  })
-                }
+                  });
+                }}
               />
             );
           },
@@ -84,12 +91,15 @@ export const tableBase = props => {
         options: {
           filterType: 'dropdown' as FilterType,
           customBodyRender: (value, tableMeta, updateValue) => {
-            const rowData = props.data[tableMeta.rowIndex];
             return (
               <EditValueForm
                 value={value}
                 updateValue={updateValue}
-                updateValueOnDB={newValue =>
+                updateValueOnDB={newValue => {
+                  const rowData = find(
+                    props.data,
+                    d => d[5] === tableMeta.rowData[5]
+                  );
                   props.editTooltip({
                     id: rowData[5],
                     object: {
@@ -99,8 +109,8 @@ export const tableBase = props => {
                       whyGB: rowData[3],
                       calculation: newValue,
                     },
-                  })
-                }
+                  });
+                }}
               />
             );
           },
@@ -139,8 +149,8 @@ export const tableBase = props => {
 };
 
 // formats data for the table
-export function formatTable(tooltips: Array<Tooltip>): Array<Array<string>> {
-  const tableData: Array<Array<string>> = [];
+export function formatTable(tooltips: Tooltip[]): string[][] {
+  const tableData: string[][] = [];
 
   tooltips.forEach(tooltip => {
     tableData.push([
