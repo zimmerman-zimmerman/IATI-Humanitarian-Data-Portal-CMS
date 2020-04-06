@@ -246,7 +246,7 @@ workflows:
             - build_deploy
       - release:
           requires:
-            - cypress/install
+            - test_e2e
           filters:
             branches:
               only: master
