@@ -1,7 +1,11 @@
 {
-  "name": "mlt-cms",
-  "version": "0.1.0",
-  "private": true,
+  "name": "iati-humanitarian-data-portal-cms",
+  "version": "1.0.0",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zimmerman-zimmerman/IATI-Humanitarian-Data-Portal-CMS.git"
+  },
   "dependencies": {
     "@devhammed/use-cookie": "^1.0.3",
     "@material-ui/core": "^4.2.1",
@@ -300,6 +304,11 @@
       "pre-commit": "echo pre && echo commit && echo police",
       "pre-push": "echo pre push police"
     }
+  },
+  "release": {
+    "branches": [
+      "master"
+    ]
   },
   "lighthouse": {
     "requiredScores": {
