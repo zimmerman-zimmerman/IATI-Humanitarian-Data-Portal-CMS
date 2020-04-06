@@ -2,7 +2,7 @@ import React from 'react';
 
 /* components */
 import { TableCell } from '@material-ui/core';
-import { Display, FilterType } from 'mui-datatables';
+import { Display, FilterType, SortDirection } from 'mui-datatables';
 
 /* interfaces */
 import { Signatory } from 'app/modules/Signatory/store/interface';
@@ -167,6 +167,7 @@ export const tableBase = {
     {
       name: 'Publisher',
       options: {
+        sortDirection: 'asc' as SortDirection,
         filterType: 'dropdown' as FilterType,
         customHeadRender: () => (
           <TableCell
@@ -277,9 +278,9 @@ export const tableBase = {
 
 // formats data for the table
 export function formatTable(
-  signatories: Array<Signatory>
-): Array<Array<string>> {
-  const tableData: Array<Array<string>> = [];
+  signatories: Signatory[]
+): Array<string>[] {
+  const tableData: Array<string>[] = [];
 
   signatories.forEach((signatory, index) => {
     tableData.push([

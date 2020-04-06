@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 /* consts */
 import { orgTypeOptions } from 'app/__consts__/dataConsts';
-import { genericOpt, iatiOpt } from './const';
+import { genericOpt, iatiOpt, reportingEDRISOpt } from './const';
 
 /* store */
 import { signatoryStore } from './store';
@@ -93,7 +93,7 @@ export function SignatoryComp(props) {
           value: state.signitem.reportsToEU,
           setValue: value =>
             actions.editSignatory({ key: 'reportsToEU', value }),
-          options: genericOpt,
+          options: reportingEDRISOpt,
         },
       ],
     },
@@ -136,12 +136,14 @@ export function SignatoryComp(props) {
         })
       }
       discardChanges={actions.discardChanges}
-      deleteSignatory={() =>
-        actions.deleteSignatory({
-          history: props.history,
-          _id: props.match.params.id,
-        })
-      }
+      deleteSignatory={() => {
+        if (window.confirm('Are you sure you want to delete this signatory?')) {
+          actions.deleteSignatory({
+            history: props.history,
+            _id: props.match.params.id,
+          });
+        }
+      }}
     />
   );
 }

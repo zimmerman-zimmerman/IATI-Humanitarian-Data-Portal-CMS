@@ -5,7 +5,17 @@
 
 ## What is the IATI Humanitarian Data Portal CMS?
 
-Content Management System (CMS) for <a href="https://github.com/zimmerman-zimmerman/mlt-frontend/" target="_blank">IATI Humanitarian Data Portal</a>.
+Content Management System (CMS) for  <a href="https://github.com/zimmerman-zimmerman/IATI-Humanitarian-Data-Portal-CMS" target="_blank"> IATI Humanitarian Data Portal</a>. The CMS is built using the <a href="https://docs.spaceuptech.com/getting-started/quick-start/" target="_blank">SpaceUpTech Space Cloud CMS </a>.
+
+## What is the IATI Humanitarian Data Portal?
+
+The IATI Humanitarian Data Portal has been developed by Development Initiatives as part of its programme to support the Grand Bargain transparency workstream. The portal provides information on the Grand Bargain transparency commitments, how they are measured , and monitors progress at an aggregate level for signatories in meeting their commitment to publish timely, high quality, harmonised and transparent open data on global humanitarian action.
+
+## About the project
+* Website:         <a href="https://www.humportal.org/" target="_blank">IATI Humanitarian Data Portal</a>
+* License:          Apache (see included <a href="https://github.com/zimmerman-zimmerman/IATI-Humanitarian-Data-Portal-CMS/blob/develop/LICENSE.MD" target="_blank">LICENSE</a> file for full license)
+* Github Repo:      <a href="https://github.com/zimmerman-zimmerman/IATI-Humanitarian-Data-Portal-CMS" target="_blank">github.com/zimmerman-zimmerman/IATI-Humanitarian-Data-Portal-CMS</a>
+
 
 ## Installing
 
@@ -64,15 +74,3 @@ Note: Replace localhost with the address of your Space Cloud if you are not runn
   * Make sure to set up socket proxy for space-cloud - https://www.nginx.com/blog/websocket-nginx/ 
   * One more thing to note is that mlt-cms is using periodic functions that happen every 24hours to update data in the cms, so these services need to be initiated for all of the cms data to be there and to be up to date. Currently its set up to run with supervisor running the scripts with the 'node' command in the frontend folder 'mlt-cms/scripts/period_scripts.js'
 
-
-## Contributing
-
-Please see our Contributing Guideline which explains repo organization, linting, testing, and other steps.
-
-## License
-
-This project is licensed under the terms of the [LICENSE TYPE]
-
-## Contributors
-
-## Supporters

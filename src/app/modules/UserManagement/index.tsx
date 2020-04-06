@@ -18,7 +18,7 @@ export function UserManagement() {
   // and whenever the added user variable updates
   useEffect(() => {
     actions.getAllUsers();
-  }, [state.userAdded, state.userDeleted, state.userUpdated]);
+  }, [actions, state.userAdded, state.userDeleted, state.userUpdated]);
 
   function handleOpen() {
     setEditUser(null);
@@ -46,11 +46,14 @@ export function UserManagement() {
 
   function handleDeleteUser(id) {
     if (currUser && currUser._id === id) {
-      if (confirm('Are you sure you want to delete yourself?')) {
+      if (window.confirm('Are you sure you want to delete yourself?')) {
         actions.deleteUser(id);
       }
     } else {
-      actions.deleteUser(id);
+      // eslint-disable-next-line no-lonely-if
+      if (window.confirm('Are you sure you want to delete this user?')) {
+        actions.deleteUser(id);
+      }
     }
   }
 

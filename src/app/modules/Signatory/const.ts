@@ -15,6 +15,27 @@ export const genericOpt = [
   },
 ];
 
+export const reportingEDRISOpt = [
+  {
+    label: 'Yes',
+    value: 'YES',
+  },
+  {
+    label: 'No',
+    value: 'NO',
+  },
+  {
+    label: 'N.A',
+    value: 'N.A',
+  },
+  {
+    label: 'Not applicable',
+    value: 'NOT APPLICABLE',
+  },
+];
+
+
+
 export const iatiOpt = [
   ...genericOpt,
   {

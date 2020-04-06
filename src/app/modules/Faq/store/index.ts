@@ -26,7 +26,7 @@ const faqs: FaqStoreModel = {
     getDBTableData('faq_items', actions.setAllItems, actions.setError)
   ),
   addItem: action(state => {
-    // state.faqItems = state.faqItems.push(payload);
+    // store.faqItems = store.faqItems.push(payload);
     state.faqItems.push({ title: '', expl: '' });
   }),
   removeItem: action((state, index) => {
