@@ -4,5 +4,8 @@
 .circleci/**/*
 build/**/*
 config/**/*
-scripts/**/*
+scripts/analyze_scores.js
+scripts/build.js
+scripts/start.js
+scripts/test.js
 storybook-static/**/*
